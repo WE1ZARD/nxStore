@@ -1,0 +1,13 @@
+{
+    "category": "sys",
+    "subcategory": "firmware",
+    "subcategory_cn": "系统固件",
+    "name": "fw2250",
+    "title": "22.5.0",
+    "description": "7mb 系统内存 - 最拉",
+    "author": "Nintendo",
+    "version": "22.5.0",
+    "quark_url": "bfed578fd332",
+    "custom_dir": "/Firmware.22.5.0",
+    "uninstall_dir": "/Firmware.22.5.0"
+}

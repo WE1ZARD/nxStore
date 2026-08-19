@@ -1,0 +1,13 @@
+{
+    "category": "sys",
+    "subcategory": "firmware",
+    "subcategory_cn": "系统固件",
+    "name": "fw2050",
+    "title": "20.5.0",
+    "description": "14mb 系统内存 - 最拉",
+    "author": "Nintendo",
+    "version": "20.5.0",
+    "quark_url": "8f0b3903ff9f",
+    "custom_dir": "/Firmware.20.5.0",
+    "uninstall_dir": "/Firmware.20.5.0"
+}

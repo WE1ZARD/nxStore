@@ -1,0 +1,8 @@
+{
+    "category": "sysmod",
+    "name": "sys-con",
+    "title": "sys-con",
+    "description": "支持第三方有线手柄",
+    "author": "o0Zz",
+    "github_url": "https://github.com/o0Zz/sys-con"
+}

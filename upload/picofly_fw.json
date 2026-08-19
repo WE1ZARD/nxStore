@@ -1,0 +1,10 @@
+{
+    "category": "sys",
+    "subcategory": "payloads",
+    "subcategory_cn": "负载工具",
+    "name": "picofly_fw",
+    "title": "Picofly Firmware",
+    "description": "硬破芯片升级固件",
+    "author": "rehius",
+    "version": "2.80"
+}

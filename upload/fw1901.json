@@ -1,0 +1,13 @@
+{
+    "category": "sys",
+    "subcategory": "firmware",
+    "subcategory_cn": "系统固件",
+    "name": "fw1901",
+    "title": "19.0.1",
+    "description": "40mb 系统内存 - 最稳",
+    "author": "Nintendo",
+    "version": "19.0.1",
+    "quark_url": "9ab28cc210af",
+    "custom_dir": "/Firmware.19.0.1",
+    "uninstall_dir": "/Firmware.19.0.1"
+}

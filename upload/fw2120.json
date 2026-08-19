@@ -1,0 +1,13 @@
+{
+    "category": "sys",
+    "subcategory": "firmware",
+    "subcategory_cn": "系统固件",
+    "name": "fw2120",
+    "title": "21.2.0",
+    "description": "7mb 系统内存 - 最拉",
+    "author": "Nintendo",
+    "version": "21.2.0",
+    "quark_url": "386d1a397da3",
+    "custom_dir": "/Firmware.21.2.0",
+    "uninstall_dir": "/Firmware.21.2.0"
+}
