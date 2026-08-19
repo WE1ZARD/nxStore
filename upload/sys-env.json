@@ -1,0 +1,8 @@
+{
+    "category": "sysmod",
+    "name": "sys-env",
+    "title": "Sys-env",
+    "description": "系统环境控制",
+    "author": "lightos",
+    "version": "1.1.0"
+}

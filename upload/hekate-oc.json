@@ -1,0 +1,12 @@
+{
+    "category": "sys",
+    "subcategory": "hekate",
+    "subcategory_cn": "系统引导",
+    "name": "hekate-oc",
+    "title": "hocate EN",
+    "description": "系统引导菜单 - 英文超频版",
+    "author": "Horizon-OC",
+    "version": "6.5.3",
+    "require_reboot": true,
+    "disable_uninstall": true
+}

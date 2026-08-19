@@ -1,0 +1,469 @@
+{
+    "packages": [
+        {
+            "category": "sysmod",
+            "name": "sys-env",
+            "title": "Sys-env",
+            "description": "系统环境控制",
+            "author": "lightos",
+            "version": "1.1.0"
+        },
+        {
+            "name": "ldn_mitm",
+            "category": "ovl",
+            "title": "ldn_mitm",
+            "description": "私服联机插件",
+            "author": "miiazertyy",
+            "version": "1.24.5"
+        },
+        {
+            "name": "sphaira",
+            "category": "nro",
+            "title": "sphaira",
+            "description": "相册工具菜单",
+            "author": "ITotalJustice",
+            "version": "2.0.5",
+            "github_url": "https://github.com/WE1ZARD/sphaira"
+        },
+        {
+            "name": "SaltyNX",
+            "category": "sysmod",
+            "title": "SaltyNX",
+            "description": "FPS核心依赖",
+            "author": "masagrator",
+            "version": "1.9.2",
+            "github_url": "https://github.com/masagrator/SaltyNX"
+        },
+        {
+            "name": "FPSLocker",
+            "category": "ovl",
+            "title": "FPSLocker",
+            "description": "帧数解锁插件",
+            "author": "masagrator",
+            "version": "3.3.2",
+            "github_url": "https://github.com/WE1ZARD/FPSLocker"
+        },
+        {
+            "name": "MasterVolume",
+            "category": "ovl",
+            "title": "MasterVolume",
+            "description": "音量控制插件",
+            "author": "averne",
+            "version": "1.2.5",
+            "github_url": "https://github.com/WE1ZARD/MasterVolume"
+        },
+        {
+            "name": "ReShade",
+            "category": "ovl",
+            "title": "ReShade",
+            "description": "复古滤镜插件",
+            "author": "WE1ZARD",
+            "version": "1.2.1",
+            "github_url": "https://github.com/WE1ZARD/ReShade"
+        },
+        {
+            "name": "autoSAVE",
+            "category": "sysmod",
+            "title": "autoSAVE",
+            "description": "存档自动备份, 支持夸克云存档",
+            "author": "WE1ZARD",
+            "version": "1.1.2",
+            "github_url": "https://github.com/WE1ZARD/autoSAVE"
+        },
+        {
+            "name": "KeyX",
+            "category": "ovl",
+            "title": "KeyX",
+            "description": "按键助手",
+            "author": "TOM-BadEN",
+            "version": "1.5.6"
+        },
+        {
+            "name": "PNGShot",
+            "category": "sysmod",
+            "title": "PNGShot",
+            "description": "无损截图工具",
+            "author": "J-D-K",
+            "version": "2.6.0"
+        },
+        {
+            "name": "ReverseNX-RT",
+            "category": "ovl",
+            "title": "ReverseNX-RT",
+            "description": "底座切换插件",
+            "author": "masagrator",
+            "version": "2.2.6",
+            "github_url": "https://github.com/WE1ZARD/ReverseNX-RT"
+        },
+        {
+            "name": "SaltyNX-Patches",
+            "category": "patches",
+            "title": "SaltyNX-Patches",
+            "description": "系统增强补丁",
+            "author": "masagrator",
+            "version": "1.9.1"
+        },
+        {
+            "name": "ftpsrv",
+            "category": "sysmod",
+            "title": "ftpsrv",
+            "description": "后台无线传输",
+            "author": "ITotalJustice",
+            "version": "1.2.2"
+        },
+        {
+            "name": "sys-dock",
+            "category": "sysmod",
+            "title": "sys-dock",
+            "description": "底座带宽增强补丁",
+            "author": "masagrator",
+            "version": "1.0.2"
+        },
+        {
+            "name": "sys-ticon",
+            "category": "sysmod",
+            "title": "sys-ticon",
+            "description": "自定义游戏标题, 封面, 版本号",
+            "author": "masagrator",
+            "version": "1.0.8"
+        },
+        {
+            "name": "AIO",
+            "category": "sys",
+            "title": "AIO",
+            "description": "大气层整合包 Magic-Suite",
+            "author": "WE1ZARD",
+            "version": "11.2.11",
+            "check_init": true,
+            "github_url": "https://github.com/WE1ZARD/Magic-Suite",
+            "require_reboot": true,
+            "disable_uninstall": true
+        },
+        {
+            "name": "fw1810",
+            "category": "sys",
+            "title": "18.1.0",
+            "description": "40mb 系统内存 - 最好",
+            "author": "Nintendo",
+            "version": "18.1.0",
+            "quark_url": "0dfed7641e20",
+            "custom_dir": "/Firmware.18.1.0",
+            "uninstall_dir": "/Firmware.18.1.0",
+            "subcategory": "firmware",
+            "subcategory_cn": "系统固件"
+        },
+        {
+            "name": "fw1901",
+            "category": "sys",
+            "title": "19.0.1",
+            "description": "40mb 系统内存 - 最稳",
+            "author": "Nintendo",
+            "version": "19.0.1",
+            "quark_url": "9ab28cc210af",
+            "custom_dir": "/Firmware.19.0.1",
+            "uninstall_dir": "/Firmware.19.0.1",
+            "subcategory": "firmware",
+            "subcategory_cn": "系统固件"
+        },
+        {
+            "name": "fw2050",
+            "category": "sys",
+            "title": "20.5.0",
+            "description": "7mb 系统内存 - 最拉",
+            "author": "Nintendo",
+            "version": "20.5.0",
+            "quark_url": "8f0b3903ff9f",
+            "custom_dir": "/Firmware.20.5.0",
+            "uninstall_dir": "/Firmware.20.5.0",
+            "subcategory": "firmware",
+            "subcategory_cn": "系统固件"
+        },
+        {
+            "name": "fw2120",
+            "category": "sys",
+            "title": "21.2.0",
+            "description": "7mb 系统内存 - 最拉",
+            "author": "Nintendo",
+            "version": "21.2.0",
+            "quark_url": "386d1a397da3",
+            "custom_dir": "/Firmware.21.2.0",
+            "uninstall_dir": "/Firmware.21.2.0",
+            "subcategory": "firmware",
+            "subcategory_cn": "系统固件"
+        },
+        {
+            "name": "fw2250",
+            "category": "sys",
+            "title": "22.5.0",
+            "description": "7mb 系统内存 - 最拉",
+            "author": "Nintendo",
+            "version": "22.5.0",
+            "quark_url": "bfed578fd332",
+            "custom_dir": "/Firmware.22.5.0",
+            "uninstall_dir": "/Firmware.22.5.0",
+            "subcategory": "firmware",
+            "subcategory_cn": "系统固件"
+        },
+        {
+            "name": "hekate-en",
+            "category": "sys",
+            "title": "hekate EN",
+            "description": "系统引导菜单 - 英文",
+            "author": "CTCaer",
+            "version": "6.5.3",
+            "subcategory": "hekate",
+            "subcategory_cn": "系统引导",
+            "require_reboot": true,
+            "disable_uninstall": true
+        },
+        {
+            "name": "hekate-oc",
+            "category": "sys",
+            "title": "hocate EN",
+            "description": "系统引导菜单 - 英文超频版",
+            "author": "Horizon-OC",
+            "version": "6.5.3",
+            "subcategory": "hekate",
+            "subcategory_cn": "系统引导",
+            "require_reboot": true,
+            "disable_uninstall": true
+        },
+        {
+            "name": "hekate-zh",
+            "category": "sys",
+            "title": "hekate ZH",
+            "description": "系统引导菜单 - 简中",
+            "author": "CTCaer",
+            "version": "6.5.3",
+            "subcategory": "hekate",
+            "subcategory_cn": "系统引导",
+            "require_reboot": true,
+            "disable_uninstall": true
+        },
+        {
+            "name": "modchip-toolbox",
+            "category": "sys",
+            "title": "Modchip Toolbox",
+            "description": "硬破芯片工具箱",
+            "author": "DefenderOfHyrule",
+            "version": "1.0.2",
+            "subcategory": "payloads",
+            "subcategory_cn": "负载工具",
+            "github_url": "https://github.com/DefenderOfHyrule/modchip-toolbox"
+        },
+        {
+            "name": "picofly_fw",
+            "category": "sys",
+            "title": "Picofly Firmware",
+            "description": "硬破芯片升级固件",
+            "author": "DefenderOfHyrule",
+            "version": "2.82",
+            "subcategory": "payloads",
+            "subcategory_cn": "负载工具"
+        },
+        {
+            "name": "JKSV",
+            "category": "nro",
+            "title": "JKSV",
+            "description": "存档管理, 支持上传夸克",
+            "author": "JDK, WE1ZARD",
+            "version": "2026.07.22",
+            "github_url": "https://github.com/WE1ZARD/JKSV"
+        },
+        {
+            "name": "akira",
+            "category": "nro",
+            "title": "akira",
+            "description": "PS4 & 5 串流工具",
+            "author": "xlanor",
+            "version": "0.6.0-rc.10",
+            "github_url": "https://github.com/xlanor/akira"
+        },
+        {
+            "name": "dvr-patches",
+            "category": "patches",
+            "title": "dvr-patches",
+            "description": "录屏增强补丁",
+            "author": "exelix11",
+            "version": "fw-22.5",
+            "github_url": "https://github.com/exelix11/dvr-patches"
+        },
+        {
+            "name": "nextendo",
+            "category": "nro",
+            "title": "Prelude",
+            "description": "私服全球联机",
+            "author": "NextendoNetwork",
+            "version": "3.3.6",
+            "github_url": "https://github.com/NextendoNetwork/Prelude-Nro"
+        },
+        {
+            "name": "Lockpick_RCM",
+            "category": "sys",
+            "subcategory": "payloads",
+            "subcategory_cn": "负载工具",
+            "title": "Lockpick_RCM",
+            "description": "密钥提取工具",
+            "author": "WE1ZARD",
+            "version": "1.9.20",
+            "github_url": "https://github.com/WE1ZARD/Lockpick_RCM"
+        },
+        {
+            "name": "Breeze",
+            "category": "nro",
+            "title": "Breeze",
+            "description": "金手指制作工具",
+            "author": "tomvita",
+            "version": "beta114.01",
+            "github_url": "https://github.com/tomvita/Breeze-Beta"
+        },
+        {
+            "name": "FanControl",
+            "category": "ovl",
+            "title": "FanControl",
+            "description": "风扇管理工具",
+            "author": "Zathawo",
+            "version": "1.2.0",
+            "github_url": "https://github.com/WE1ZARD/FanControl"
+        },
+        {
+            "name": "MissionControl",
+            "category": "sysmod",
+            "title": "MissionControl",
+            "description": "第三方蓝牙手柄支持",
+            "author": "ndeadly",
+            "version": "0.15.2",
+            "github_url": "https://github.com/ndeadly/MissionControl"
+        },
+        {
+            "name": "emuiibo",
+            "category": "ovl",
+            "title": "emuiibo",
+            "description": "虚拟阿米波",
+            "author": "XorTroll",
+            "version": "1.1.3"
+        },
+        {
+            "name": "DBI_CN",
+            "category": "nro",
+            "subcategory": "DBI",
+            "subcategory_cn": "万能安装工具",
+            "title": "DBI_CN",
+            "description": "万能安装工具",
+            "author": "duckbill",
+            "version": "898"
+        },
+        {
+            "name": "SDK18",
+            "category": "nro",
+            "subcategory": "DBI",
+            "subcategory_cn": "万能安装工具",
+            "title": "SDK 18",
+            "description": "SDK 18 替换固件",
+            "author": "Nintendo",
+            "version": "18.1.0"
+        },
+        {
+            "name": "SDK19",
+            "category": "nro",
+            "subcategory": "DBI",
+            "subcategory_cn": "万能安装工具",
+            "title": "SDK 19",
+            "description": "SDK 19 替换固件",
+            "author": "Nintendo",
+            "version": "19.0.1"
+        },
+        {
+            "name": "Fizeau",
+            "category": "nro",
+            "title": "Fizeau",
+            "description": "屏幕调色工具",
+            "author": "averne",
+            "version": "2.8.3",
+            "github_url": "https://github.com/averne/Fizeau"
+        },
+        {
+            "name": "switchfin",
+            "category": "nro",
+            "title": "Switchfin",
+            "description": "视频播放器",
+            "author": "dragonflylee",
+            "version": "0.9.3",
+            "github_url": "https://github.com/dragonflylee/switchfin/releases/download/0.9.3/Switchfin.nro"
+        },
+        {
+            "name": "sys-con",
+            "category": "sysmod",
+            "title": "sys-con",
+            "description": "支持第三方有线手柄",
+            "author": "o0Zz",
+            "version": "1.7.0",
+            "github_url": "https://github.com/o0Zz/sys-con"
+        },
+        {
+            "name": "Aurora",
+            "category": "pkgs",
+            "title": "Aurora",
+            "description": "HOC 超频助手",
+            "author": "WE1ZARD",
+            "version": "11.2.r250",
+            "github_url": "https://github.com/WE1ZARD/Aurora"
+        },
+        {
+            "name": "EdiZon_offline",
+            "category": "ovl",
+            "subcategory": "edizon",
+            "subcategory_cn": "金手指作弊工具",
+            "title": "EdiZon Offline",
+            "description": "金手指 - 本地版",
+            "author": "proferabg",
+            "version": "1.2.2",
+            "github_url": "https://github.com/WE1ZARD/EdiZon-Overlay"
+        },
+        {
+            "name": "EdiZon_online",
+            "category": "ovl",
+            "subcategory": "edizon",
+            "subcategory_cn": "金手指作弊工具",
+            "title": "EdiZon Online",
+            "description": "金手指 - 在线下载版",
+            "author": "星落尘降",
+            "version": "1.2.0"
+        },
+        {
+            "name": "Settings",
+            "category": "pkgs",
+            "title": "Settings",
+            "description": "设置助手",
+            "author": "WE1ZARD",
+            "version": "3.5.2"
+        },
+        {
+            "name": "Status-Monitor-Overlay",
+            "category": "ovl",
+            "title": "Status-Monitor-Overlay",
+            "description": "状态监控插件",
+            "author": "masagrator",
+            "version": "1.7.3",
+            "github_url": "https://github.com/WE1ZARD/Status-Monitor-Overlay"
+        },
+        {
+            "name": "battery_desync_fix_nx",
+            "category": "nro",
+            "title": "Battery Desync Fix",
+            "description": "电量校准工具",
+            "author": "CTCaer",
+            "version": "1.5.1",
+            "github_url": "https://github.com/CTCaer/battery_desync_fix_nx"
+        },
+        {
+            "name": "WIZBOX",
+            "category": "nro",
+            "title": "WIZBOX",
+            "description": "魔盒助手",
+            "author": "WE1ZARD",
+            "version": "1.4.6",
+            "github_url": "https://github.com/WE1ZARD/WIZBOX"
+        }
+    ]
+}

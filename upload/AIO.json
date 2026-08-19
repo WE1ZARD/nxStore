@@ -1,0 +1,11 @@
+{
+    "category": "sys",
+    "name": "AIO",
+    "title": "AIO",
+    "description": "大气层整合包 Magic-Suite",
+    "author": "WE1ZARD",
+    "github_url": "https://github.com/WE1ZARD/Magic-Suite",
+    "check_init": true,
+    "require_reboot": true,
+    "disable_uninstall": true
+}
