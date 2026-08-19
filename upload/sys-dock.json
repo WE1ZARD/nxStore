@@ -1,0 +1,8 @@
+{
+    "category": "sysmod",
+    "name": "sys-dock",
+    "title": "sys-dock",
+    "description": "底座带宽增强补丁",
+    "author": "masagrator",
+    "version": "1.0.2"
+}

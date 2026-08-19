@@ -1,0 +1,8 @@
+{
+    "category": "ovl",
+    "name": "sys-clk",
+    "title": "sys-clk",
+    "description": "超频管理插件",
+    "author": "WE1ZARD",
+    "github_url": "https://github.com/WE1ZARD/sys-clk"
+}

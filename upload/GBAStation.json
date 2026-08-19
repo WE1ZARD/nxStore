@@ -1,0 +1,8 @@
+{
+    "category": "nro",
+    "name": "GBAStation",
+    "title": "GBAStation",
+    "description": "多核心模拟器前端",
+    "author": "beiklive",
+    "github_url": "https://github.com/beiklive/GBAStation"
+}
