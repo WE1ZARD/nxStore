@@ -1,0 +1,14 @@
+U: atmosphere/contents/0100000000000352/exefs.nsp
+U: atmosphere/contents/0100000000000352/flags/boot2.flag
+U: atmosphere/contents/0100000000000352/toolbox.json
+U: emuiibo/overlay/lang/de.json
+U: emuiibo/overlay/lang/en.json
+U: emuiibo/overlay/lang/es.json
+U: emuiibo/overlay/lang/fr.json
+U: emuiibo/overlay/lang/it.json
+U: emuiibo/overlay/lang/ko.json
+U: emuiibo/overlay/lang/pt-BR.json
+U: emuiibo/overlay/lang/ru.json
+U: emuiibo/overlay/lang/zh-Hans.json
+U: emuiibo/overlay/lang/zh-Hant.json
+U: switch/.overlays/emuiibo.ovl

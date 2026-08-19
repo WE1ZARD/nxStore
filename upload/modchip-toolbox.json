@@ -1,0 +1,10 @@
+{
+    "category": "sys",
+    "subcategory": "payloads",
+    "subcategory_cn": "负载工具",
+    "name": "modchip-toolbox",
+    "title": "Modchip Toolbox",
+    "description": "硬破芯片工具箱",
+    "author": "DefenderOfHyrule",
+    "github_url": "https://github.com/DefenderOfHyrule/modchip-toolbox"
+}

@@ -1,0 +1,8 @@
+{
+    "category": "sysmod",
+    "name": "sys-env",
+    "title": "sys-env",
+    "description": "系统环境控制",
+    "author": "lightos",
+    "github_url": "https://github.com/Lightos1/sys-env"
+}

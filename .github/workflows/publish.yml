@@ -1,0 +1,95 @@
+name: Publish store (gen_manifest)
+
+# 作用:
+#   1. 定期/手动/每次 master 推送时跑 gen_manifest.py
+#      - 自动拉取 github_url 托管包的最新 release；私有缓存中的 tag + asset id 都未变化才复用归档
+#      - changelog: true 的包把 release 更新内容同步到 packages/{name}/changelog.md
+#      - 处理 upload/ 里的 zip/json/图标 -> zips/ packages/ repo.json
+#   2. 产物有变化时提交回 master([skip ci] 防循环), 并触发壳仓库部署一次
+#
+# 触发:
+#   - push master   : upload/ 之类的 PR 合并后立即处理
+#   - schedule    : 每日 UTC 03:00 拉取 github_url 最新版本
+#   - workflow_dispatch : 手动
+
+on:
+  push:
+    branches: [master]
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    env:
+      DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install pillow
+
+      - name: Regenerate and publish artifacts
+        id: commit
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          BRANCH: master
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          for attempt in 1 2 3; do
+            echo "::group::publish attempt $attempt"
+
+            # Queued runs may have checked out an older event SHA. Always regenerate
+            # from the current branch head instead of rebasing generated repo.json.
+            git fetch origin "$BRANCH"
+            git reset --hard "origin/$BRANCH"
+
+            python3 tools/validate_package.py --dir "$PWD"
+            bash run.sh gen_manifest
+
+            if [[ -z "$(git status --porcelain)" ]]; then
+              echo "changed=false" >> "$GITHUB_OUTPUT"
+              echo "no changes"
+              echo "::endgroup::"
+              exit 0
+            fi
+
+            git add -A
+            git commit -m "publish(store): regenerate artifacts [skip ci]"
+            if git push origin "HEAD:$BRANCH"; then
+              echo "changed=true" >> "$GITHUB_OUTPUT"
+              echo "::endgroup::"
+              exit 0
+            fi
+
+            echo "::warning::Branch advanced during generation; regenerating from latest $BRANCH"
+            echo "::endgroup::"
+          done
+
+          echo "::error::Failed to publish after 3 attempts because $BRANCH kept advancing"
+          exit 1
+
+      - name: Trigger shell deploy
+        if: (github.event_name == 'push' || steps.commit.outputs.changed == 'true') && env.DISPATCH_TOKEN != ''
+        env:
+          GH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
+        run: gh workflow run deploy.yml -R WE1ZARD/we1zard.github.io

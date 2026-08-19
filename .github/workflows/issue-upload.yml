@@ -1,0 +1,40 @@
+name: Upload from issue (approved)
+
+# 流程: 用户在 issue 提供 {name}.zip + {name}.json → 维护者审核后回复 /publish
+#   → 本 workflow 抓附件落到 upload/ → 开 PR → 合并后由 publish.yml 处理入库并触发部署。
+#
+# 触发条件(防止滥用):
+#   - 是 issue 评论(不是 PR 评论)
+#   - 评论以 /publish 开头
+#   - 评论者必须是有仓库写权限的人(OWNER/MEMBER/COLLABORATOR):
+#     仅维护者/协作者可触发, 提交者本人、路人都不行 —— 保证发出的 PR 都经过审核, 减少垃圾 PR。
+#   - 产物只是"待审核 PR", 不会自动合并; 最终入库仍需维护者合入。
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  upload:
+    if: ${{ github.event.issue.pull_request == null
+          && startsWith(github.event.comment.body, '/publish')
+          && (github.event.comment.author_association == 'OWNER'
+              || github.event.comment.author_association == 'MEMBER'
+              || github.event.comment.author_association == 'COLLABORATOR') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build upload files + open PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          ISSUE: ${{ github.event.issue.number }}
+          COMMENT: ${{ github.event.comment.body }}
+        run: bash .github/scripts/publish_from_issue.sh

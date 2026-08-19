@@ -1,0 +1,8 @@
+{
+    "category": "sysmod",
+    "name": "sys-ticon",
+    "title": "sys-ticon",
+    "description": "自定义游戏标题, 封面, 版本号",
+    "author": "masagrator",
+    "version": "1.0.8"
+}

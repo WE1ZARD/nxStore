@@ -1,0 +1,5 @@
+G: config/ftpsrv/config.ini
+U: atmosphere/contents/420000000000011B/exefs.nsp
+U: atmosphere/contents/420000000000011B/flags/boot2.flag
+U: atmosphere/contents/420000000000011B/toolbox.json
+U: config/ftpsrv/config.ini.template

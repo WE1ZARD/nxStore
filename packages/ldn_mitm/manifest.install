@@ -1,0 +1,7 @@
+G: config/ldn_mitm/relay.cfg
+U: atmosphere/contents/4200000000000010/exefs.nsp
+U: atmosphere/contents/4200000000000010/flags/boot2.flag
+U: atmosphere/contents/4200000000000010/toolbox.json
+U: switch/.overlays/lang/ldn_mitm/zh-Hans.json
+U: switch/.overlays/lang/ldn_mitm/zh-Hant.json
+U: switch/.overlays/ldn_mitm.ovl

@@ -1,0 +1,13 @@
+{
+    "category": "sys",
+    "subcategory": "firmware",
+    "subcategory_cn": "系统固件",
+    "name": "fw1810",
+    "title": "18.1.0",
+    "description": "40mb 系统内存 - 最好",
+    "author": "Nintendo",
+    "version": "18.1.0",
+    "quark_url": "0dfed7641e20",
+    "custom_dir": "/Firmware.18.1.0",
+    "uninstall_dir": "/Firmware.18.1.0"
+}
