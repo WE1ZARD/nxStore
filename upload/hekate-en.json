@@ -1,0 +1,12 @@
+{
+    "category": "sys",
+    "subcategory": "hekate",
+    "subcategory_cn": "系统引导",
+    "name": "hekate-en",
+    "title": "hekate EN",
+    "description": "系统引导菜单 - 英文",
+    "author": "CTCaer",
+    "version": "6.5.3",
+    "require_reboot": true,
+    "disable_uninstall": true
+}

@@ -1,0 +1,8 @@
+{
+    "category": "sysmod",
+    "name": "MissionControl",
+    "title": "MissionControl",
+    "description": "第三方蓝牙手柄支持",
+    "author": "ndeadly",
+    "github_url": "https://github.com/ndeadly/MissionControl"
+}

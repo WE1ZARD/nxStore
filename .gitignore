@@ -1,0 +1,6 @@
+tests
+__pycache__
+tools/__pycache__
+tools/serve_repo.py
+tools/icon_convertor.py
+gh_token.txt

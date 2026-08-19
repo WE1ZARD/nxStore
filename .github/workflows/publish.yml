@@ -1,0 +1,75 @@
+name: Publish store (gen_manifest)
+
+# 作用:
+#   1. 定期/手动/每次 master 推送时跑 gen_manifest.py
+#      - 自动拉取 github_url 托管包的最新 release；私有缓存中的 tag + asset id 都未变化才复用归档
+#      - 处理 upload/ 里的 zip/json/图标 -> zips/ packages/ repo.json
+#   2. 产物有变化时提交回 master([skip ci] 防循环), 并触发壳仓库部署一次
+#
+# 触发:
+#   - push master   : upload/ 之类的 PR 合并后立即处理
+#   - schedule    : 每日 UTC 03:00 拉取 github_url 最新版本
+#   - workflow_dispatch : 手动
+
+on:
+  push:
+    branches: [master]
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install pillow
+
+      - name: Validate upload metadata (防坏 json 流入 repo.json)
+        run: python3 tools/validate_package.py --dir "$PWD"
+
+      - name: Run gen_manifest
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: bash run.sh gen_manifest
+
+      - name: Commit artifacts if changed
+        id: commit
+        run: |
+          if git status --porcelain | grep -q .; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "publish(store): regenerate artifacts [skip ci]"
+            git pull --rebase origin "${{ github.ref_name }}"
+            git push origin "${{ github.ref_name }}"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "no changes"
+          fi
+
+      - name: Trigger shell deploy
+        if: (github.event_name == 'push' || steps.commit.outputs.changed == 'true') && env.DISPATCH_TOKEN != ''
+        env:
+          GH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
+        run: gh workflow run deploy.yml -R WE1ZARD/we1zard.github.io

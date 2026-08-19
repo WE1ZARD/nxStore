@@ -1,0 +1,120 @@
+{
+    "packages": {
+        "AIO": {
+            "version": "11.2.14",
+            "asset_id": 536435417
+        },
+        "Aurora": {
+            "version": "11.2.r250",
+            "asset_id": 504525380
+        },
+        "Breeze": {
+            "version": "beta118.02",
+            "asset_id": 543893869
+        },
+        "EdiZon_offline": {
+            "version": "1.2.2",
+            "asset_id": 533368935
+        },
+        "FPSLocker": {
+            "version": "3.3.2",
+            "asset_id": 533353437
+        },
+        "FanControl": {
+            "version": "1.2.0",
+            "asset_id": 533430196
+        },
+        "Fizeau": {
+            "version": "2.8.2+r7+cn",
+            "asset_id": 533320116
+        },
+        "JKSV": {
+            "version": "2026.07.22",
+            "asset_id": 495439582
+        },
+        "Lockpick_RCM": {
+            "version": "1.9.20",
+            "asset_id": 392461371
+        },
+        "MasterVolume": {
+            "version": "1.2.5",
+            "asset_id": 533395542
+        },
+        "MissionControl": {
+            "version": "0.15.2",
+            "asset_id": 451450100
+        },
+        "NX-FanControl": {
+            "version": "1.1.0",
+            "asset_id": 536793177
+        },
+        "ReShade": {
+            "version": "1.2.1",
+            "asset_id": 533390429
+        },
+        "ReverseNX-RT": {
+            "version": "2.2.6",
+            "asset_id": 533360395
+        },
+        "SaltyNX": {
+            "version": "1.9.3",
+            "asset_id": 535155285
+        },
+        "Settings": {
+            "version": "3.5.4",
+            "asset_id": 536432713
+        },
+        "Status-Monitor-Overlay": {
+            "version": "1.7.3",
+            "asset_id": 533366433
+        },
+        "WIZBOX": {
+            "version": "2.0.7",
+            "asset_id": 542762159
+        },
+        "akira": {
+            "version": "0.6.2-rc.1",
+            "asset_id": 538122895
+        },
+        "arcane": {
+            "version": "4.0.0",
+            "asset_id": 533489675
+        },
+        "autoSAVE": {
+            "version": "1.1.2",
+            "asset_id": 533490224
+        },
+        "battery_desync_fix_nx": {
+            "version": "1.5.1",
+            "asset_id": 317236993
+        },
+        "dvr-patches": {
+            "version": "fw-22.5",
+            "asset_id": 453846633
+        },
+        "modchip-toolbox": {
+            "version": "1.0.3",
+            "asset_id": 543880882
+        },
+        "nextendo": {
+            "version": "3.3.9",
+            "asset_id": 528464230
+        },
+        "sphaira": {
+            "version": "2.0.7",
+            "asset_id": 536022626
+        },
+        "sys-clk": {
+            "version": "3.4.6",
+            "asset_id": 533380131
+        },
+        "sys-con": {
+            "version": "1.7.0",
+            "asset_id": 495478602
+        },
+        "sys-env": {
+            "version": "1.1.0",
+            "asset_id": 491430212
+        }
+    }
+}
