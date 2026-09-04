@@ -524,11 +524,11 @@
             "name": "NX-FanControl",
             "category": "ovl",
             "title": "NX-FanControl",
-            "description": "风扇管理插件",
+            "description": "风扇管理插件 (汉化 by WE1ZARD)",
             "author": "Lightos1",
             "version": "1.1.0",
             "crc32": "6cf78e85",
-            "github_url": "https://github.com/Lightos1/NX-FanControl"
+            "github_url": "https://github.com/WE1ZARD/NX-FanControl"
         }
     ]
 }
