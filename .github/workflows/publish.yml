@@ -22,12 +22,13 @@ permissions:
   contents: write
 
 concurrency:
-  group: publish
+  group: publish-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
   publish:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
     env:
       DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
     steps:
@@ -44,29 +45,47 @@ jobs:
       - name: Install deps
         run: pip install pillow
 
-      - name: Validate upload metadata (防坏 json 流入 repo.json)
-        run: python3 tools/validate_package.py --dir "$PWD"
-
-      - name: Run gen_manifest
+      - name: Regenerate and publish artifacts
+        id: commit
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: bash run.sh gen_manifest
-
-      - name: Commit artifacts if changed
-        id: commit
+          BRANCH: master
         run: |
-          if git status --porcelain | grep -q .; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          for attempt in 1 2 3; do
+            echo "::group::publish attempt $attempt"
+
+            # Queued runs may have checked out an older event SHA. Always regenerate
+            # from the current branch head instead of rebasing generated repo.json.
+            git fetch origin "$BRANCH"
+            git reset --hard "origin/$BRANCH"
+
+            python3 tools/validate_package.py --dir "$PWD"
+            bash run.sh gen_manifest
+
+            if [[ -z "$(git status --porcelain)" ]]; then
+              echo "changed=false" >> "$GITHUB_OUTPUT"
+              echo "no changes"
+              echo "::endgroup::"
+              exit 0
+            fi
+
             git add -A
             git commit -m "publish(store): regenerate artifacts [skip ci]"
-            git pull --rebase origin "${{ github.ref_name }}"
-            git push origin "${{ github.ref_name }}"
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "no changes"
-          fi
+            if git push origin "HEAD:$BRANCH"; then
+              echo "changed=true" >> "$GITHUB_OUTPUT"
+              echo "::endgroup::"
+              exit 0
+            fi
+
+            echo "::warning::Branch advanced during generation; regenerating from latest $BRANCH"
+            echo "::endgroup::"
+          done
+
+          echo "::error::Failed to publish after 3 attempts because $BRANCH kept advancing"
+          exit 1
 
       - name: Trigger shell deploy
         if: (github.event_name == 'push' || steps.commit.outputs.changed == 'true') && env.DISPATCH_TOKEN != ''
