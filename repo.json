@@ -299,9 +299,9 @@
             "title": "akira",
             "description": "PS4 & 5 串流工具",
             "author": "xlanor",
-            "version": "0.6.2-rc.1",
+            "version": "0.6.2",
             "github_url": "https://github.com/xlanor/akira",
-            "crc32": "206f3da2"
+            "crc32": "51a1046c"
         },
         {
             "name": "dvr-patches",
