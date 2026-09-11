@@ -301,7 +301,7 @@
             "author": "xlanor",
             "version": "0.6.3",
             "github_url": "https://github.com/xlanor/akira",
-            "crc32": "e32ee90b"
+            "crc32": "63df7c07"
         },
         {
             "name": "dvr-patches",
@@ -321,7 +321,7 @@
             "author": "NextendoNetwork",
             "version": "3.4.3",
             "github_url": "https://github.com/NextendoNetwork/Prelude-Nro",
-            "crc32": "90b7c26f"
+            "crc32": "b40278e8"
         },
         {
             "name": "Lockpick_RCM",
@@ -343,7 +343,7 @@
             "author": "tomvita",
             "version": "beta118.05",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "83869b73"
+            "crc32": "356c2924"
         },
         {
             "name": "MissionControl",
