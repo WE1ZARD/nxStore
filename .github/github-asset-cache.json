@@ -2,7 +2,7 @@
     "packages": {
         "AIO": {
             "version": "11.2.19",
-            "asset_id": 557174742
+            "asset_id": 557429260
         },
         "Aurora": {
             "version": "11.2.7303",
@@ -29,8 +29,8 @@
             "asset_id": 533320116
         },
         "JKSV": {
-            "version": "2026.07.22",
-            "asset_id": 495439582
+            "version": "2026.09.11",
+            "asset_id": 557424855
         },
         "Lockpick_RCM": {
             "version": "1.9.20.1",
