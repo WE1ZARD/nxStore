@@ -528,8 +528,8 @@
             "title": "NX-FanControl",
             "description": "风扇管理插件 (汉化 by WE1ZARD)",
             "author": "Lightos1",
-            "version": "1.1.1",
-            "crc32": "dfc64f6a",
+            "version": "1.1.2",
+            "crc32": "2672d09b",
             "github_url": "https://github.com/WE1ZARD/NX-FanControl"
         },
         {
