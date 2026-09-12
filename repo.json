@@ -498,9 +498,9 @@
             "title": "WIZBOX",
             "description": "魔盒助手",
             "author": "WE1ZARD",
-            "version": "2.1.2",
+            "version": "2.1.3",
             "github_url": "https://github.com/WE1ZARD/WIZBOX",
-            "crc32": "ed5d05a9"
+            "crc32": "42e2f6d5"
         },
         {
             "name": "arcane",
