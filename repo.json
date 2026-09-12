@@ -478,9 +478,9 @@
             "title": "Status-Monitor-Overlay",
             "description": "状态监控插件",
             "author": "masagrator",
-            "version": "1.7.3",
+            "version": "1.7.4",
             "github_url": "https://github.com/WE1ZARD/Status-Monitor-Overlay",
-            "crc32": "34b1981c"
+            "crc32": "f6fdf0b8"
         },
         {
             "name": "battery_desync_fix_nx",
