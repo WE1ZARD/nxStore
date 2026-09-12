@@ -1,8 +1,8 @@
 {
     "packages": {
         "AIO": {
-            "version": "11.2.19",
-            "asset_id": 557429260
+            "version": "11.2.20",
+            "asset_id": 559539762
         },
         "Aurora": {
             "version": "11.2.7303",
