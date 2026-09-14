@@ -542,6 +542,16 @@
             "author": "XorTroll",
             "version": "1.1.3",
             "crc32": "eb16f63f"
+        },
+        {
+            "name": "sys-tune",
+            "category": "ovl",
+            "title": "sys-tune",
+            "description": "后台音乐",
+            "author": "ppkantorski",
+            "version": "2.1.0+r3",
+            "crc32": "cd3354cd",
+            "github_url": "https://github.com/we1zard/sys-tune"
         }
     ]
 }
