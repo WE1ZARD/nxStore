@@ -1,22 +1,20 @@
-- 优化: aio.json 版本同步问题
-## WIZBOX 2.1.4
-- 修复: AIO 解压成功后、重启前自动按 `.ovl` / `.nro` / `.nsp` 主程序写入组件版本记录；跳过附属配置或名称文件不影响版本
-## sphaira 2.0.9
-- Data Management menu (#353, @Insektaure)
-- NTFS support for USB drives (#361, @strongt1me)
-- Fix MTP/FTP deadlock when installing many files (#359, @strongt1me)
-- Updated libnxtc, support for compressed control.nacp (#369, @R-YaTian)
-- Updated libhaze, adds DeviceBusy support (#371, @R-YaTian)
-- Updated libusbdvd (#368, @R-YaTian)
-- Fix Chinese localization (#364, @dragonflylee)
-## sphaira 2.0.8
-- Added support for installing complete folders through MTP.
-- Added a filter for games with missing updates or DLC.
-- Added a Y shortcut to view application content directly from the Games menu.
-- Fixed touch input and focus navigation in the forwarder editor. @Niklas080208
-- Improved HTTP compatibility by identifying requests with the Sphaira version. @a1ex4
-- Improved translations, including Korean corrections, localized playtime units, and better sentence ordering. @Yorunokyujitsu
-- If you’re launching Sphaira through a forwarder, you may need to delete and recreate it using this newer release to receive the NRO launch fix.
-## Aurora 11.2.7303
-- 移除: 错误的CPU 2805+频率
-- 更新: kip文件
+## Arcane 4.0.9
+- 修复: 特斯拉快捷键修改后没法及时生效的问题
+## Arcane 4.0.8
+- 修复: 点击主菜单底栏的“插件包/插件”提示现在可切换对应列表,轻触切页延迟到触控回调结束后执行
+- 修复: 触摸仍按下时切换插件会把活动手势带入下一个进程,且同一事件可能重复提交启动;现在仅在触摸释放后允许一次 ovlloader 交接,避免系统崩溃
+- 修复: 恢复触屏滚动与点击,触摸列表项时焦点会立即跟随命中位置;拖动只滚动列表,轻触可打开插件或插件包
+- 修复: 页面切换后停止向旧页面分发当前帧触控,空内容页面也不会再解引用空指针
+## Status-Monitor-Overlay 1.7.5
+- 新增: 触控支持, 按住屏幕退出模式
+## ReverseNX-RT 2.2.8
+- 修复: 触控启动后不再向已切换的空页面分发同一帧触控,避免空指针崩溃
+## ReShade 1.2.2
+- 新增: 触控支持, 按住屏幕退出模式
+## sys-clk 3.4.8
+- 修复: 连续触控切换临时内存频率时 overlay 崩溃的问题
+## WIZBOX 2.1.5
+- 修复: 恢复全局左右滑动导航；向右滑等同 L，向左滑等同 R，并沿用页面现有的导航阻断规则
+- 新增: 页面 Footer 按键提示支持触控，点击对应提示区域执行相同按键逻辑
+- 新增: 通用确认弹窗与安装确认弹窗的取消、确认按钮支持直接触控
+- 修复: 系统22.0.0以下, eShop 启动快捷键修改不生效的问题
