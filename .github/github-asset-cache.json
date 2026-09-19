@@ -9,8 +9,8 @@
             "asset_id": 562366650
         },
         "Breeze": {
-            "version": "beta121.00",
-            "asset_id": 572156780
+            "version": "beta121.01",
+            "asset_id": 574448146
         },
         "DowngradeFixer": {
             "version": "1.0.1",
@@ -31,6 +31,10 @@
         "Fizeau": {
             "version": "2.8.2+r7+cn",
             "asset_id": 533320116
+        },
+        "GBAStation": {
+            "version": "0.3.15",
+            "asset_id": 548841524
         },
         "JKSV": {
             "version": "2026.09.11",
@@ -109,8 +113,8 @@
             "asset_id": 543880882
         },
         "nextendo": {
-            "version": "3.4.5",
-            "asset_id": 560015524
+            "version": "3.4.6",
+            "asset_id": 574453512
         },
         "sphaira": {
             "version": "2.0.10",

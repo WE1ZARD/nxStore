@@ -280,9 +280,9 @@
             "title": "Prelude",
             "description": "私服全球联机",
             "author": "NextendoNetwork",
-            "version": "3.4.5",
+            "version": "3.4.6",
             "github_url": "https://github.com/NextendoNetwork/Prelude-Nro",
-            "crc32": "87092ed3"
+            "crc32": "1ac04ec1"
         },
         {
             "name": "Lockpick_RCM",
@@ -302,9 +302,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta121.00",
+            "version": "beta121.01",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "5ca4b13f"
+            "crc32": "068dc881"
         },
         {
             "name": "MissionControl",
@@ -569,6 +569,16 @@
             "author": "WE1ZARD",
             "version": "1.0.0",
             "crc32": "ec2ffd36"
+        },
+        {
+            "name": "GBAStation",
+            "category": "nro",
+            "title": "GBAStation",
+            "description": "多核心模拟器前端",
+            "author": "beiklive",
+            "version": "0.3.15",
+            "crc32": "76710da2",
+            "github_url": "https://github.com/beiklive/GBAStation"
         }
     ]
 }
