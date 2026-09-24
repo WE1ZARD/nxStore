@@ -1,0 +1,13 @@
+{
+    "category": "ovl",
+    "subcategory": "emuiibo",
+    "subcategory_cn": "虚拟手办",
+    "name": "emuiibo_db",
+    "title": "emuiibo data",
+    "description": "虚拟手办数据库",
+    "author": "XorTroll",
+    "version": "20260921",
+    "quark_url": "40e62cd04a1a",
+    "custom_dir": "/",
+    "uninstall_dir": "/emuiibo/amiibo"
+}

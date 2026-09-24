@@ -1,0 +1,10 @@
+{
+    "category": "sys",
+    "subcategory": "payloads",
+    "subcategory_cn": "负载工具",
+    "name": "DowngradeFixer",
+    "title": "Downgrade Fixer",
+    "description": "降级修复工具",
+    "author": "sthetix",
+    "github_url": "https://github.com/sthetix/DowngradeFixer"
+}

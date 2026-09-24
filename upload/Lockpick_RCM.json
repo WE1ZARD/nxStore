@@ -1,0 +1,10 @@
+{
+    "category": "sys",
+    "subcategory": "payloads",
+    "subcategory_cn": "负载工具",
+    "name": "Lockpick_RCM",
+    "title": "Lockpick_RCM",
+    "description": "密钥提取工具",
+    "author": "WE1ZARD",
+    "github_url": "https://github.com/WE1ZARD/Lockpick_RCM"
+}

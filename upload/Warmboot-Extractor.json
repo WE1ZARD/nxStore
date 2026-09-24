@@ -1,0 +1,10 @@
+{
+    "category": "sys",
+    "subcategory": "payloads",
+    "subcategory_cn": "负载工具",
+    "name": "Warmboot-Extractor",
+    "title": "Warmboot Extractor",
+    "description": "熔断补丁提取工具",
+    "author": "sthetix",
+    "github_url": "https://github.com/sthetix/Warmboot-Extractor"
+}

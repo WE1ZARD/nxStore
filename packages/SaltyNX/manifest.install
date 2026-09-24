@@ -1,0 +1,16 @@
+U: SaltySD/exceptions.txt
+U: SaltySD/flags/log.flag
+U: SaltySD/saltynx_bootstrap.elf
+U: SaltySD/saltynx_bootstrap32_3k.elf
+U: SaltySD/saltynx_bootstrap32_5k.elf
+U: SaltySD/saltynx_core.elf
+U: SaltySD/saltynx_core32.elf
+U: atmosphere/contents/0000000000534C56/exefs.nsp
+U: atmosphere/contents/0000000000534C56/flags/boot2.flag
+U: atmosphere/contents/0000000000534C56/toolbox.json
+U: atmosphere/exefs_patches/SaltyNX_Fixes/053ABE9494B5397AE818B3721DE50995.ips
+U: atmosphere/exefs_patches/SaltyNX_Fixes/10C14AD346AE02E32AA52A9030A3A87B98D89642000000000000000000000000.ips
+U: atmosphere/exefs_patches/SaltyNX_Fixes/66A8EB853DE90A1AF13D19DA575E339B.ips
+U: atmosphere/exefs_patches/SaltyNX_Fixes/C4D1BCED9D8C5B813295345B7F9FDF97.ips
+U: atmosphere/exefs_patches/SaltyNX_Fixes/ECF4B91AF1B669ECD92829F25E4B530EE48985FA000000000000000000000000.ips
+U: atmosphere/exefs_patches/SaltyNX_Fixes/IDs.txt
