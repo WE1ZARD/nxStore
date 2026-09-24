@@ -1,0 +1,5 @@
+U: bootloader/hekate_ipl.ini
+U: bootloader/res/icon_emu_hue_nobox.bmp
+U: bootloader/res/icon_ofw_hue_nobox.bmp
+U: bootloader/res/icon_res_hue_nobox.bmp
+U: bootloader/res/icon_sys_hue_nobox.bmp

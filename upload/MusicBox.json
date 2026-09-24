@@ -1,0 +1,9 @@
+{
+    "category": "ovl",
+    "name": "MusicBox",
+    "title": "MusicBox",
+    "description": "网易云音乐",
+    "author": "水の仙",
+    "app_url": "https://download.nswiki.cn/gayking/store/zips/MusicBox.zip",
+    "require_reboot": true
+}

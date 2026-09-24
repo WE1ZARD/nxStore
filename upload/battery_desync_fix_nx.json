@@ -1,0 +1,8 @@
+{
+    "category": "nro",
+    "name": "battery_desync_fix_nx",
+    "title": "Battery Desync Fix",
+    "description": "电量校准工具",
+    "author": "CTCaer",
+    "github_url": "https://github.com/CTCaer/battery_desync_fix_nx"
+}

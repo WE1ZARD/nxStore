@@ -1,0 +1,9 @@
+{
+    "category": "ovl",
+    "name": "ldn_mitm",
+    "title": "ldn_mitm",
+    "description": "私服联机插件",
+    "author": "miiazertyy",
+    "version": "1.24.5",
+    "notify": "要求重启生效, \n查看联机教程\nwww.tomodachilife.cn/?page=game-online"
+}

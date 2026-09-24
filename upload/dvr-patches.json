@@ -1,0 +1,8 @@
+{
+    "category": "patches",
+    "name": "dvr-patches",
+    "title": "dvr-patches",
+    "description": "录屏增强补丁",
+    "author": "exelix11",
+    "github_url": "https://github.com/exelix11/dvr-patches"
+}

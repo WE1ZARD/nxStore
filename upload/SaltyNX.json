@@ -1,0 +1,9 @@
+{
+    "category": "sysmod",
+    "name": "SaltyNX",
+    "title": "SaltyNX",
+    "description": "FPS核心依赖",
+    "author": "masagrator",
+    "github_url": "https://github.com/masagrator/SaltyNX",
+    "notify": "要求重启生效"
+}
