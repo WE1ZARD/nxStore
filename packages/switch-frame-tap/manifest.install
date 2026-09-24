@@ -1,0 +1,11 @@
+U: Switch Frame Tap.app/Contents/Info.plist
+U: Switch Frame Tap.app/Contents/MacOS/SwitchFrameTap
+U: Switch Frame Tap.app/Contents/MacOS/switch-frame-tap-viewer
+U: clarity.o
+U: licenses/AMD-FidelityFX-FSR1-MIT.txt
+U: licenses/FFmpeg-LGPL-2.1.txt
+U: licenses/NVIDIA-Image-Scaling-MIT.txt
+U: licenses/SDL2-zlib.txt
+U: licenses/libusb-LGPL-2.1.txt
+U: licenses/switch-frame-tap-GPL-2.0.txt
+U: switch-frame-tap-viewer

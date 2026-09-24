@@ -1,0 +1,11 @@
+{
+    "category": "nro",
+    "name": "PKSE",
+    "title": "PKSE",
+    "description": "宝可梦存档修改器 (汉化 by easyworld)",
+    "author": "kiasta",
+    "version": "1.1.3",
+    "quark_url": "37dda5a8c8ba",
+    "custom_dir": "/",
+    "uninstall_dir": "/switch/PKSE.nro"
+}

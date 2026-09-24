@@ -1,0 +1,8 @@
+{
+    "category": "ovl",
+    "name": "switch-frame-tap",
+    "title": "Switch Frame Tap",
+    "description": "USB 串流录屏, 支持1080P 60FPS",
+    "author": "TomasUribe",
+    "github_url": "https://github.com/TomasUribe/switch-frame-tap"
+}
