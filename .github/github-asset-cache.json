@@ -1,0 +1,172 @@
+{
+    "packages": {
+        "AIO": {
+            "version": "12.0.6",
+            "asset_id": 615861476
+        },
+        "ANIMEX": {
+            "version": "1.0.0",
+            "asset_id": 613985467
+        },
+        "Aurora": {
+            "version": "12.0.7260",
+            "asset_id": 596814251
+        },
+        "Breeze": {
+            "version": "beta123.11",
+            "asset_id": 618018857
+        },
+        "CommonProblemResolver": {
+            "version": "0.3.4",
+            "asset_id": 319274688
+        },
+        "DowngradeFixer": {
+            "version": "1.0.1",
+            "asset_id": 404919342
+        },
+        "EdiZon_offline": {
+            "version": "1.3.0",
+            "asset_id": 605688878
+        },
+        "FPSLocker": {
+            "version": "3.5.0",
+            "asset_id": 609017646
+        },
+        "FanControl": {
+            "version": "1.2.0",
+            "asset_id": 533430196
+        },
+        "Fizeau": {
+            "version": "2.8.2+r7+cn",
+            "asset_id": 533320116
+        },
+        "GBAStation": {
+            "version": "0.3.15",
+            "asset_id": 548841524
+        },
+        "JKSV": {
+            "version": "2026.09.11",
+            "asset_id": 557424855
+        },
+        "Lockpick_RCM": {
+            "version": "2.0.1.0",
+            "asset_id": 598052446
+        },
+        "MasterVolume": {
+            "version": "1.2.5",
+            "asset_id": 533395542
+        },
+        "MissionControl": {
+            "version": "0.16.0",
+            "asset_id": 605337501
+        },
+        "NX-Cast": {
+            "version": "0.3.2",
+            "asset_id": 608508502
+        },
+        "NX-FanControl": {
+            "version": "1.1.2",
+            "asset_id": 563264936
+        },
+        "ReShade": {
+            "version": "1.2.3",
+            "asset_id": 592550972
+        },
+        "ReverseNX-RT": {
+            "version": "2.2.8",
+            "asset_id": 563111305
+        },
+        "SaltyNX": {
+            "version": "2.1.2",
+            "asset_id": 612672563
+        },
+        "Settings": {
+            "version": "3.6.1",
+            "asset_id": 618158342
+        },
+        "Status-Monitor-Overlay": {
+            "version": "1.7.7",
+            "asset_id": 592653614
+        },
+        "Vita3K-nx": {
+            "version": "1.3.1",
+            "asset_id": 568620028
+        },
+        "WIZBOX": {
+            "version": "2.4.1",
+            "asset_id": 618250319
+        },
+        "Warmboot-Extractor": {
+            "version": "1.1.0",
+            "asset_id": 554602280
+        },
+        "YOMI": {
+            "version": "0.4.2-beta.4",
+            "asset_id": 615116517
+        },
+        "akira": {
+            "version": "0.6.5",
+            "asset_id": 613903288
+        },
+        "arcane": {
+            "version": "4.1.0",
+            "asset_id": 595225532
+        },
+        "autoSAVE": {
+            "version": "1.1.2",
+            "asset_id": 533490224
+        },
+        "battery_desync_fix_nx": {
+            "version": "1.5.1",
+            "asset_id": 317236993
+        },
+        "dvr-patches": {
+            "version": "fw-22.5",
+            "asset_id": 453846633
+        },
+        "equalizer": {
+            "version": "1.0.0",
+            "asset_id": 558400183
+        },
+        "mangadex-reader": {
+            "version": "1.0.4",
+            "asset_id": 495891523
+        },
+        "modchip-toolbox": {
+            "version": "1.0.3",
+            "asset_id": 543880882
+        },
+        "nextendo": {
+            "version": "3.5.12",
+            "asset_id": 610213309
+        },
+        "sphaira": {
+            "version": "2.1.0",
+            "asset_id": 602632170
+        },
+        "switch-frame-tap": {
+            "version": "0.7.9",
+            "asset_id": 616109852
+        },
+        "sys-clk": {
+            "version": "3.5.0",
+            "asset_id": 605170134
+        },
+        "sys-con": {
+            "version": "2.0.0",
+            "asset_id": 589161432
+        },
+        "sys-env": {
+            "version": "1.1.0",
+            "asset_id": 491430212
+        },
+        "sys-ticon": {
+            "version": "1.0.9",
+            "asset_id": 594833642
+        },
+        "sys-tune": {
+            "version": "2.1.0+r5",
+            "asset_id": 585081134
+        }
+    }
+}

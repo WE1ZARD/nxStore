@@ -1,0 +1,9 @@
+{
+    "category": "sysmod",
+    "name": "sys-ticon",
+    "title": "sys-ticon",
+    "description": "自定义游戏标题, 封面, 版本号",
+    "author": "masagrator",
+    "github_url": "https://github.com/masagrator/sys-ticon",
+    "notify": "要求重启生效"
+}

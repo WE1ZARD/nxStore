@@ -1,0 +1,14 @@
+{
+    "category": "sys",
+    "subcategory": "firmware",
+    "subcategory_cn": "系统固件",
+    "name": "fw2301",
+    "title": "23.0.1",
+    "description": "3mb 系统内存 - 最拉",
+    "author": "Nintendo",
+    "version": "23.0.1",
+    "quark_url": "587fc62fe8a9",
+    "custom_dir": "/Firmware.23.0.1",
+    "uninstall_dir": "/Firmware.23.0.1",
+    "notify": "下载后, \n须使用 Daybreak 进行升降级"
+}
