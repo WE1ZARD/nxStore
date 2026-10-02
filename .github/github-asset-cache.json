@@ -84,6 +84,10 @@
             "version": "1.7.7",
             "asset_id": 592653614
         },
+        "Vita3K-nx": {
+            "version": "1.3.1",
+            "asset_id": 568620028
+        },
         "WIZBOX": {
             "version": "2.3.5",
             "asset_id": 604752278
@@ -125,8 +129,8 @@
             "asset_id": 543880882
         },
         "nextendo": {
-            "version": "3.5.8",
-            "asset_id": 605177345
+            "version": "3.5.9",
+            "asset_id": 605228208
         },
         "sphaira": {
             "version": "2.1.0",
