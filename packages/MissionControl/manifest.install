@@ -2,6 +2,7 @@ U: atmosphere/contents/010000000000bd00/exefs.nsp
 U: atmosphere/contents/010000000000bd00/flags/boot2.flag
 U: atmosphere/contents/010000000000bd00/mitm.lst
 U: atmosphere/contents/010000000000bd00/toolbox.json
+U: atmosphere/exefs_patches/bluetooth_patches/064521C83399E09105D9A190688BF8B8C2C7F17C.ips
 U: atmosphere/exefs_patches/bluetooth_patches/08601CC4C629F981F92CE3A53C2633FB46DDEA00.ips
 U: atmosphere/exefs_patches/bluetooth_patches/144B678306269E3D5245497373C09866D2BB8997.ips
 U: atmosphere/exefs_patches/bluetooth_patches/1494B3B0E7AA4234ED20F6A5EEA60620522C68DD.ips
@@ -54,6 +55,7 @@ U: atmosphere/exefs_patches/btm_patches/5C60D97B9800074FE755847EE2380477A751BDAE
 U: atmosphere/exefs_patches/btm_patches/65AFEE4DCE1AB795540D204AF5D20AAF83C68A82.ips
 U: atmosphere/exefs_patches/btm_patches/6DC55293131192B617564C62732CC2CF445BD248.ips
 U: atmosphere/exefs_patches/btm_patches/702DADCB98BF9D965F570BCB6A6480C00AC536FB.ips
+U: atmosphere/exefs_patches/btm_patches/72FC67F6B4096661FDF4773527E84967B7D8A460.ips
 U: atmosphere/exefs_patches/btm_patches/A0542C24E727081A6A63208700C9CE2952B6914C.ips
 U: atmosphere/exefs_patches/btm_patches/A27AE05114E0A17160A8C74BE8472F8EE6ABB273.ips
 U: atmosphere/exefs_patches/btm_patches/ADB4B59EFF92BC8D10F28F87FD9C13666213EE53.ips
@@ -86,6 +88,7 @@ U: atmosphere/exefs_patches/hid_patches/B5D1C5A111EB89E72F2EBF93D1343DFD7BF4E421
 U: atmosphere/exefs_patches/hid_patches/BBEE6C2C132C849BC313B0E38732D91B9C45FBFD.ips
 U: atmosphere/exefs_patches/hid_patches/C3030310E47B3841417518902AFFB2301F0033FC.ips
 U: atmosphere/exefs_patches/hid_patches/C5FCB68A301FD160FF5209C54175AC51D69750BC.ips
+U: atmosphere/exefs_patches/hid_patches/C9636704F7726BF77CEBBC53FFB14A80D8F789A1.ips
 U: atmosphere/exefs_patches/hid_patches/CA1A12452AF8789F5D03BF2A70260CE80D7DA5C4.ips
 U: atmosphere/exefs_patches/hid_patches/CEE923637C0797454FBE98A64F63D2B9F39B62FC.ips
 U: atmosphere/exefs_patches/hid_patches/CFCBD39A38FC2E8FC1273B4B5BF7C619FA93579E.ips

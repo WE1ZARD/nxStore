@@ -291,9 +291,9 @@
             "title": "Prelude",
             "description": "私服全球联机",
             "author": "NextendoNetwork",
-            "version": "3.5.9",
+            "version": "3.5.10",
             "github_url": "https://github.com/NextendoNetwork/Prelude-Nro",
-            "crc32": "e6623404"
+            "crc32": "99790922"
         },
         {
             "name": "Lockpick_RCM",
@@ -313,9 +313,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta123.07",
+            "version": "beta123.08",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "52982976"
+            "crc32": "bf7b5811"
         },
         {
             "name": "MissionControl",
@@ -323,9 +323,9 @@
             "title": "MissionControl",
             "description": "第三方蓝牙手柄支持",
             "author": "ndeadly",
-            "version": "0.15.2",
+            "version": "0.16.0",
             "github_url": "https://github.com/ndeadly/MissionControl",
-            "crc32": "d10bec6b",
+            "crc32": "033c4faf",
             "notify": "要求重启生效, \n手柄重置后, 再蓝牙匹配"
         },
         {
@@ -422,9 +422,9 @@
             "title": "EdiZon Offline",
             "description": "游戏作弊 - 本地版",
             "author": "proferabg",
-            "version": "1.2.2",
+            "version": "1.3.0",
             "github_url": "https://github.com/WE1ZARD/EdiZon-Overlay",
-            "crc32": "ad5080d3"
+            "crc32": "f7cb4fbd"
         },
         {
             "name": "EdiZon_online",
