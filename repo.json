@@ -315,7 +315,7 @@
             "author": "tomvita",
             "version": "beta123.09",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "d438df35"
+            "crc32": "dd3e8ca5"
         },
         {
             "name": "MissionControl",
@@ -693,8 +693,8 @@
             "title": "ANIMEX",
             "description": "多源在线动漫影视播放器",
             "author": "凉菜LINKO",
-            "version": "0.9.7",
-            "crc32": "2b0216ff",
+            "version": "0.9.8",
+            "crc32": "6ec19612",
             "github_url": "https://github.com/cuijunhao20000307-web/-ANIMEX"
         },
         {
