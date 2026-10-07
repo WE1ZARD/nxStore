@@ -160,7 +160,7 @@
             "github_url": "https://github.com/WE1ZARD/Magic-Suite",
             "require_reboot": true,
             "disable_uninstall": true,
-            "crc32": "caefba62"
+            "crc32": "5d4b75f5"
         },
         {
             "name": "fw1810",
