@@ -473,9 +473,9 @@
             "title": "WIZBOX",
             "description": "魔盒助手",
             "author": "WE1ZARD",
-            "version": "2.4.1",
+            "version": "2.4.2",
             "github_url": "https://github.com/WE1ZARD/WIZBOX",
-            "crc32": "ad7bf11e"
+            "crc32": "29a203e4"
         },
         {
             "name": "arcane",
@@ -759,8 +759,8 @@
             "title": "YOMI",
             "description": "漫画阅读器",
             "author": "凉菜LINKO",
-            "version": "0.4.2-beta.19",
-            "crc32": "ba5c24a9",
+            "version": "0.4.2-beta.22",
+            "crc32": "7a45170c",
             "github_url": "https://github.com/cuijunhao20000307-web/YOMI-"
         },
         {
