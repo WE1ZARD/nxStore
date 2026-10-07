@@ -1,8 +1,8 @@
 {
     "packages": {
         "AIO": {
-            "version": "12.0.6",
-            "asset_id": 615861476
+            "version": "12.0.7",
+            "asset_id": 618291960
         },
         "ANIMEX": {
             "version": "1.0.0",
@@ -101,8 +101,8 @@
             "asset_id": 554602280
         },
         "YOMI": {
-            "version": "0.4.2-beta.4",
-            "asset_id": 615116517
+            "version": "0.4.2-beta.18",
+            "asset_id": 618293092
         },
         "akira": {
             "version": "0.6.5",

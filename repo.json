@@ -155,12 +155,12 @@
             "title": "AIO",
             "description": "大气层整合包 Magic-Suite",
             "author": "WE1ZARD",
-            "version": "12.0.6",
+            "version": "12.0.7",
             "check_init": true,
             "github_url": "https://github.com/WE1ZARD/Magic-Suite",
             "require_reboot": true,
             "disable_uninstall": true,
-            "crc32": "cc858957"
+            "crc32": "3f27fa70"
         },
         {
             "name": "fw1810",
@@ -759,8 +759,8 @@
             "title": "YOMI",
             "description": "漫画阅读器",
             "author": "凉菜LINKO",
-            "version": "0.4.2-beta.4",
-            "crc32": "7a066a91",
+            "version": "0.4.2-beta.18",
+            "crc32": "b26698d9",
             "github_url": "https://github.com/cuijunhao20000307-web/YOMI-"
         },
         {
