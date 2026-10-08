@@ -693,8 +693,8 @@
             "title": "ANIMEX",
             "description": "多源在线动漫影视播放器",
             "author": "凉菜LINKO",
-            "version": "1.0.0",
-            "crc32": "0b27f377",
+            "version": "1.0.1",
+            "crc32": "83bd5b93",
             "github_url": "https://github.com/cuijunhao20000307-web/-ANIMEX-Release"
         },
         {
@@ -759,8 +759,8 @@
             "title": "YOMI",
             "description": "漫画阅读器",
             "author": "凉菜LINKO",
-            "version": "0.4.2-beta.22",
-            "crc32": "7a45170c",
+            "version": "0.4.2",
+            "crc32": "55bb38a3",
             "github_url": "https://github.com/cuijunhao20000307-web/YOMI-"
         },
         {
