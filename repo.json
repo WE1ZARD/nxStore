@@ -313,9 +313,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta123.11",
+            "version": "beta124.00",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "e66d342e"
+            "crc32": "19b45835"
         },
         {
             "name": "MissionControl",
@@ -693,8 +693,8 @@
             "title": "ANIMEX",
             "description": "多源在线动漫影视播放器",
             "author": "凉菜LINKO",
-            "version": "1.0.2",
-            "crc32": "b6bdebfc",
+            "version": "1.0.3",
+            "crc32": "926d18b2",
             "github_url": "https://github.com/cuijunhao20000307-web/-ANIMEX-Release"
         },
         {
