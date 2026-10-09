@@ -291,9 +291,9 @@
             "title": "Prelude",
             "description": "私服全球联机",
             "author": "NextendoNetwork",
-            "version": "3.5.12",
+            "version": "3.5.14",
             "github_url": "https://github.com/NextendoNetwork/Prelude-Nro",
-            "crc32": "d4575d68"
+            "crc32": "1486be70"
         },
         {
             "name": "Lockpick_RCM",
@@ -313,9 +313,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta124.00",
+            "version": "beta124.01",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "19b45835"
+            "crc32": "f268fe1b"
         },
         {
             "name": "MissionControl",
@@ -603,8 +603,8 @@
             "title": "NX-Cast",
             "description": "在线 IPTV",
             "author": "Ode1l",
-            "version": "0.3.2",
-            "crc32": "662c788c",
+            "version": "continuous",
+            "crc32": "a94b480f",
             "github_url": "https://github.com/Ode1l/NX-Cast"
         },
         {
@@ -693,8 +693,8 @@
             "title": "ANIMEX",
             "description": "多源在线动漫影视播放器",
             "author": "凉菜LINKO",
-            "version": "1.0.3",
-            "crc32": "926d18b2",
+            "version": "1.0.4",
+            "crc32": "35d8119c",
             "github_url": "https://github.com/cuijunhao20000307-web/-ANIMEX-Release"
         },
         {
