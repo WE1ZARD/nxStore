@@ -313,9 +313,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta124.01",
+            "version": "beta124.02",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "f268fe1b"
+            "crc32": "5f69dd74"
         },
         {
             "name": "MissionControl",
@@ -645,7 +645,7 @@
             "description": "在线主题下载安装工具 (汉化版)",
             "author": "suchmememanyskill",
             "version": "3.0.2",
-            "crc32": "018fab93",
+            "crc32": "1fc9b88a",
             "app_url": "https://download.nswiki.cn/gayking/store/zips/ThemezerNX.zip"
         },
         {
@@ -693,8 +693,8 @@
             "title": "ANIMEX",
             "description": "多源在线动漫影视播放器",
             "author": "凉菜LINKO",
-            "version": "1.0.5-beta.19",
-            "crc32": "393b92f8",
+            "version": "1.0.6-beta.1",
+            "crc32": "0d885bc6",
             "github_url": "https://github.com/cuijunhao20000307-web/-ANIMEX-Release"
         },
         {
