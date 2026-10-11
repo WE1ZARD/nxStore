@@ -5,16 +5,16 @@
             "asset_id": 619144625
         },
         "ANIMEX": {
-            "version": "1.0.6-beta.1",
-            "asset_id": 628274409
+            "version": "1.0.6-beta.18",
+            "asset_id": 629717632
         },
         "Aurora": {
             "version": "12.0.7260",
             "asset_id": 596814251
         },
         "Breeze": {
-            "version": "beta124.02",
-            "asset_id": 628140055
+            "version": "beta124.03",
+            "asset_id": 629749557
         },
         "CommonProblemResolver": {
             "version": "0.3.4",
@@ -121,8 +121,8 @@
             "asset_id": 317236993
         },
         "dvr-patches": {
-            "version": "fw-22.5",
-            "asset_id": 453846633
+            "version": "fw-23.0.1",
+            "asset_id": 612882781
         },
         "equalizer": {
             "version": "1.0.0",
