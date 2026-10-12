@@ -5,16 +5,16 @@
             "asset_id": 619144625
         },
         "ANIMEX": {
-            "version": "1.0.6-beta.18",
-            "asset_id": 629717632
+            "version": "1.0.6",
+            "asset_id": 631547329
         },
         "Aurora": {
             "version": "12.0.7260",
             "asset_id": 596814251
         },
         "Breeze": {
-            "version": "beta124.03",
-            "asset_id": 629749557
+            "version": "beta124.06",
+            "asset_id": 632803199
         },
         "CommonProblemResolver": {
             "version": "0.3.4",
@@ -137,8 +137,8 @@
             "asset_id": 543880882
         },
         "nextendo": {
-            "version": "3.5.14",
-            "asset_id": 623000400
+            "version": "3.5.15",
+            "asset_id": 631795525
         },
         "sphaira": {
             "version": "2.1.0",

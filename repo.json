@@ -291,9 +291,9 @@
             "title": "Prelude",
             "description": "私服全球联机",
             "author": "NextendoNetwork",
-            "version": "3.5.14",
+            "version": "3.5.15",
             "github_url": "https://github.com/NextendoNetwork/Prelude-Nro",
-            "crc32": "1486be70"
+            "crc32": "516f72f4"
         },
         {
             "name": "Lockpick_RCM",
@@ -313,9 +313,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta124.03",
+            "version": "beta124.06",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "fcc21375"
+            "crc32": "1899b92e"
         },
         {
             "name": "MissionControl",
@@ -693,8 +693,8 @@
             "title": "ANIMEX",
             "description": "多源在线动漫影视播放器",
             "author": "凉菜LINKO",
-            "version": "1.0.6-beta.18",
-            "crc32": "a0d84945",
+            "version": "1.0.6",
+            "crc32": "e738198b",
             "github_url": "https://github.com/cuijunhao20000307-web/-ANIMEX-Release"
         },
         {
