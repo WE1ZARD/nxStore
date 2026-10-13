@@ -291,9 +291,9 @@
             "title": "Prelude",
             "description": "私服全球联机",
             "author": "NextendoNetwork",
-            "version": "3.5.15",
+            "version": "3.5.16",
             "github_url": "https://github.com/NextendoNetwork/Prelude-Nro",
-            "crc32": "516f72f4"
+            "crc32": "8be4fc23"
         },
         {
             "name": "Lockpick_RCM",
@@ -313,9 +313,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta124.06",
+            "version": "beta125.00",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "1899b92e"
+            "crc32": "627d5c89"
         },
         {
             "name": "MissionControl",
@@ -759,8 +759,8 @@
             "title": "YOMI",
             "description": "漫画阅读器",
             "author": "凉菜LINKO",
-            "version": "0.4.2",
-            "crc32": "55bb38a3",
+            "version": "0.4.3-beta.8",
+            "crc32": "a469715d",
             "github_url": "https://github.com/cuijunhao20000307-web/YOMI-"
         },
         {
