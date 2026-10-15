@@ -291,9 +291,9 @@
             "title": "Prelude",
             "description": "私服全球联机",
             "author": "NextendoNetwork",
-            "version": "3.5.17",
+            "version": "3.5.18",
             "github_url": "https://github.com/NextendoNetwork/Prelude-Nro",
-            "crc32": "62ef6ba2"
+            "crc32": "9ad0b86e"
         },
         {
             "name": "Lockpick_RCM",
@@ -313,9 +313,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta125.01",
+            "version": "beta125.03",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "903d19e1"
+            "crc32": "c986f1dc"
         },
         {
             "name": "MissionControl",
@@ -759,8 +759,8 @@
             "title": "YOMI",
             "description": "漫画阅读器",
             "author": "凉菜LINKO",
-            "version": "0.4.3-beta.10",
-            "crc32": "24a652dd",
+            "version": "0.4.3-beta.11",
+            "crc32": "dfc6ed1a",
             "github_url": "https://github.com/cuijunhao20000307-web/YOMI-"
         },
         {
@@ -778,8 +778,8 @@
             "title": "Switch Frame Tap",
             "description": "USB 串流录屏, 支持1080P 60FPS",
             "author": "TomasUribe",
-            "version": "0.7.12",
-            "crc32": "128fe80d",
+            "version": "0.7.13-test3",
+            "crc32": "e556efaf",
             "github_url": "https://github.com/TomasUribe/switch-frame-tap"
         }
     ]
