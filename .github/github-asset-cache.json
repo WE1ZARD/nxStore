@@ -1,8 +1,8 @@
 {
     "packages": {
         "AIO": {
-            "version": "12.0.8",
-            "asset_id": 619144625
+            "version": "12.1.0",
+            "asset_id": 647305542
         },
         "ANIMEX": {
             "version": "1.0.6",

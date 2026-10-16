@@ -37,9 +37,6 @@ U: atmosphere/exefs_patches/audio_mastervolume/3a75b4a62dad189b2c8b30e4dedb4e15e
 U: atmosphere/exefs_patches/audio_mastervolume/62b74bae7163b0ea9b29ed5a050c09cd8299c14e.ips
 U: atmosphere/exefs_patches/audio_mastervolume/d1e98d469d5bd0e878fdb06e7ca517ba411d4682.ips
 U: atmosphere/exefs_patches/audio_mastervolume/e163d0b718e32f87430ca8c98fda2e22ba733990.ips
-U: atmosphere/extra/app.bin
-U: atmosphere/extra/app_sysmod.bin
-U: atmosphere/extra/sysmod.bin
 U: atmosphere/hbl.nsp
 U: atmosphere/hbl_html/accessible-urls/accessible-urls.txt
 U: atmosphere/hosts/aio.json
@@ -48,7 +45,7 @@ U: atmosphere/hosts/block_update.txt
 U: atmosphere/hosts/emummc.txt
 U: atmosphere/hosts/sysmmc.txt
 U: atmosphere/hosts/version.txt
-U: atmosphere/kips/.bak/hoc_12.0.7260.kip
+U: atmosphere/kips/.bak/hoc_12.1.7260.kip
 U: atmosphere/kips/hoc.kip
 U: atmosphere/kips/presets/G2400.json
 U: atmosphere/kips/presets/G2666.json
