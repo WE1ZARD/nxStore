@@ -13,8 +13,8 @@
             "asset_id": 596814251
         },
         "Breeze": {
-            "version": "beta125.03",
-            "asset_id": 642680078
+            "version": "beta125.04",
+            "asset_id": 643909384
         },
         "CommonProblemResolver": {
             "version": "0.3.4",
@@ -137,16 +137,16 @@
             "asset_id": 543880882
         },
         "nextendo": {
-            "version": "3.5.18",
-            "asset_id": 641680402
+            "version": "4.0.0",
+            "asset_id": 645746023
         },
         "sphaira": {
             "version": "2.1.0",
             "asset_id": 602632170
         },
         "switch-frame-tap": {
-            "version": "0.7.13-test3",
-            "asset_id": 642652710
+            "version": "0.7.13",
+            "asset_id": 645876896
         },
         "sys-clk": {
             "version": "3.5.0",

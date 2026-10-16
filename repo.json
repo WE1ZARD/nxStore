@@ -291,9 +291,9 @@
             "title": "Prelude",
             "description": "私服全球联机",
             "author": "NextendoNetwork",
-            "version": "3.5.18",
+            "version": "4.0.0",
             "github_url": "https://github.com/NextendoNetwork/Prelude-Nro",
-            "crc32": "9ad0b86e"
+            "crc32": "f42ed3a7"
         },
         {
             "name": "Lockpick_RCM",
@@ -313,9 +313,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta125.03",
+            "version": "beta125.04",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "c986f1dc"
+            "crc32": "74ee86d3"
         },
         {
             "name": "MissionControl",
@@ -778,8 +778,8 @@
             "title": "Switch Frame Tap",
             "description": "USB 串流录屏, 支持1080P 60FPS",
             "author": "TomasUribe",
-            "version": "0.7.13-test3",
-            "crc32": "e556efaf",
+            "version": "0.7.13",
+            "crc32": "1e81dc02",
             "github_url": "https://github.com/TomasUribe/switch-frame-tap"
         }
     ]
