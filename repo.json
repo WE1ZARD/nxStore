@@ -291,9 +291,9 @@
             "title": "Prelude",
             "description": "私服全球联机",
             "author": "NextendoNetwork",
-            "version": "4.0.0",
+            "version": "4.0.1",
             "github_url": "https://github.com/NextendoNetwork/Prelude-Nro",
-            "crc32": "f42ed3a7"
+            "crc32": "ece003f1"
         },
         {
             "name": "Lockpick_RCM",
@@ -313,9 +313,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta125.04",
+            "version": "beta125.05",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "74ee86d3"
+            "crc32": "b43ad186"
         },
         {
             "name": "MissionControl",
@@ -410,9 +410,9 @@
             "title": "Aurora",
             "description": "HOC 超频助手",
             "author": "WE1ZARD",
-            "version": "12.0.7260",
+            "version": "12.1.7260",
             "github_url": "https://github.com/WE1ZARD/Aurora",
-            "crc32": "08186a73"
+            "crc32": "df9c4a3c"
         },
         {
             "name": "EdiZon_offline",
