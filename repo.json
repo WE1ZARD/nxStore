@@ -781,6 +781,26 @@
             "version": "0.7.13",
             "crc32": "1e81dc02",
             "github_url": "https://github.com/TomasUribe/switch-frame-tap"
+        },
+        {
+            "name": "SwitchTVBox",
+            "category": "nro",
+            "title": "Switch TVBox",
+            "description": "多源+网盘影视",
+            "author": "Zender",
+            "version": "SwitchTVBox-v0.4.45",
+            "crc32": "a297ed2c",
+            "github_url": "https://github.com/lGuann/SwitchTVBox"
+        },
+        {
+            "name": "Tikzen",
+            "category": "nro",
+            "title": "Tikzen",
+            "description": "第三方抖音",
+            "author": "Zender",
+            "version": "tikzen-v1.0.5",
+            "crc32": "865e4b07",
+            "github_url": "https://github.com/lGuann/Tikzen"
         }
     ]
 }
