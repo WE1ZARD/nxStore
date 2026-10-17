@@ -37,9 +37,9 @@
             "title": "SaltyNX",
             "description": "FPS核心依赖",
             "author": "masagrator",
-            "version": "2.1.2",
+            "version": "2.1.3",
             "github_url": "https://github.com/we1zard/SaltyNX",
-            "crc32": "8bf3c695",
+            "crc32": "35bb844d",
             "notify": "要求重启生效"
         },
         {
@@ -291,9 +291,9 @@
             "title": "Prelude",
             "description": "私服全球联机",
             "author": "NextendoNetwork",
-            "version": "4.0.1",
+            "version": "4.0.3",
             "github_url": "https://github.com/NextendoNetwork/Prelude-Nro",
-            "crc32": "ece003f1"
+            "crc32": "a79ebf98"
         },
         {
             "name": "Lockpick_RCM",
@@ -693,8 +693,8 @@
             "title": "ANIMEX",
             "description": "多源在线动漫影视播放器",
             "author": "凉菜LINKO",
-            "version": "1.0.6",
-            "crc32": "e738198b",
+            "version": "1.0.7-beta.2",
+            "crc32": "f2653882",
             "github_url": "https://github.com/cuijunhao20000307-web/-ANIMEX-Release"
         },
         {
