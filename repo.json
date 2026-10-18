@@ -693,8 +693,8 @@
             "title": "ANIMEX",
             "description": "多源在线动漫影视播放器",
             "author": "凉菜LINKO",
-            "version": "1.0.8-beta.12",
-            "crc32": "4104f423",
+            "version": "1.0.8-beta.14",
+            "crc32": "adf82478",
             "github_url": "https://github.com/cuijunhao20000307-web/-ANIMEX-Release"
         },
         {
@@ -762,15 +762,6 @@
             "version": "0.4.3",
             "crc32": "683edc6c",
             "github_url": "https://github.com/cuijunhao20000307-web/YOMI-"
-        },
-        {
-            "name": "xgo",
-            "category": "nro",
-            "title": "XGO",
-            "description": "XBOX 串流NS端工具",
-            "author": "lin_chunhao",
-            "version": "3.8.29",
-            "crc32": "fce321f8"
         },
         {
             "name": "switch-frame-tap",
