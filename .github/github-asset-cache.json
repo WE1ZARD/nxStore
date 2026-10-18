@@ -5,16 +5,16 @@
             "asset_id": 649381217
         },
         "ANIMEX": {
-            "version": "1.0.8-beta.14",
-            "asset_id": 652169259
+            "version": "1.0.8-beta.22",
+            "asset_id": 652804024
         },
         "Aurora": {
             "version": "12.1.7260",
             "asset_id": 647293762
         },
         "Breeze": {
-            "version": "beta125.05",
-            "asset_id": 646613997
+            "version": "beta125.06",
+            "asset_id": 652637439
         },
         "CommonProblemResolver": {
             "version": "0.3.4",
@@ -89,8 +89,8 @@
             "asset_id": 592653614
         },
         "SwitchTVBox": {
-            "version": "0.4.45",
-            "asset_id": 650166757
+            "version": "0.4.52",
+            "asset_id": 652758370
         },
         "Tikzen": {
             "version": "1.0.5",
@@ -109,8 +109,8 @@
             "asset_id": 554602280
         },
         "YOMI": {
-            "version": "0.4.3",
-            "asset_id": 651921626
+            "version": "0.4.3-beta.30",
+            "asset_id": 652793411
         },
         "akira": {
             "version": "0.6.5",

@@ -313,9 +313,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta125.05",
+            "version": "beta125.06",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "b43ad186"
+            "crc32": "99d4d357"
         },
         {
             "name": "MissionControl",
@@ -693,8 +693,8 @@
             "title": "ANIMEX",
             "description": "多源在线动漫影视播放器",
             "author": "凉菜LINKO",
-            "version": "1.0.8-beta.14",
-            "crc32": "adf82478",
+            "version": "1.0.8-beta.22",
+            "crc32": "ba8c5ca2",
             "github_url": "https://github.com/cuijunhao20000307-web/-ANIMEX-Release"
         },
         {
@@ -759,8 +759,8 @@
             "title": "YOMI",
             "description": "漫画阅读器",
             "author": "凉菜LINKO",
-            "version": "0.4.3",
-            "crc32": "683edc6c",
+            "version": "0.4.3-beta.30",
+            "crc32": "66af13d0",
             "github_url": "https://github.com/cuijunhao20000307-web/YOMI-"
         },
         {
@@ -779,8 +779,8 @@
             "title": "Switch TVBox",
             "description": "多源+网盘影视",
             "author": "Zender",
-            "version": "0.4.45",
-            "crc32": "f4c4c6f1",
+            "version": "0.4.52",
+            "crc32": "32669cd6",
             "github_url": "https://github.com/lGuann/SwitchTVBox"
         },
         {
