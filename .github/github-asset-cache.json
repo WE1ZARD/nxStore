@@ -44,6 +44,10 @@
             "version": "0.3.15",
             "asset_id": 548841524
         },
+        "HongGuo": {
+            "version": "0.3.0",
+            "asset_id": 647750730
+        },
         "JKSV": {
             "version": "2026.09.11",
             "asset_id": 557424855
@@ -59,6 +63,10 @@
         "MissionControl": {
             "version": "0.16.0",
             "asset_id": 605337501
+        },
+        "NSteamLink": {
+            "version": "0.5.0",
+            "asset_id": 655046516
         },
         "NX-Cast": {
             "version": "continuous",
