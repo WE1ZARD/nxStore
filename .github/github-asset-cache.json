@@ -5,8 +5,8 @@
             "asset_id": 649381217
         },
         "ANIMEX": {
-            "version": "1.0.8-beta.22",
-            "asset_id": 652804024
+            "version": "1.0.8-beta.24",
+            "asset_id": 654483369
         },
         "Aurora": {
             "version": "12.1.7260",
@@ -109,8 +109,8 @@
             "asset_id": 554602280
         },
         "YOMI": {
-            "version": "0.4.3-beta.30",
-            "asset_id": 652793411
+            "version": "0.4.3-beta.34",
+            "asset_id": 655119695
         },
         "akira": {
             "version": "0.6.5",
@@ -145,16 +145,16 @@
             "asset_id": 543880882
         },
         "nextendo": {
-            "version": "4.0.3",
-            "asset_id": 648951935
+            "version": "4.0.5",
+            "asset_id": 654949489
         },
         "sphaira": {
             "version": "2.1.0",
             "asset_id": 602632170
         },
         "switch-frame-tap": {
-            "version": "0.7.13",
-            "asset_id": 645876896
+            "version": "0.7.14-beta1",
+            "asset_id": 653986858
         },
         "sys-clk": {
             "version": "3.5.0",
@@ -169,8 +169,8 @@
             "asset_id": 491430212
         },
         "sys-ticon": {
-            "version": "1.0.9",
-            "asset_id": 594833642
+            "version": "1.0.10",
+            "asset_id": 653130234
         },
         "sys-tune": {
             "version": "2.1.0+r5",
