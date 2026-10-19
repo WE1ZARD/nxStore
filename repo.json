@@ -792,6 +792,26 @@
             "version": "1.0.5",
             "crc32": "865e4b07",
             "github_url": "https://github.com/lGuann/Tikzen"
+        },
+        {
+            "name": "HongGuo",
+            "category": "nro",
+            "title": "switch-hongguo",
+            "description": "第三方红果短剧",
+            "author": "ZYP-INre",
+            "version": "0.3.0",
+            "crc32": "a43df1ba",
+            "github_url": "https://github.com/ZYP-INre/switch-hongguo"
+        },
+        {
+            "name": "NSteamLink",
+            "category": "nro",
+            "title": "NSteamlink",
+            "description": "Steam 串流工具",
+            "author": "kxn",
+            "version": "0.5.0",
+            "crc32": "8465e2ce",
+            "github_url": "https://github.com/kxn/nsteamlink"
         }
     ]
 }
