@@ -759,8 +759,8 @@
             "title": "YOMI",
             "description": "漫画阅读器",
             "author": "凉菜LINKO",
-            "version": "0.4.3-beta.34",
-            "crc32": "3765e699",
+            "version": "0.4.3-beta.35",
+            "crc32": "a6c3b8d2",
             "github_url": "https://github.com/cuijunhao20000307-web/YOMI-"
         },
         {
@@ -782,16 +782,6 @@
             "version": "0.4.52",
             "crc32": "32669cd6",
             "github_url": "https://github.com/lGuann/SwitchTVBox"
-        },
-        {
-            "name": "Tikzen",
-            "category": "nro",
-            "title": "Tikzen",
-            "description": "第三方抖音",
-            "author": "Zender",
-            "version": "1.0.5",
-            "crc32": "865e4b07",
-            "github_url": "https://github.com/lGuann/Tikzen"
         },
         {
             "name": "HongGuo",
