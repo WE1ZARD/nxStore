@@ -13,8 +13,8 @@
             "asset_id": 647293762
         },
         "Breeze": {
-            "version": "beta125.06",
-            "asset_id": 652637439
+            "version": "beta126.00",
+            "asset_id": 658284383
         },
         "CommonProblemResolver": {
             "version": "0.3.4",
@@ -65,8 +65,8 @@
             "asset_id": 605337501
         },
         "NSteamLink": {
-            "version": "0.5.0",
-            "asset_id": 655046516
+            "version": "0.5.1",
+            "asset_id": 657973606
         },
         "NX-Cast": {
             "version": "continuous",
@@ -117,8 +117,8 @@
             "asset_id": 554602280
         },
         "YOMI": {
-            "version": "0.4.3-beta.35",
-            "asset_id": 656203079
+            "version": "0.4.5",
+            "asset_id": 657506369
         },
         "akira": {
             "version": "0.6.5",
@@ -153,8 +153,8 @@
             "asset_id": 543880882
         },
         "nextendo": {
-            "version": "4.0.5",
-            "asset_id": 654949489
+            "version": "4.0.6",
+            "asset_id": 658324252
         },
         "sphaira": {
             "version": "2.1.0",
