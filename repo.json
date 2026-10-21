@@ -313,9 +313,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta126.00",
+            "version": "beta126.02",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "bf09bc65"
+            "crc32": "01ab041f"
         },
         {
             "name": "MissionControl",
@@ -759,8 +759,8 @@
             "title": "YOMI",
             "description": "漫画阅读器",
             "author": "凉菜LINKO",
-            "version": "0.4.5",
-            "crc32": "c6387cf0",
+            "version": "0.4.6-beta.3",
+            "crc32": "d03d864f",
             "github_url": "https://github.com/cuijunhao20000307-web/YOMI-"
         },
         {

@@ -13,8 +13,8 @@
             "asset_id": 647293762
         },
         "Breeze": {
-            "version": "beta126.00",
-            "asset_id": 658284383
+            "version": "beta126.02",
+            "asset_id": 661218391
         },
         "CommonProblemResolver": {
             "version": "0.3.4",
@@ -117,8 +117,8 @@
             "asset_id": 554602280
         },
         "YOMI": {
-            "version": "0.4.5",
-            "asset_id": 657506369
+            "version": "0.4.6-beta.3",
+            "asset_id": 659311843
         },
         "akira": {
             "version": "0.6.5",
