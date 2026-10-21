@@ -61,6 +61,8 @@
 	"quark_url": "夸克分享链接id",
 	"github_url": "开源下载页",
 	"direct_url": "完整直链下载链接",
+	"version_url": "版本接口地址 (direct_url 托管时自动取版本)",
+	"version_key": "版本接口 JSON 字段路径 (如 data.versionText)",
 	"custom_dir": "自定义安装路径",
 	"uninstall_dir": "自定义卸载路径"
 }
@@ -73,7 +75,14 @@
 	- quark 外部托管 (quark_url) 时必填, 否则跳过不发布
 - `github_url`: 
 	- 填写 release 地址 (`https://github.com/{owner}/{repo}/releases`, 比如: `https://github.com/WE1ZARD/Magic-Suite/releases`) 
-- 填 `true` 仅当包名与仓库名相同时自动获取
+	- 填 `true` 仅当包名与仓库名相同时自动获取
+- `direct_url`:
+	- 填完整直链时自动下载入库: 单文件 `.nro/.ovl/.bin` 直接打包, `.zip` 剔除第三方元数据后入库
+	- 每次发布流程重新拉取, 内容未变则跳过; `upload/` 有同名包时以本地为准
+	- tomod.cn 的 `downloadId` 参数可省略 (省略时服务端不计下载量)
+- `version_url` / `version_key`:
+	- direct_url 托管包的版本来源 (JSON 接口 + `.` 分隔的字段路径), 不填则用 `version`
+	- 例: `"version_url": "https://tomod.cn/api/v1/clientReleases/current"`, `"version_key": "data.versionText"`
 - `changelog`: 
 	- 填 `true` 时把 release 的更新内容写入 `packages/{name}/changelog.md`(仅 github_url 托管包)
 - `version`: 

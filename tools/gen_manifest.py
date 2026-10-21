@@ -39,6 +39,9 @@ RAW_ENTRY_MAP = {
     ".bin": "bootloader/payloads/{name}.bin",  # 单文件 payload (如 modchip-toolbox)
 }
 
+# direct_url 直链可自动拉取的资产类型
+DIRECT_FETCH_EXTS = (".zip",) + tuple(RAW_ENTRY_MAP)
+
 # .nro 统一安装到 switch/{name}/ 下; 仅 hbmenu.nro 保留在根目录
 # (AIO/sphaira 等引导器依赖根目录的 hbmenu.nro)。
 NRO_INSTALL_ROOT = "switch"
@@ -100,7 +103,7 @@ def externally_hosted(data) -> bool:
 
 
 GITHUB_API = "https://api.github.com"
-GITHUB_UA = "wizbox-nxstore-gen-manifest/1.0"
+HTTP_UA = "wizbox-nxstore-gen-manifest/1.0"
 # release 刚建好时资产可能尚未上传完或尚未在 API 可见: 此时查到的是一个资产
 # 为空的 release。按这些间隔退避重查, 避免把「资产还没出现」当成「不存在」。
 GITHUB_ASSET_RETRY_DELAYS = (5, 20, 45)
@@ -198,7 +201,7 @@ def github_auth_token():
 def github_request(url: str, accept=None):
     """构造 GitHub 请求, 仅向 HTTPS GitHub 主机附加认证头."""
     parsed = urllib.parse.urlsplit(url)
-    headers = {"User-Agent": GITHUB_UA}
+    headers = {"User-Agent": HTTP_UA}
     token = github_auth_token()
     if (token and parsed.scheme == "https"
             and parsed.hostname and parsed.hostname.lower() in GITHUB_AUTH_HOSTS):
@@ -558,6 +561,171 @@ def fetch_github_package(root: str, name: str, data, dry_run: bool, cached_ident
     os.replace(tmp, src)
     print("github %s: %s -> upload/%s%s" % (name, asset_name, name, ext))
     return ("ok", version, asset_id, notes)
+
+
+def direct_json_field(url: str, key_path: str, name: str):
+    """读取版本接口 JSON 的指定字段 (key_path 以 . 分隔, 如 data.versionText)."""
+    try:
+        req = urllib.request.Request(
+            url, headers={"User-Agent": HTTP_UA, "Accept": "application/json"})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            doc = json.load(r)
+    except Exception as e:
+        print("direct %s: 版本接口读取失败 (%s)" % (name, e), file=sys.stderr)
+        return None
+    cur = doc
+    for part in key_path.split("."):
+        if not isinstance(cur, dict) or part not in cur:
+            print("direct %s: 版本接口缺少字段 %s" % (name, key_path), file=sys.stderr)
+            return None
+        cur = cur[part]
+    if isinstance(cur, bool) or not isinstance(cur, (str, int, float)):
+        return None
+    return str(cur).strip() or None
+
+
+def download_asset_ext(headers, url: str):
+    """从 Content-Disposition / URL 推断直链资产扩展名; 认不出返回 None."""
+    cd = headers.get("Content-Disposition") or ""
+    m = re.search(r"filename\*?=(?:UTF-8''|\")?([^\";]+)", cd, re.I)
+    if m:
+        ext = os.path.splitext(m.group(1).strip().strip('"'))[1].lower()
+        if ext in DIRECT_FETCH_EXTS:
+            return ext
+    ext = os.path.splitext(urllib.parse.urlsplit(url).path)[1].lower()
+    return ext if ext in DIRECT_FETCH_EXTS else None
+
+
+def sniff_asset_ext(path: str):
+    """按文件头识别类型: zip (PK) / nro (偏移 0x10 的 NRO0) / ovl (NSO0)."""
+    try:
+        with open(path, "rb") as f:
+            head = f.read(64)
+    except OSError:
+        return None
+    if head[:4] == b"PK\x03\x04":
+        return ".zip"
+    if len(head) >= 20 and head[16:20] == b"NRO0":
+        return ".nro"
+    if head[:4] == b"NSO0":
+        return ".ovl"
+    return None
+
+
+def zip_info_version(path: str) -> str:
+    """读取 zip 内 info.json 的 version; 缺失/损坏返回空串."""
+    try:
+        with zipfile.ZipFile(path) as zf:
+            if "info.json" not in zf.namelist():
+                return ""
+            info = json.loads(zf.read("info.json"))
+    except (OSError, zipfile.BadZipFile, json.JSONDecodeError):
+        return ""
+    version = info.get("version") if isinstance(info, dict) else None
+    return version.strip() if isinstance(version, str) else ""
+
+
+def fetch_direct_package(root: str, name: str, data, dry_run: bool):
+    """direct_url 直链自动拉取 (单文件 nro/ovl/bin 或 zip).
+
+    单文件与 github_url 资产同一管线: 内容变化时移除旧 zips/{name}.zip,
+    落到 upload/{name}{ext} 交给首遍重新打包; zip 则剔除第三方元数据后
+    直接写 zips/{name}.zip。版本优先取 version_url + version_key,
+    其次 zip 内 info.json, 最后 upload json 的 version。
+    返回 (status, version): status 为 'ok' / 'up-to-date' / 'failed'。
+    """
+    url = str(data.get("direct_url", "")).strip()
+    version = None
+    if not is_empty(data.get("version_url")):
+        key = str(data.get("version_key") or "version").strip() or "version"
+        raw = direct_json_field(str(data["version_url"]).strip(), key, name)
+        if raw:
+            version = github_version_of(raw, name)
+
+    if dry_run:
+        print("direct %s: 将拉取 %s (dry-run, 版本 %s)"
+              % (name, url, version or "未知"))
+        return ("ok", version)
+
+    tmp = os.path.join(root, "upload", ".direct-%s.download" % name)
+    ext = None
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": HTTP_UA})
+        with urllib.request.urlopen(req, timeout=300) as r, open(tmp, "wb") as f:
+            ext = download_asset_ext(r.headers, url)
+            while True:
+                chunk = r.read(65536)
+                if not chunk:
+                    break
+                f.write(chunk)
+    except Exception as e:
+        print("direct %s: 下载失败 (%s)" % (name, e), file=sys.stderr)
+        try:
+            os.remove(tmp)
+        except OSError:
+            pass
+        return ("failed", version)
+
+    ext = ext or sniff_asset_ext(tmp)
+    if ext not in DIRECT_FETCH_EXTS:
+        print("direct %s: 无法识别资产类型 (仅支持 %s)"
+              % (name, "/".join(DIRECT_FETCH_EXTS)), file=sys.stderr)
+        try:
+            os.remove(tmp)
+        except OSError:
+            pass
+        return ("failed", version)
+
+    if ext == ".zip" and version is None:
+        inner = zip_info_version(tmp)
+        if inner:
+            version = github_version_of(inner, name)
+    if version is None and not is_empty(data.get("version")):
+        version = github_version_of(data["version"], name)
+
+    zips_dir = os.path.join(root, "zips")
+    zip_path = os.path.join(zips_dir, name + ".zip")
+    if ext == ".zip":
+        repacked = tmp + ".repack"
+        try:
+            _repack_zip_skip_meta(tmp, repacked)
+        except (OSError, zipfile.BadZipFile) as e:
+            print("direct %s: 无法解析 zip (%s)" % (name, e), file=sys.stderr)
+            for p in (tmp, repacked):
+                try:
+                    os.remove(p)
+                except OSError:
+                    pass
+            return ("failed", version)
+        try:
+            os.remove(tmp)
+        except OSError:
+            pass
+        if os.path.isfile(zip_path) and _files_equal(repacked, zip_path):
+            os.remove(repacked)
+            return ("up-to-date", version)
+        os.makedirs(zips_dir, exist_ok=True)
+        os.replace(repacked, zip_path)
+        print("direct %s: zip -> zips/%s.zip (版本 %s)" % (name, name, version or "未知"))
+        return ("ok", version)
+
+    entry = safe_rel(RAW_ENTRY_MAP[ext].format(name=name))
+    if entry is None:
+        print("direct %s: 非法安装路径" % name, file=sys.stderr)
+        try:
+            os.remove(tmp)
+        except OSError:
+            pass
+        return ("failed", version)
+    if os.path.isfile(zip_path) and _zip_entry_equal(zip_path, entry, tmp):
+        os.remove(tmp)
+        return ("up-to-date", version)
+    if os.path.isfile(zip_path):
+        os.remove(zip_path)  # 内容有变: 移除旧 zip, 让首遍按新文件重新打包
+    os.replace(tmp, os.path.join(root, "upload", name + ext))
+    print("direct %s: %s -> upload/%s%s (版本 %s)"
+          % (name, url, name, ext, version or "未知"))
+    return ("ok", version)
 
 
 def update_release_changelog(root: str, name: str, notes, dry_run: bool) -> bool:
@@ -1096,6 +1264,31 @@ def process_upload(root: str, dry_run: bool):
                         json.dump(gdata, f, ensure_ascii=False, indent=4)
                     print("github %s: %s" % (name, "; ".join(changes)))
 
+    # ── 第零点三遍: direct_url 直链自动拉取 (单文件 nro/ovl/bin 或 zip;
+    #    版本可取 version_url + version_key, 不回写 upload json) ──
+    direct_failed = set()
+    direct_versions = {}
+    for fname in sorted(f for f in os.listdir(upload_dir) if f):
+        if not fname.lower().endswith(".json"):
+            continue
+        name, _ = os.path.splitext(fname)
+        try:
+            with open(os.path.join(upload_dir, fname), encoding="utf-8") as f:
+                ddata = json.load(f)
+        except (OSError, json.JSONDecodeError):
+            continue
+        if not isinstance(ddata, dict) or is_empty(ddata.get("direct_url")):
+            continue
+        if any(os.path.isfile(os.path.join(upload_dir, name + e))
+               for e in (".zip",) + tuple(RAW_ENTRY_MAP)):
+            print("direct %s: 已存在本地 upload 安装包, 以本地为准" % name)
+            continue
+        status, version = fetch_direct_package(root, name, ddata, dry_run)
+        if status == "failed":
+            direct_failed.add(name)
+        elif version:
+            direct_versions[name] = version
+
     # ── 第零点五遍: app_url 托管包自动拉取 (zip 内含 info.json/manifest.install,
     #    版本号从 zip 内 info.json 提取，不回写 upload json) ──
     app_versions = {}
@@ -1139,7 +1332,7 @@ def process_upload(root: str, dry_run: bool):
 
         tmp = os.path.join(upload_dir, ".app-%s.download" % name)
         try:
-            req = urllib.request.Request(app_url, headers={"User-Agent": GITHUB_UA})
+            req = urllib.request.Request(app_url, headers={"User-Agent": HTTP_UA})
             with urllib.request.urlopen(req, timeout=300) as r, open(tmp, "wb") as f:
                 while True:
                     chunk = r.read(65536)
@@ -1357,6 +1550,11 @@ def process_upload(root: str, dry_run: bool):
             print("跳过(github 拉取失败且无本地归档, 未写入 repo.json/packages): %s" % fname,
                   file=sys.stderr)
             continue
+        # direct_url 同理: 拉取失败但已有归档时继续刷新元数据, 否则跳过
+        if name in direct_failed and not os.path.isfile(os.path.join(zips_dir, name + ".zip")):
+            print("跳过(direct 拉取失败且无本地归档, 未写入 repo.json/packages): %s" % fname,
+                  file=sys.stderr)
+            continue
 
         # ── 安装包检查: 本地 zip/nro/ovl/bin 直接发布; quark 托管须填写
         #    custom_dir 和 uninstall_dir (整包解压目标/卸载目录) ──
@@ -1375,6 +1573,7 @@ def process_upload(root: str, dry_run: bool):
         # ── 归一化: 剔除空值 (只留非空), name 与文件名核对 ──
         # github 托管包: version 以 release tag 为准, 从 upload json 移除 (不记录)
         gh_version = github_versions.get(name)
+        direct_version = direct_versions.get(name)
         is_gh = (gh_version is not None or not is_empty(data.get("github_url"))
                  or data.get("github") is True)
         changed = False
@@ -1417,6 +1616,8 @@ def process_upload(root: str, dry_run: bool):
         # app_url 包的版本号从 zip 内 info.json 提取，优先于 upload json 的 version。
         if gh_version is not None:
             version = str(gh_version)
+        elif direct_version:
+            version = str(direct_version)
         elif name in app_versions and app_versions[name]:
             version = str(app_versions[name])
         else:
@@ -1447,6 +1648,8 @@ def process_upload(root: str, dry_run: bool):
             if k == "version":
                 if gh_version is not None:
                     v = gh_version
+                elif direct_version:
+                    v = direct_version
                 elif name in app_versions and app_versions[name]:
                     v = app_versions[name]
                 else:

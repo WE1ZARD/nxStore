@@ -802,6 +802,16 @@
             "version": "0.5.1",
             "crc32": "09c0111a",
             "github_url": "https://github.com/kxn/nsteamlink"
+        },
+        {
+            "name": "TOMOD",
+            "category": "nro",
+            "title": "TOMOD",
+            "description": "游戏模组管理器",
+            "author": "TOM",
+            "version": "4.0.2",
+            "crc32": "a29543dd",
+            "direct_url": "https://tomod.cn/api/v1/clientReleases/current/file"
         }
     ]
 }

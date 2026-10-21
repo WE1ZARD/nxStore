@@ -1,0 +1,10 @@
+{
+    "category": "nro",
+    "name": "TOMOD",
+    "title": "TOMOD",
+    "description": "游戏模组管理器",
+    "author": "TOM",
+    "direct_url": "https://tomod.cn/api/v1/clientReleases/current/file",
+    "version_url": "https://tomod.cn/api/v1/clientReleases/current",
+    "version_key": "data.versionText"
+}

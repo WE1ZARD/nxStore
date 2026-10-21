@@ -9,8 +9,8 @@
 硬错误(exit 1): JSON 无法解析 / name、title 仅英文数字._- 且缺失即拦 /
   author、description 缺失 / category、subcategory 仅英文白名单 /
   subcategory_cn 须中文 / 字段类型错误(version 允许纯数字) /
-  quark 托管缺 custom_dir+uninstall_dir / github_url 非法。
-软警告(仅提示): version 缺失(github_url 托管可省) / subcategory 不配对 /
+  quark 托管缺 custom_dir+uninstall_dir / github_url、direct_url、version_url 非法。
+软警告(仅提示): version 缺失(github_url/app_url/version_url 托管可省) / subcategory 不配对 /
   未知字段 / 无安装来源 / 空选填字段。
 
 与 gen_manifest.py 的 README 字段约定保持一致。
@@ -32,7 +32,7 @@ CATEGORIES = {
 KNOWN = {
     "name", "title", "author", "category", "version", "description",
     "subcategory", "subcategory_cn", "quark_url", "github_url",
-    "direct_url", "app_url",
+    "direct_url", "app_url", "version_url", "version_key",
     "custom_dir", "uninstall_dir", "check_init", "github_asset", "github",
     "require_reboot", "disable_uninstall", "changelog", "notify",
 }
@@ -45,6 +45,7 @@ REQUIRED = ("title", "author", "description")
 OPTIONAL_STR = (
     "subcategory", "subcategory_cn",
     "quark_url", "github_url", "direct_url", "app_url",
+    "version_url", "version_key",
     "custom_dir", "uninstall_dir", "notify",
 )
 RAW_EXTS = (".zip", ".nro", ".ovl", ".bin")
@@ -89,7 +90,8 @@ def validate(name_key, data, path, errors, warns):
     elif not (isinstance(ver, str) and ver.strip()) \
             and not isinstance(ver, (int, float)) \
             and not data.get("github_url") \
-            and not data.get("app_url"):
+            and not data.get("app_url") \
+            and not data.get("version_url"):
         errors.append(f"{path}: 缺少必填字段 version(github_url 托管包除外, 版本以 release 为准)")
 
     # 选填字符串字段: 类型错为硬错误, 空值仅警告
@@ -119,8 +121,8 @@ def validate(name_key, data, path, errors, warns):
     if isinstance(gh, str) and gh.strip() and not gh.startswith(("http://", "https://")) \
             and gh != "true":
         errors.append(f"{path}: github_url 必须是 http(s):// 链接(或 github_url: true)")
-    # direct_url / app_url 必须是 http(s) 直链
-    for url_key in ("direct_url", "app_url"):
+    # direct_url / app_url / version_url 必须是 http(s) 链接
+    for url_key in ("direct_url", "app_url", "version_url"):
         u = data.get(url_key)
         if isinstance(u, str) and u.strip() and not u.startswith(("http://", "https://")):
             errors.append(f"{path}: {url_key} 必须是 http(s):// 链接")
@@ -179,9 +181,10 @@ def main() -> int:
             os.path.isfile(os.path.join(root, sub, name_key + ext))
             for sub in ("upload", "zips")
             for ext in RAW_EXTS)
-        if not has_local and not (data.get("quark_url") or data.get("github_url") or data.get("app_url")):
+        if not has_local and not (data.get("quark_url") or data.get("github_url")
+                                  or data.get("app_url") or data.get("direct_url")):
             warns.append(f"{os.path.relpath(f, root)}: 无安装来源(需 {name_key}.zip/nro/ovl 文件, "
-                         f"或 quark_url / github_url 外部托管), 该项不会进入 repo.json")
+                         f"或 quark_url / github_url / direct_url 托管), 该项不会进入 repo.json")
 
     for w in warns:
         print("WARN:", w)
