@@ -291,9 +291,9 @@
             "title": "Prelude",
             "description": "私服全球联机",
             "author": "NextendoNetwork",
-            "version": "4.0.6",
+            "version": "4.0.7",
             "github_url": "https://github.com/NextendoNetwork/Prelude-Nro",
-            "crc32": "2b058081"
+            "crc32": "93c863b9"
         },
         {
             "name": "Lockpick_RCM",
