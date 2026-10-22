@@ -23,12 +23,12 @@ except ImportError:
     Image = None  # 缺 Pillow 时图标原样移动并警告
 
 ENTRY_FIELDS = ("category", "subcategory", "subcategory_cn", "title", "description",
-                "author", "version", "crc32", "quark_url", "github_url", "direct_url",
+                "author", "version", "crc32", "quark_url", "github_url",
                 "app_url", "custom_dir", "uninstall_dir", "check_init", "require_reboot",
                 "disable_uninstall", "notify")
 
 # 这些字段为空时不写入 repo.json
-OPTIONAL_FIELDS = ("subcategory", "subcategory_cn", "quark_url", "github_url", "direct_url",
+OPTIONAL_FIELDS = ("subcategory", "subcategory_cn", "quark_url", "github_url",
                    "app_url", "custom_dir", "uninstall_dir", "notify")
 
 # 非 zip 原始文件自动打包: 小写扩展名 -> zip 内安装路径 ({name} 为包名占位符)
@@ -764,6 +764,11 @@ def check_repo_payloads(root: str, repo) -> bool:
         name = e.get("name")
         if not name:
             continue
+        # direct_url 只是 upload json 的入库拉取来源; 写进目录会让客户端绕过
+        # zips/{name}.zip 去下载直链, 而 crc32 是对归档计算的, 直链一旦换版本
+        # 或换了容器 (单文件 nro vs zip) 就必然校验失败。
+        if "direct_url" in e:
+            errors.append("%s: repo.json 不应包含 direct_url (客户端将绕过归档导致 crc32 校验失败)" % name)
         if not is_empty(e.get("quark_url")):
             if is_empty(e.get("custom_dir")) or is_empty(e.get("uninstall_dir")):
                 errors.append("%s: quark 外部托管缺少 custom_dir/uninstall_dir" % name)
@@ -1673,6 +1678,10 @@ def process_upload(root: str, dry_run: bool):
             print("repo.json: 追加新条目 %s" % name)
         else:
             changed_keys = []
+            # 旧版生成器把 direct_url 写进了目录, 重新发布时清掉 (见 check_repo_payloads)。
+            if "direct_url" in existing:
+                del existing["direct_url"]
+                changed_keys.append("direct_url")
             for k in ENTRY_FIELDS:
                 v = entry_value(k)
                 if k == "crc32" and v is None:

@@ -80,6 +80,7 @@
 	- 填完整直链时自动下载入库: 单文件 `.nro/.ovl/.bin` 直接打包, `.zip` 剔除第三方元数据后入库
 	- 每次发布流程重新拉取, 内容未变则跳过; `upload/` 有同名包时以本地为准
 	- tomod.cn 的 `downloadId` 参数可省略 (省略时服务端不计下载量)
+	- 该字段只是入库拉取来源, **不会写入 repo.json**: 客户端始终下载 `zips/{name}.zip`, `crc32` 也只对该归档计算。把直链写进目录会让客户端绕过归档, 直链内容一变就必然 CRC32 校验失败
 - `version_url` / `version_key`:
 	- direct_url 托管包的版本来源 (JSON 接口 + `.` 分隔的字段路径), 不填则用 `version`
 	- 例: `"version_url": "https://tomod.cn/api/v1/clientReleases/current"`, `"version_key": "data.versionText"`
