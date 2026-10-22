@@ -769,8 +769,8 @@
             "title": "Switch Frame Tap",
             "description": "USB 串流录屏, 支持1080P 60FPS",
             "author": "TomasUribe",
-            "version": "0.7.14-beta1",
-            "crc32": "08a7436a",
+            "version": "0.7.13.2",
+            "crc32": "0a8d05c4",
             "github_url": "https://github.com/TomasUribe/switch-frame-tap"
         },
         {

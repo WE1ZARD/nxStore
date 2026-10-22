@@ -161,8 +161,8 @@
             "asset_id": 602632170
         },
         "switch-frame-tap": {
-            "version": "0.7.14-beta1",
-            "asset_id": 653986858
+            "version": "0.7.13.2",
+            "asset_id": 664723772
         },
         "sys-clk": {
             "version": "3.5.0",
