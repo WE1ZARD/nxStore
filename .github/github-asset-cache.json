@@ -9,12 +9,12 @@
             "asset_id": 654483369
         },
         "Aurora": {
-            "version": "12.1.7260",
-            "asset_id": 647293762
+            "version": "12.1.7261",
+            "asset_id": 665560659
         },
         "Breeze": {
-            "version": "beta126.02",
-            "asset_id": 661218391
+            "version": "beta127.00",
+            "asset_id": 665383969
         },
         "CommonProblemResolver": {
             "version": "0.3.4",
