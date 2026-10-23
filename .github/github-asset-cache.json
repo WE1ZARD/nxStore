@@ -13,8 +13,8 @@
             "asset_id": 665560659
         },
         "Breeze": {
-            "version": "beta127.01",
-            "asset_id": 667627717
+            "version": "beta127.02",
+            "asset_id": 669035772
         },
         "CommonProblemResolver": {
             "version": "0.3.4",
@@ -56,6 +56,10 @@
             "version": "2.0.1.0",
             "asset_id": 598052446
         },
+        "Loopy": {
+            "version": "1.2.28",
+            "asset_id": 669190226
+        },
         "MasterVolume": {
             "version": "1.2.5",
             "asset_id": 533395542
@@ -65,8 +69,8 @@
             "asset_id": 605337501
         },
         "NSteamLink": {
-            "version": "0.6.0",
-            "asset_id": 667584864
+            "version": "0.7.0",
+            "asset_id": 668823949
         },
         "NX-Cast": {
             "version": "continuous",

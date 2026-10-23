@@ -313,9 +313,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta127.01",
+            "version": "beta127.02",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "e7b05ad7"
+            "crc32": "9cea7415"
         },
         {
             "name": "MissionControl",
@@ -799,8 +799,8 @@
             "title": "NSteamlink",
             "description": "Steam 串流工具",
             "author": "kxn",
-            "version": "0.6.0",
-            "crc32": "d138e56c",
+            "version": "0.7.0",
+            "crc32": "3a269d89",
             "github_url": "https://github.com/kxn/nsteamlink"
         },
         {
@@ -811,6 +811,16 @@
             "author": "TOM",
             "version": "4.0.2",
             "crc32": "a29543dd"
+        },
+        {
+            "name": "Loopy",
+            "category": "nro",
+            "title": "Loopy",
+            "description": "首款多源后台播放器，可自行添加音源",
+            "author": "Zender",
+            "version": "1.2.28",
+            "crc32": "1a7cb3a4",
+            "github_url": "https://github.com/lGuann/Loopy"
         }
     ]
 }
