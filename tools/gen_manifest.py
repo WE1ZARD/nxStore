@@ -1635,9 +1635,16 @@ def process_upload(root: str, dry_run: bool):
                       file=sys.stderr)
                 version = preserved
         zip_crc32 = file_crc32(os.path.join(root, "zips", name + ".zip"))
-        info_content = json.dumps({"version": version}, ensure_ascii=False)
+        # crc32 与 repo.json 同源 (同一个 zip_crc32): 客户端自更新据此把归档 URL
+        # 拼成 ?v=<crc32> 并校验字节, 边缘缓存发旧归档时能直接判死。
+        # 没有归档 (quark 托管) 时不写该字段, 客户端退回裸 URL。
+        info_payload = {"version": version}
+        if zip_crc32:
+            info_payload["crc32"] = zip_crc32
+        info_content = json.dumps(info_payload, ensure_ascii=False)
         if read_if_exists(info_path) != info_content:
-            print("info %s: version=%s" % (fname, version or "(空)"))
+            print("info %s: version=%s crc32=%s"
+                  % (fname, version or "(空)", zip_crc32 or "(无归档)"))
             if dry_run:
                 print("  [dry-run] -> %s" % os.path.relpath(info_path, root))
             else:
