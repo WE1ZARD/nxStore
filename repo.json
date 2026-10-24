@@ -155,12 +155,12 @@
             "title": "AIO",
             "description": "大气层整合包 Magic-Suite",
             "author": "WE1ZARD",
-            "version": "12.1.2",
+            "version": "12.1.3",
             "check_init": true,
             "github_url": "https://github.com/WE1ZARD/Magic-Suite",
             "require_reboot": true,
             "disable_uninstall": true,
-            "crc32": "10588724"
+            "crc32": "517b33dc"
         },
         {
             "name": "fw1810",
@@ -473,9 +473,9 @@
             "title": "WIZBOX",
             "description": "魔盒助手",
             "author": "WE1ZARD",
-            "version": "2.4.2",
+            "version": "2.4.3",
             "github_url": "https://github.com/WE1ZARD/WIZBOX",
-            "crc32": "29a203e4"
+            "crc32": "c6672328"
         },
         {
             "name": "arcane",
