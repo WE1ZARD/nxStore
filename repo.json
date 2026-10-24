@@ -291,9 +291,9 @@
             "title": "Prelude",
             "description": "私服全球联机",
             "author": "NextendoNetwork",
-            "version": "4.0.8",
+            "version": "4.0.11",
             "github_url": "https://github.com/NextendoNetwork/Prelude-Nro",
-            "crc32": "bed2cebe"
+            "crc32": "bc48c2b8"
         },
         {
             "name": "Lockpick_RCM",
@@ -313,9 +313,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta127.02",
+            "version": "beta128.00",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "9cea7415"
+            "crc32": "70bba99d"
         },
         {
             "name": "MissionControl",
@@ -493,8 +493,8 @@
             "title": "sys-clk",
             "description": "超频管理插件",
             "author": "WE1ZARD",
-            "version": "3.5.0",
-            "crc32": "d90fe59b",
+            "version": "3.5.1",
+            "crc32": "b331f8d7",
             "github_url": "https://github.com/WE1ZARD/sys-clk"
         },
         {
@@ -769,8 +769,8 @@
             "title": "Switch Frame Tap",
             "description": "USB 串流录屏, 支持1080P 60FPS",
             "author": "TomasUribe",
-            "version": "0.7.14",
-            "crc32": "8a8b840a",
+            "version": "0.7.15",
+            "crc32": "4c017f15",
             "github_url": "https://github.com/TomasUribe/switch-frame-tap"
         },
         {
@@ -799,8 +799,8 @@
             "title": "NSteamlink",
             "description": "Steam 串流工具",
             "author": "kxn",
-            "version": "0.7.0",
-            "crc32": "3a269d89",
+            "version": "0.7.2",
+            "crc32": "8ae9d42c",
             "github_url": "https://github.com/kxn/nsteamlink"
         },
         {

@@ -13,8 +13,8 @@
             "asset_id": 665560659
         },
         "Breeze": {
-            "version": "beta127.02",
-            "asset_id": 669035772
+            "version": "beta128.00",
+            "asset_id": 671324387
         },
         "CommonProblemResolver": {
             "version": "0.3.4",
@@ -69,8 +69,8 @@
             "asset_id": 605337501
         },
         "NSteamLink": {
-            "version": "0.7.0",
-            "asset_id": 668823949
+            "version": "0.7.2",
+            "asset_id": 670990475
         },
         "NX-Cast": {
             "version": "continuous",
@@ -157,20 +157,20 @@
             "asset_id": 543880882
         },
         "nextendo": {
-            "version": "4.0.8",
-            "asset_id": 667912369
+            "version": "4.0.11",
+            "asset_id": 671399948
         },
         "sphaira": {
             "version": "2.1.0",
             "asset_id": 602632170
         },
         "switch-frame-tap": {
-            "version": "0.7.14",
-            "asset_id": 667765952
+            "version": "0.7.15",
+            "asset_id": 671339908
         },
         "sys-clk": {
-            "version": "3.5.0",
-            "asset_id": 605170134
+            "version": "3.5.1",
+            "asset_id": 671603698
         },
         "sys-con": {
             "version": "2.0.0",
