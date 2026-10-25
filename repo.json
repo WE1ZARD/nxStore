@@ -291,9 +291,9 @@
             "title": "Prelude",
             "description": "私服全球联机",
             "author": "NextendoNetwork",
-            "version": "4.0.11",
+            "version": "4.0.13",
             "github_url": "https://github.com/NextendoNetwork/Prelude-Nro",
-            "crc32": "bc48c2b8"
+            "crc32": "00e92412"
         },
         {
             "name": "Lockpick_RCM",
@@ -313,9 +313,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta128.01",
+            "version": "beta128.02",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "85f62660"
+            "crc32": "c7052bfc"
         },
         {
             "name": "MissionControl",
@@ -473,9 +473,9 @@
             "title": "WIZBOX",
             "description": "魔盒助手",
             "author": "WE1ZARD",
-            "version": "2.4.4",
+            "version": "2.4.5",
             "github_url": "https://github.com/WE1ZARD/WIZBOX",
-            "crc32": "e309ee7f"
+            "crc32": "7551558f"
         },
         {
             "name": "arcane",
@@ -769,8 +769,8 @@
             "title": "Switch Frame Tap",
             "description": "USB 串流录屏, 支持1080P 60FPS",
             "author": "TomasUribe",
-            "version": "0.7.15",
-            "crc32": "4c017f15",
+            "version": "0.7.17",
+            "crc32": "cb63551a",
             "github_url": "https://github.com/TomasUribe/switch-frame-tap"
         },
         {
@@ -799,8 +799,8 @@
             "title": "NSteamlink",
             "description": "Steam 串流工具",
             "author": "kxn",
-            "version": "0.7.2",
-            "crc32": "8ae9d42c",
+            "version": "0.7.3",
+            "crc32": "eaa99e27",
             "github_url": "https://github.com/kxn/nsteamlink"
         },
         {
@@ -818,8 +818,8 @@
             "title": "Loopy",
             "description": "首款多源后台播放器，可自行添加音源",
             "author": "Zender",
-            "version": "1.2.28",
-            "crc32": "1a7cb3a4",
+            "version": "1.2.35",
+            "crc32": "af1db08b",
             "github_url": "https://github.com/lGuann/Loopy"
         }
     ]

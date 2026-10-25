@@ -13,8 +13,8 @@
             "asset_id": 665560659
         },
         "Breeze": {
-            "version": "beta128.01",
-            "asset_id": 672265409
+            "version": "beta128.02",
+            "asset_id": 672692892
         },
         "CommonProblemResolver": {
             "version": "0.3.4",
@@ -57,8 +57,8 @@
             "asset_id": 598052446
         },
         "Loopy": {
-            "version": "1.2.28",
-            "asset_id": 669190226
+            "version": "1.2.35",
+            "asset_id": 674018066
         },
         "MasterVolume": {
             "version": "1.2.5",
@@ -69,8 +69,8 @@
             "asset_id": 605337501
         },
         "NSteamLink": {
-            "version": "0.7.2",
-            "asset_id": 670990475
+            "version": "0.7.3",
+            "asset_id": 672630208
         },
         "NX-Cast": {
             "version": "continuous",
@@ -113,8 +113,8 @@
             "asset_id": 568620028
         },
         "WIZBOX": {
-            "version": "2.4.4",
-            "asset_id": 672365395
+            "version": "2.4.5",
+            "asset_id": 674032274
         },
         "Warmboot-Extractor": {
             "version": "1.1.0",
@@ -157,16 +157,16 @@
             "asset_id": 543880882
         },
         "nextendo": {
-            "version": "4.0.11",
-            "asset_id": 671399948
+            "version": "4.0.13",
+            "asset_id": 673093471
         },
         "sphaira": {
             "version": "2.1.1",
             "asset_id": 672209159
         },
         "switch-frame-tap": {
-            "version": "0.7.15",
-            "asset_id": 671339908
+            "version": "0.7.17",
+            "asset_id": 672818160
         },
         "sys-clk": {
             "version": "3.5.1",
