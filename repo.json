@@ -291,9 +291,9 @@
             "title": "Prelude",
             "description": "私服全球联机",
             "author": "NextendoNetwork",
-            "version": "4.0.13",
+            "version": "4.0.14",
             "github_url": "https://github.com/NextendoNetwork/Prelude-Nro",
-            "crc32": "00e92412"
+            "crc32": "9ae4cff5"
         },
         {
             "name": "Lockpick_RCM",
@@ -473,9 +473,9 @@
             "title": "WIZBOX",
             "description": "魔盒助手",
             "author": "WE1ZARD",
-            "version": "2.4.5",
+            "version": "2.4.6",
             "github_url": "https://github.com/WE1ZARD/WIZBOX",
-            "crc32": "7551558f"
+            "crc32": "782c7e1b"
         },
         {
             "name": "arcane",
@@ -809,8 +809,8 @@
             "title": "TOMOD",
             "description": "游戏模组管理器",
             "author": "TOM",
-            "version": "4.0.3",
-            "crc32": "2eeb9245"
+            "version": "4.0.4",
+            "crc32": "94d0b348"
         },
         {
             "name": "Loopy",
