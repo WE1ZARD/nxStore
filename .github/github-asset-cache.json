@@ -13,8 +13,8 @@
             "asset_id": 665560659
         },
         "Breeze": {
-            "version": "beta128.02",
-            "asset_id": 672692892
+            "version": "beta128.03",
+            "asset_id": 677290508
         },
         "CommonProblemResolver": {
             "version": "0.3.4",
@@ -165,8 +165,8 @@
             "asset_id": 672209159
         },
         "switch-frame-tap": {
-            "version": "0.7.18.1",
-            "asset_id": 674198345
+            "version": "0.7.20-beta3",
+            "asset_id": 676012258
         },
         "sys-clk": {
             "version": "3.5.1",
