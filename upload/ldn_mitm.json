@@ -5,5 +5,5 @@
     "description": "私服联机插件",
     "author": "miiazertyy",
     "version": "1.24.5",
-    "notify": "要求重启生效, \n查看联机教程\nwww.tomodachilife.cn/?page=game-online"
+    "notify": "不支持23系统, 要求重启生效, \n查看联机教程\nwww.tomodachilife.cn/?page=game-online"
 }
