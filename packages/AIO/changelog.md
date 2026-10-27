@@ -1,7 +1,8 @@
-## WIZBOX 2.4.5
-- 移除: 大气层设置中的 `提取虚拟系统内存` / `提取真实系统内存` (固件 23+ 已无需内存补丁)
-- 修复: 网盘安装路径识别错误的问题
-## WIZBOX 2.4.4
-- 新增: 应用商店错误弹窗支持直接切换到其他来源 (来源多于 1 个时)
-## sphaira 2.1.1
-- 修复: 小程序模式和ip地址显示重叠的问题
+## WIZBOX 2.4.7
+- 修复: AIO `保留图标` 未真正保留卡上图标, 更新后 `bootloader/res` 被清空
+- 优化: AIO 缺失文件保留逻辑
+## WIZBOX 2.4.6
+- 新增: WIZBOX 自更新跟随应用商店当前来源, 切换来源后自动重新检测
+# sys-patch 1.6.3.1
+- erpt: follow upstream layout (latest ams)
+- am: homebrew fix applies to 22.0.0 only

@@ -155,12 +155,12 @@
             "title": "AIO",
             "description": "大气层整合包 Magic-Suite",
             "author": "WE1ZARD",
-            "version": "12.1.4",
+            "version": "12.1.5",
             "check_init": true,
             "github_url": "https://github.com/WE1ZARD/Magic-Suite",
             "require_reboot": true,
             "disable_uninstall": true,
-            "crc32": "e2fc8c24"
+            "crc32": "b3f9a687"
         },
         {
             "name": "fw1810",
@@ -291,9 +291,9 @@
             "title": "Prelude",
             "description": "私服全球联机",
             "author": "NextendoNetwork",
-            "version": "4.0.14",
+            "version": "4.0.15",
             "github_url": "https://github.com/NextendoNetwork/Prelude-Nro",
-            "crc32": "9ae4cff5"
+            "crc32": "9b875a30"
         },
         {
             "name": "Lockpick_RCM",
@@ -313,9 +313,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta128.03",
+            "version": "beta128.05",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "04f286bc"
+            "crc32": "9d775414"
         },
         {
             "name": "MissionControl",
@@ -473,9 +473,9 @@
             "title": "WIZBOX",
             "description": "魔盒助手",
             "author": "WE1ZARD",
-            "version": "2.4.6",
+            "version": "2.4.7",
             "github_url": "https://github.com/WE1ZARD/WIZBOX",
-            "crc32": "782c7e1b"
+            "crc32": "6684f158"
         },
         {
             "name": "arcane",
@@ -809,8 +809,8 @@
             "title": "TOMOD",
             "description": "游戏模组管理器",
             "author": "TOM",
-            "version": "4.0.4",
-            "crc32": "94d0b348"
+            "version": "4.1.4",
+            "crc32": "b72e5e3c"
         },
         {
             "name": "Loopy",
@@ -818,9 +818,10 @@
             "title": "Loopy",
             "description": "首款多源后台播放器，可自行添加音源",
             "author": "Zender",
-            "version": "1.2.35",
-            "crc32": "af1db08b",
-            "github_url": "https://github.com/lGuann/Loopy"
+            "version": "1.3.0",
+            "crc32": "5b934429",
+            "github_url": "https://github.com/lGuann/Loopy",
+            "notify": "歌单列表需额外安装补丁否则为空，请自行前往开发者Q群获取"
         }
     ]
 }
