@@ -155,12 +155,12 @@
             "title": "AIO",
             "description": "大气层整合包 Magic-Suite",
             "author": "WE1ZARD",
-            "version": "12.1.4",
+            "version": "12.1.5",
             "check_init": true,
             "github_url": "https://github.com/WE1ZARD/Magic-Suite",
             "require_reboot": true,
             "disable_uninstall": true,
-            "crc32": "e2fc8c24"
+            "crc32": "b3f9a687"
         },
         {
             "name": "fw1810",
@@ -809,8 +809,8 @@
             "title": "TOMOD",
             "description": "游戏模组管理器",
             "author": "TOM",
-            "version": "4.0.4",
-            "crc32": "94d0b348"
+            "version": "4.1.4",
+            "crc32": "b72e5e3c"
         },
         {
             "name": "Loopy",
