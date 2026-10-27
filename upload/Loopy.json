@@ -4,5 +4,6 @@
     "title": "Loopy",
     "description": "首款多源后台播放器，可自行添加音源",
     "author": "Zender",
-    "github_url": "https://github.com/lGuann/Loopy"
+    "github_url": "https://github.com/lGuann/Loopy",
+    "notify": "歌单列表需额外安装补丁否则为空，请自行前往开发者Q群获取"
 }
