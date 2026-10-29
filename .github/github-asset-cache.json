@@ -13,8 +13,8 @@
             "asset_id": 665560659
         },
         "Breeze": {
-            "version": "beta128.05",
-            "asset_id": 680276076
+            "version": "beta128.06",
+            "asset_id": 685560631
         },
         "CommonProblemResolver": {
             "version": "0.3.4",
@@ -157,8 +157,8 @@
             "asset_id": 543880882
         },
         "nextendo": {
-            "version": "4.0.15",
-            "asset_id": 680018610
+            "version": "4.0.16",
+            "asset_id": 686694304
         },
         "sphaira": {
             "version": "2.1.1",
