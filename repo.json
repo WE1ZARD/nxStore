@@ -48,9 +48,9 @@
             "title": "FPSLocker",
             "description": "帧数解锁插件",
             "author": "masagrator",
-            "version": "3.5.0",
+            "version": "3.5.1",
             "github_url": "https://github.com/WE1ZARD/FPSLocker",
-            "crc32": "06b8a8c6"
+            "crc32": "a5aef97f"
         },
         {
             "name": "MasterVolume",
@@ -313,9 +313,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta128.06",
+            "version": "beta128.07",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "1e60b7ed"
+            "crc32": "c1d285ed"
         },
         {
             "name": "MissionControl",

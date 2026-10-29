@@ -13,8 +13,8 @@
             "asset_id": 665560659
         },
         "Breeze": {
-            "version": "beta128.06",
-            "asset_id": 685560631
+            "version": "beta128.07",
+            "asset_id": 688572806
         },
         "CommonProblemResolver": {
             "version": "0.3.4",
@@ -29,8 +29,8 @@
             "asset_id": 605688878
         },
         "FPSLocker": {
-            "version": "3.5.0",
-            "asset_id": 609017646
+            "version": "3.5.1",
+            "asset_id": 688785533
         },
         "FanControl": {
             "version": "1.2.0",
