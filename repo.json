@@ -313,9 +313,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta128.07",
+            "version": "beta128.08",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "c1d285ed"
+            "crc32": "c7a107da"
         },
         {
             "name": "MissionControl",
@@ -473,9 +473,9 @@
             "title": "WIZBOX",
             "description": "魔盒助手",
             "author": "WE1ZARD",
-            "version": "2.4.7",
+            "version": "2.4.8",
             "github_url": "https://github.com/WE1ZARD/WIZBOX",
-            "crc32": "6684f158"
+            "crc32": "3ab5c2dc"
         },
         {
             "name": "arcane",

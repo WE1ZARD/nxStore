@@ -13,8 +13,8 @@
             "asset_id": 665560659
         },
         "Breeze": {
-            "version": "beta128.07",
-            "asset_id": 688572806
+            "version": "beta128.08",
+            "asset_id": 690653356
         },
         "CommonProblemResolver": {
             "version": "0.3.4",
@@ -113,8 +113,8 @@
             "asset_id": 568620028
         },
         "WIZBOX": {
-            "version": "2.4.7",
-            "asset_id": 680901570
+            "version": "2.4.8",
+            "asset_id": 691119874
         },
         "Warmboot-Extractor": {
             "version": "1.1.0",
