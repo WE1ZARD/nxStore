@@ -1,8 +1,8 @@
-## WIZBOX 2.4.7
-- 修复: AIO `保留图标` 未真正保留卡上图标, 更新后 `bootloader/res` 被清空
-- 优化: AIO 缺失文件保留逻辑
-## WIZBOX 2.4.6
-- 新增: WIZBOX 自更新跟随应用商店当前来源, 切换来源后自动重新检测
-# sys-patch 1.6.3.1
-- erpt: follow upstream layout (latest ams)
-- am: homebrew fix applies to 22.0.0 only
+## FPSLocker 3.5.1
+- Fix bugs in config to patch converter
+- Reduce footprint of parsing config
+## WIZBOX 2.4.9
+- 修复: 主菜单设置选项菜单按B会直接退出应用的问题
+## WIZBOX 2.4.8
+- 新增: 游戏库按 L3 查看官方截图长图 (按需下载并缓存, 支持整屏翻页)
+- 新增: 主菜单新增设置选项 `自动熄屏` 默认关闭, 开启后 `超过30秒` 没有任何输入将自动关闭背光, 任意操作唤醒屏幕
