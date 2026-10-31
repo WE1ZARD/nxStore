@@ -291,9 +291,9 @@
             "title": "Prelude",
             "description": "私服全球联机",
             "author": "NextendoNetwork",
-            "version": "4.0.16",
+            "version": "4.0.18",
             "github_url": "https://github.com/NextendoNetwork/Prelude-Nro",
-            "crc32": "00c6e151"
+            "crc32": "61d4f97c"
         },
         {
             "name": "Lockpick_RCM",
@@ -769,8 +769,8 @@
             "title": "Switch Frame Tap",
             "description": "USB 串流录屏, 支持1080P 60FPS",
             "author": "TomasUribe",
-            "version": "0.7.20-beta3",
-            "crc32": "c3fb44ef",
+            "version": "0.7.20-beta4",
+            "crc32": "bf8e38f1",
             "github_url": "https://github.com/TomasUribe/switch-frame-tap"
         },
         {
@@ -822,6 +822,17 @@
             "crc32": "5b934429",
             "github_url": "https://github.com/lGuann/Loopy",
             "notify": "歌单列表需额外安装补丁否则为空，请自行前往开发者Q群获取"
+        },
+        {
+            "name": "MissionControl-Patches",
+            "category": "sysmod",
+            "title": "MissionControl-Patches",
+            "description": "第三方蓝牙手柄增强补丁",
+            "author": "ndeadly",
+            "version": "23.0.1",
+            "crc32": "86231532",
+            "github_url": "https://github.com/ndeadly/mc_exefs_patches",
+            "notify": "要求重启生效, \n手柄重置后, 再蓝牙匹配"
         }
     ]
 }

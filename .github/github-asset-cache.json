@@ -68,6 +68,10 @@
             "version": "0.16.0",
             "asset_id": 605337501
         },
+        "MissionControl-Patches": {
+            "version": "23.0.1",
+            "asset_id": 685000707
+        },
         "NSteamLink": {
             "version": "0.7.3",
             "asset_id": 672630208
@@ -157,16 +161,16 @@
             "asset_id": 543880882
         },
         "nextendo": {
-            "version": "4.0.16",
-            "asset_id": 686694304
+            "version": "4.0.18",
+            "asset_id": 694775636
         },
         "sphaira": {
             "version": "2.1.1",
             "asset_id": 672209159
         },
         "switch-frame-tap": {
-            "version": "0.7.20-beta3",
-            "asset_id": 676012258
+            "version": "0.7.20-beta4",
+            "asset_id": 693475584
         },
         "sys-clk": {
             "version": "3.5.1",
