@@ -645,7 +645,7 @@
             "description": "在线主题下载安装工具 (汉化版)",
             "author": "suchmememanyskill",
             "version": "3.0.2",
-            "crc32": "1fc9b88a",
+            "crc32": "b529df1b",
             "app_url": "https://download.nswiki.cn/gayking/store/zips/ThemezerNX.zip"
         },
         {
@@ -784,16 +784,6 @@
             "github_url": "https://github.com/lGuann/SwitchTVBox"
         },
         {
-            "name": "HongGuo",
-            "category": "nro",
-            "title": "switch-hongguo",
-            "description": "第三方红果短剧",
-            "author": "ZYP-INre",
-            "version": "0.3.0",
-            "crc32": "a43df1ba",
-            "github_url": "https://github.com/ZYP-INre/switch-hongguo"
-        },
-        {
             "name": "NSteamLink",
             "category": "nro",
             "title": "NSteamlink",
@@ -833,6 +823,16 @@
             "crc32": "86231532",
             "github_url": "https://github.com/ndeadly/mc_exefs_patches",
             "notify": "要求重启生效, \n手柄重置后, 再蓝牙匹配"
+        },
+        {
+            "name": "hongguodong",
+            "category": "nro",
+            "title": "hongguodong",
+            "description": "第三方红果短剧",
+            "author": "雨天rain",
+            "version": "2.0.5",
+            "crc32": "8e1d5033",
+            "github_url": "https://github.com/zys123444444-dotcom/zys123444444-dotcom.github.io"
         }
     ]
 }
