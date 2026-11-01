@@ -693,8 +693,8 @@
             "title": "ANIMEX",
             "description": "多源在线动漫影视播放器",
             "author": "凉菜LINKO",
-            "version": "1.0.8-beta.24",
-            "crc32": "993fdeff",
+            "version": "1.0.8-beta.28",
+            "crc32": "e40cb81b",
             "github_url": "https://github.com/cuijunhao20000307-web/-ANIMEX-Release"
         },
         {
@@ -769,8 +769,8 @@
             "title": "Switch Frame Tap",
             "description": "USB 串流录屏, 支持1080P 60FPS",
             "author": "TomasUribe",
-            "version": "0.7.20-beta4",
-            "crc32": "bf8e38f1",
+            "version": "0.7.20-beta6",
+            "crc32": "bfbd9e18",
             "github_url": "https://github.com/TomasUribe/switch-frame-tap"
         },
         {
@@ -799,8 +799,8 @@
             "title": "TOMOD",
             "description": "游戏模组管理器",
             "author": "TOM",
-            "version": "4.1.6",
-            "crc32": "eb865ba4"
+            "version": "4.1.7",
+            "crc32": "e8b7825f"
         },
         {
             "name": "Loopy",
