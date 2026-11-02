@@ -313,9 +313,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta128.08",
+            "version": "beta128.09",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "c7a107da"
+            "crc32": "b0d2d3fe"
         },
         {
             "name": "MissionControl",
@@ -737,8 +737,8 @@
             "title": "Vita3K",
             "description": "PSV 模拟器",
             "author": "NaGaa95",
-            "version": "1.3.1",
-            "crc32": "6e661e0d",
+            "version": "1.4.0",
+            "crc32": "8f72838d",
             "github_url": "https://github.com/NaGaa95/Vita3K-nx"
         },
         {
@@ -769,8 +769,8 @@
             "title": "Switch Frame Tap",
             "description": "USB 串流录屏, 支持1080P 60FPS",
             "author": "TomasUribe",
-            "version": "0.7.20-beta6",
-            "crc32": "bfbd9e18",
+            "version": "0.7.20.1-beta1",
+            "crc32": "e4f424ff",
             "github_url": "https://github.com/TomasUribe/switch-frame-tap"
         },
         {
@@ -830,8 +830,8 @@
             "title": "hongguodong",
             "description": "第三方红果短剧",
             "author": "雨天rain",
-            "version": "2.0.5",
-            "crc32": "8e1d5033",
+            "version": "2.0.76",
+            "crc32": "9f4b2877",
             "github_url": "https://github.com/zys123444444-dotcom/zys123444444-dotcom.github.io"
         }
     ]
