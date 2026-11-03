@@ -57,8 +57,8 @@
             "asset_id": 598052446
         },
         "Loopy": {
-            "version": "1.3.0",
-            "asset_id": 678867890
+            "version": "2.12",
+            "asset_id": 701611546
         },
         "MasterVolume": {
             "version": "1.2.5",
@@ -113,8 +113,8 @@
             "asset_id": 650146286
         },
         "Vita3K-nx": {
-            "version": "1.4.0",
-            "asset_id": 699881197
+            "version": "1.4.1",
+            "asset_id": 702510277
         },
         "WIZBOX": {
             "version": "2.4.9",
@@ -129,8 +129,8 @@
             "asset_id": 659311843
         },
         "akira": {
-            "version": "0.6.5",
-            "asset_id": 613903288
+            "version": "0.7.0-rc.1",
+            "asset_id": 703440621
         },
         "arcane": {
             "version": "4.1.2",
@@ -153,8 +153,8 @@
             "asset_id": 558400183
         },
         "hongguodong": {
-            "version": "2.0.76",
-            "asset_id": 699543992
+            "version": "2.2.10",
+            "asset_id": 702657113
         },
         "mangadex-reader": {
             "version": "1.0.4",

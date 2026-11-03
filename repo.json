@@ -271,9 +271,9 @@
             "title": "akira",
             "description": "PS4 & 5 串流工具",
             "author": "xlanor",
-            "version": "0.6.5",
+            "version": "0.7.0-rc.1",
             "github_url": "https://github.com/xlanor/akira",
-            "crc32": "14d6ffdd"
+            "crc32": "e0f204dc"
         },
         {
             "name": "dvr-patches",
@@ -737,8 +737,8 @@
             "title": "Vita3K",
             "description": "PSV 模拟器",
             "author": "NaGaa95",
-            "version": "1.4.0",
-            "crc32": "8f72838d",
+            "version": "1.4.1",
+            "crc32": "7b2aa3c5",
             "github_url": "https://github.com/NaGaa95/Vita3K-nx"
         },
         {
@@ -799,8 +799,8 @@
             "title": "TOMOD",
             "description": "游戏模组管理器",
             "author": "TOM",
-            "version": "4.1.7",
-            "crc32": "e8b7825f"
+            "version": "4.1.8",
+            "crc32": "dab6c119"
         },
         {
             "name": "Loopy",
@@ -808,8 +808,8 @@
             "title": "Loopy",
             "description": "首款多源后台播放器，可自行添加音源",
             "author": "Zender",
-            "version": "1.3.0",
-            "crc32": "5b934429",
+            "version": "2.12",
+            "crc32": "23421584",
             "github_url": "https://github.com/lGuann/Loopy",
             "notify": "歌单列表需额外安装补丁否则为空，请自行前往开发者Q群获取"
         },
@@ -830,8 +830,8 @@
             "title": "hongguodong",
             "description": "第三方红果短剧",
             "author": "雨天rain",
-            "version": "2.0.76",
-            "crc32": "9f4b2877",
+            "version": "2.2.10",
+            "crc32": "ce76130f",
             "github_url": "https://github.com/zys123444444-dotcom/zys123444444-dotcom.github.io"
         }
     ]
