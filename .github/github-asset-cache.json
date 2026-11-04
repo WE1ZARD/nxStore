@@ -52,6 +52,10 @@
             "version": "2026.09.11",
             "asset_id": 557424855
         },
+        "KeyX": {
+            "version": "1.5.8",
+            "asset_id": 696611366
+        },
         "Lockpick_RCM": {
             "version": "2.0.1.0",
             "asset_id": 598052446
@@ -173,8 +177,8 @@
             "asset_id": 672209159
         },
         "switch-frame-tap": {
-            "version": "0.7.20.1-beta1",
-            "asset_id": 699954938
+            "version": "0.7.21.1",
+            "asset_id": 706302455
         },
         "sys-clk": {
             "version": "3.5.1",

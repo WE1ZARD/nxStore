@@ -88,8 +88,9 @@
             "title": "KeyX",
             "description": "按键助手",
             "author": "TOM-BadEN",
-            "version": "1.5.6",
-            "crc32": "1b86a2c1"
+            "version": "1.5.8",
+            "crc32": "38a23ce8",
+            "github_url": "https://github.com/TOM-BadEN/KeyX"
         },
         {
             "name": "PNGShot",
@@ -769,8 +770,8 @@
             "title": "Switch Frame Tap",
             "description": "USB 串流录屏, 支持1080P 60FPS",
             "author": "TomasUribe",
-            "version": "0.7.20.1-beta1",
-            "crc32": "e4f424ff",
+            "version": "0.7.21.1",
+            "crc32": "05edaff2",
             "github_url": "https://github.com/TomasUribe/switch-frame-tap"
         },
         {
