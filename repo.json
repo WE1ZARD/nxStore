@@ -37,9 +37,9 @@
             "title": "SaltyNX",
             "description": "FPS核心依赖",
             "author": "masagrator",
-            "version": "2.1.3",
+            "version": "2.1.4",
             "github_url": "https://github.com/we1zard/SaltyNX",
-            "crc32": "35bb844d",
+            "crc32": "1b7ff853",
             "notify": "要求重启生效"
         },
         {
@@ -314,9 +314,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta128.10",
+            "version": "beta128.11",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "48e0a4c6"
+            "crc32": "56d76074"
         },
         {
             "name": "MissionControl",
@@ -780,8 +780,8 @@
             "title": "Switch TVBox",
             "description": "多源+网盘影视",
             "author": "Zender",
-            "version": "0.4.52",
-            "crc32": "32669cd6",
+            "version": "1.0.1",
+            "crc32": "f8f5bf5a",
             "github_url": "https://github.com/lGuann/SwitchTVBox"
         },
         {

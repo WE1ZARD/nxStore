@@ -13,8 +13,8 @@
             "asset_id": 665560659
         },
         "Breeze": {
-            "version": "beta128.10",
-            "asset_id": 705780284
+            "version": "beta128.11",
+            "asset_id": 712176144
         },
         "CommonProblemResolver": {
             "version": "0.3.4",
@@ -97,8 +97,8 @@
             "asset_id": 563111305
         },
         "SaltyNX": {
-            "version": "2.1.3",
-            "asset_id": 649325513
+            "version": "2.1.4",
+            "asset_id": 712549549
         },
         "Settings": {
             "version": "3.6.1",
@@ -109,8 +109,8 @@
             "asset_id": 592653614
         },
         "SwitchTVBox": {
-            "version": "0.4.52",
-            "asset_id": 652758370
+            "version": "1.0.1",
+            "asset_id": 709415123
         },
         "Tikzen": {
             "version": "1.0.5",
