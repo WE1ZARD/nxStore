@@ -133,8 +133,8 @@
             "asset_id": 659311843
         },
         "akira": {
-            "version": "0.7.0-rc.1",
-            "asset_id": 703440621
+            "version": "0.7.0-rc.2",
+            "asset_id": 715233099
         },
         "arcane": {
             "version": "4.1.2",
@@ -157,8 +157,8 @@
             "asset_id": 558400183
         },
         "hongguodong": {
-            "version": "2.2.10",
-            "asset_id": 702657113
+            "version": "2.3.9",
+            "asset_id": 714724268
         },
         "mangadex-reader": {
             "version": "1.0.4",
@@ -185,8 +185,8 @@
             "asset_id": 671603698
         },
         "sys-con": {
-            "version": "2.0.0",
-            "asset_id": 589161432
+            "version": "2.1.0",
+            "asset_id": 716255948
         },
         "sys-env": {
             "version": "1.1.0",

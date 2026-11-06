@@ -272,9 +272,9 @@
             "title": "akira",
             "description": "PS4 & 5 串流工具",
             "author": "xlanor",
-            "version": "0.7.0-rc.1",
+            "version": "0.7.0-rc.2",
             "github_url": "https://github.com/xlanor/akira",
-            "crc32": "e0f204dc"
+            "crc32": "d66cc14d"
         },
         {
             "name": "dvr-patches",
@@ -400,9 +400,9 @@
             "title": "sys-con",
             "description": "支持第三方有线手柄",
             "author": "o0Zz",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "github_url": "https://github.com/o0Zz/sys-con",
-            "crc32": "9b5326a7",
+            "crc32": "9eec055f",
             "notify": "要求重启生效"
         },
         {
@@ -800,8 +800,8 @@
             "title": "TOMOD",
             "description": "游戏模组管理器",
             "author": "TOM",
-            "version": "4.1.8",
-            "crc32": "dab6c119"
+            "version": "4.1.9",
+            "crc32": "08a973b0"
         },
         {
             "name": "Loopy",
@@ -831,8 +831,8 @@
             "title": "hongguodong",
             "description": "第三方红果短剧",
             "author": "雨天rain",
-            "version": "2.2.10",
-            "crc32": "ce76130f",
+            "version": "2.3.9",
+            "crc32": "1226ce41",
             "github_url": "https://github.com/zys123444444-dotcom/zys123444444-dotcom.github.io"
         }
     ]
