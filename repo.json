@@ -292,9 +292,9 @@
             "title": "Prelude",
             "description": "私服全球联机",
             "author": "NextendoNetwork",
-            "version": "4.0.18",
+            "version": "4.0.19",
             "github_url": "https://github.com/NextendoNetwork/Prelude-Nro",
-            "crc32": "61d4f97c"
+            "crc32": "fcf76ae8"
         },
         {
             "name": "Lockpick_RCM",
@@ -800,8 +800,8 @@
             "title": "TOMOD",
             "description": "游戏模组管理器",
             "author": "TOM",
-            "version": "4.1.9",
-            "crc32": "08a973b0"
+            "version": "4.2.0",
+            "crc32": "35b07cf8"
         },
         {
             "name": "Loopy",
