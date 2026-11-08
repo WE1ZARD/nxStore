@@ -800,8 +800,8 @@
             "title": "TOMOD",
             "description": "游戏模组管理器",
             "author": "TOM",
-            "version": "4.2.0",
-            "crc32": "35b07cf8"
+            "version": "4.2.1",
+            "crc32": "acf96b1e"
         },
         {
             "name": "Loopy",
@@ -831,8 +831,8 @@
             "title": "hongguodong",
             "description": "第三方红果短剧",
             "author": "雨天rain",
-            "version": "2.3.9",
-            "crc32": "1226ce41",
+            "version": "2.4.0",
+            "crc32": "334605c9",
             "github_url": "https://github.com/zys123444444-dotcom/zys123444444-dotcom.github.io"
         }
     ]
