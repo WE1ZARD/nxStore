@@ -314,9 +314,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta128.11",
+            "version": "beta128.12",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "56d76074"
+            "crc32": "120a2a3a"
         },
         {
             "name": "MissionControl",
