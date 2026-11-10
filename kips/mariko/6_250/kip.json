@@ -1,0 +1,393 @@
+{
+  	"CPU": {
+	    "192": {
+	    	"name": "Boost Clock",
+	    	"options": {
+	    		"1020000": "1020 MHz",
+	    		"1122000": "1122 MHz",
+	    		"1224000": "1224 MHz",
+	    		"1326000": "1326 MHz",
+	    		"1428000": "1428 MHz",
+	    		"1581000": "1581 MHz",
+	    		"1683000": "1683 MHz",
+	    		"1785000": "1785 MHz",
+	    		"1887000": "1887 MHz",
+	    		"1963500": "1963 MHz",
+	    		"2091000": "2091 MHz",
+	    		"2193000": "2193 MHz",
+	    		"2295000": "2295 MHz",
+	    		"2397000": "2397 MHz",
+	    		"2499000": "2499 MHz",
+	    		"2601000": "2601 MHz",
+	    		"2703000": "2703 MHz",
+	    		"2805000": "2805 MHz",
+	    		"2907000": "2907 MHz",
+	    		"3009000": "3009 MHz"
+	    	},
+	    	"default": 1785000
+	    },
+	    "160": { "name": "UV Level", 		"min": 0, 		"max": 12, 		"step": 1,   	"default": 0 },
+	    "164": { "name": "High UV Level", 	"min": 0, 		"max": 12, 		"step": 1,   	"default": 0 },
+	    "180": { "name": "vMax", 			"min": 900, 	"max": 1200, 	"step": 5,   	"default": 1120, 		"unit": "mV" },
+	    "172": { "name": "vMin Low", 		"min": 500, 	"max": 710, 	"step": 5, 		"default": 620, 		"unit": "mV" },
+	    "176": { "name": "vMin High", 		"min": 645, 	"max": 900, 	"step": 5, 		"default": 850, 		"unit": "mV" },
+	    "168": {
+	    	"name": "Table",
+	    	"options": {
+				"1": "Default",
+				"5": "1428 MHz Tbreak",
+				"2": "1581 MHz Tbreak",
+				"3": "1683 MHz Tbreak",
+				"4": "Helios"
+	    	},
+	    	"default": "1"
+	    }
+	},
+  	"GPU": {
+	    "204": { "name": "UV Level", 		"min": 0, 		"max": 4, 		"step": 1,   	"default": 0 },
+	    "212": { "name": "vMax", 			"min": 500, 	"max": 800, 	"step": 5, 		"default": 800,		"unit": "mV" },
+	    "208": { "name": "vMin", 			"min": 500, 	"max": 800, 	"step": 5, 		"default": 620,		"unit": "mV" },
+	    "gpu_offset": {
+	    	"default": 0,
+	    	"min": 0,
+	    	"max": 50,
+	    	"step": 1,
+	    	"format": "-{v} mV"
+	    },
+	    "216": { "name": "Volt Offset", 	"inherit": "gpu_offset" },
+	    "gpu_volts": {
+	    	"options": {
+	    		"0": "Auto"
+	    	},
+	    	"default": 0,
+	    	"min": 450,
+	    	"max": 1050,
+	    	"step": 5,
+	    	"format": "{v} mV"
+	    },
+	    "GPU Custom Table": {
+	    	"inherit": "gpu_volts",
+	    	"328": { "name": "76 MHz" },
+	    	"332": { "name": "153 MHz" },
+	    	"336": { "name": "230 MHz" },
+	    	"340": { "name": "307 MHz" },
+	    	"344": { "name": "384 MHz" },
+	    	"348": { "name": "460 MHz" },
+	    	"352": { "name": "537 MHz" },
+	    	"356": { "name": "614 MHz" },
+	    	"360": { "name": "691 MHz" },
+	    	"364": { "name": "768 MHz" },
+	    	"368": { "name": "844 MHz" },
+	    	"372": { "name": "921 MHz" },
+	    	"376": { "name": "998 MHz" },
+	    	"380": { "name": "1075 MHz" },
+	    	"384": { "name": "1152 MHz" },
+	    	"388": { "name": "1228 MHz" },
+	    	"392": { "name": "1267 MHz" },
+	    	"396": { "name": "1305 MHz", "extra_options": { "2000": "Disabled" }, "default": 2000 },
+	    	"400": { "name": "1344 MHz", "extra_options": { "2000": "Disabled" }, "default": 2000 },
+	    	"404": { "name": "1382 MHz", "extra_options": { "2000": "Disabled" }, "default": 2000 },
+	    	"408": { "name": "1420 MHz", "extra_options": { "2000": "Disabled" }, "default": 2000 },
+	    	"412": { "name": "1459 MHz", "extra_options": { "2000": "Disabled" }, "default": 2000 },
+	    	"416": { "name": "1497 MHz", "extra_options": { "2000": "Disabled" }, "default": 2000 },
+	    	"420": { "name": "1536 MHz", "extra_options": { "2000": "Disabled" }, "default": 2000 }
+    	},
+  	},
+  	"MEM": {
+	  	"28": {
+	  		"name": "Max Clock",
+	  		"min": 1866,
+	  		"max": 3500,
+	  		"step": 133,
+	  		"divisor": 1000,
+	  		"default": 1600,
+	  		"unit": "MHz" 
+	  	},
+	    "36": { 
+	    	"name": "DVB",
+	    	"options": {
+	    		"0xFCFFFFFF": "-100 mV",
+	    		"0xFDFFFFFF": "-75 mV",
+	    		"0xFEFFFFFF": "-50 mV",
+	    		"0xFFFFFFFF": "-25 mV",
+	    		"0x00000000": "0 mV",
+	    		"0x01000000": "+25 mV",
+	    		"0x02000000": "+50 mV",
+	    		"0x03000000": "+75 mV",
+	    		"0x04000000": "+100 mV",
+	    		"0x05000000": "+125 mV",
+	    		"0x06000000": "+150 mV",
+	    		"0x07000000": "+175 mV",
+	    		"0x08000000": "+200 mV"
+	    	},
+	    	"default": "0x00000000"
+	    },
+	    "16": { "name": "VDD2", 			"min": 1000, 	"max": 1350, 	"step": 12.5,	"unit": "mV", 		"divisor": 1000,   	"default": 1175 },
+	    "32": { "name": "VDDQ", 			"min": 400, 	"max": 750, 	"step": 5,		"unit": "mV", 		"divisor": 1000,   	"default": 600 },
+	    "12": { 
+	    	"name": "HP Mode",
+	    	"toggle": {
+	        	"0": "OFF",
+	        	"1": "ON"
+	      	},
+	    	"default": 0
+	    },
+	    "40": { "name": "SOC vMax", 		"min": 1000, 	"max": 1200, 	"step": 25,		"unit": "mV",		"default": "0x00000000" },
+	    "24": { 
+	    	"name": "Step Mode",
+	    	"options": {
+		        "0": "66 MHz",
+		        "1": "100 MHz",
+		        "3": "133 MHz",
+		        "2": "JEDEC"
+	      	},
+	    	"default": 0
+	    },
+	    "soc_volts": {
+	    	"options": {
+	    		"0": "Auto",
+	    		"2000": "Disabled"
+	    	},
+	    	"default": 0,
+	    	"min": 450,
+	    	"max": 1050,
+	    	"step": 5,
+	    	"divisor": 1,
+	    	"format": "{v} mV"
+	    },
+	    "SOC Custom Table": {
+	    	"inherit": "soc_volts",
+	    	"452": { "name": "1866 MHz" },
+	    	"456": { "name": "2000 MHz" },
+	    	"460": { "name": "2133 MHz" },
+	    	"464": { "name": "2200 MHz" },
+	    	"468": { "name": "2266 MHz" },
+	    	"472": { "name": "2333 MHz" },
+	    	"476": { "name": "2400 MHz" },
+	    	"480": { "name": "2433 MHz" },
+	    	"484": { "name": "2466 MHz" },
+	    	"488": { "name": "2533 MHz" },
+	    	"492": { "name": "2566 MHz" },
+	    	"496": { "name": "2600 MHz" },
+	    	"500": { "name": "2666 MHz" },
+	    	"504": { "name": "2700 MHz" },
+	    	"508": { "name": "2733 MHz" },
+	    	"512": { "name": "2766 MHz" },
+	    	"516": { "name": "2800 MHz" },
+	    	"520": { "name": "2833 MHz" },
+	    	"524": { "name": "2900 MHz" },
+	    	"528": { "name": "2933 MHz" },
+	    	"532": { "name": "3000 MHz" },
+	    	"536": { "name": "3033 MHz" },
+	    	"540": { "name": "3100 MHz" },
+	    	"544": { "name": "3133 MHz" },
+	    	"548": { "name": "3166 MHz" },
+	    	"552": { "name": "3200 MHz" }
+	    }
+  	},
+  	"TIMINGS": {
+	    "tRCD_opts": {
+	    	"options": {
+	    		"0": "18",
+	    		"1": "17",
+	    		"2": "16",
+	    		"3": "15",
+	    		"4": "14",
+	    		"5": "13",
+	    		"6": "12",
+	    		"7": "11"
+	    	},
+	    	"default": 0
+	    },
+	    "tRAS_opts": {
+	    	"options": {
+	    		"0": "42",
+	    		"1": "36",
+	    		"2": "34",
+	    		"3": "32",
+	    		"4": "30",
+	    		"5": "28",
+	    		"6": "26",
+	    		"7": "24",
+	    		"8": "22",
+	    		"9": "20"
+	    	},
+	    	"default": 0
+	    },
+	    "tRRD_opts": {
+	    	"options": {
+	    		"0": "7.5",
+	    		"1": "6",
+	    		"2": "5",
+	    		"3": "4",
+	    		"4": "3",
+	    		"5": "2",
+	    		"6": "1"
+	    	},
+	    	"default": 0
+	    },
+	    "tRFC_opts": {
+	    	"options": {
+	    		"0": "140",
+	    		"1": "130",
+	    		"2": "120",
+	    		"3": "110",
+	    		"4": "100",
+	    		"5": "90",
+	    		"6": "80",
+	    		"7": "70",
+	    		"8": "60",
+	    		"9": "50",
+	    		"10":"40"
+	    	},
+	    	"default": 0
+	    },
+	    "tRTW_opts": {
+	    	"min": 0,
+	    	"max": 9,
+	    	"step": 1,
+	    	"default": 0
+	    },
+	    "tWTR_opts": {
+	    	"options": {
+	    		"0": "10",
+	    		"1": "9",
+	    		"2": "8",
+	    		"3": "7",
+	    		"4": "6",
+	    		"5": "5",
+	    		"6": "4",
+	    		"7": "3",
+	    		"8": "2",
+	    		"9": "1"
+	    	},
+	    	"default": 0
+	    },
+	    "tREFpb_opts": {
+	    	"options": {
+	    		"0": "1x REFI",
+	    		"1": "1.5x REFI",
+	    		"2": "2x REFI",
+	    		"3": "3x REFI",
+	    		"4": "4x REFI",
+	    		"5": "Max REFI",
+	    		"6": "Auto REFI"
+	    	},
+	    	"default": 0
+	    },
+	    "bl": {
+	      	"options": {
+	        	"0x00000000": "Default",
+				"0x0018EAE8": "1633000 MHz",
+				"0x00196BD0": "1666000 MHz",
+				"0x0019F0A0": "1700000 MHz",
+				"0x001A7188": "1733000 MHz",
+				"0x001AF270": "1766000 MHz",
+				"0x001B7740": "1800000 MHz",
+				"0x001BF828": "1833000 MHz",
+				"0x001C7910": "1866000 MHz",
+				"0x001CFDE0": "1900000 MHz",
+				"0x001D7EC8": "1933000 MHz",
+				"0x001DFFB0": "1966000 MHz",
+				"0x001E74E0": "1996000 MHz",
+				"0x001E8480": "2000000 MHz",
+				"0x001F0568": "2033000 MHz",
+				"0x001F8650": "2066000 MHz",
+				"0x00200B20": "2100000 MHz",
+				"0x00208C08": "2133000 MHz",
+				"0x00210CF0": "2166000 MHz",
+				"0x002191C0": "2200000 MHz",
+				"0x002212A8": "2233000 MHz",
+				"0x00229390": "2266000 MHz",
+				"0x00231860": "2300000 MHz",
+				"0x00239948": "2333000 MHz",
+				"0x00241A30": "2366000 MHz",
+				"0x00249F00": "2400000 MHz",
+				"0x00251FE8": "2433000 MHz",
+				"0x0025A0D0": "2466000 MHz",
+				"0x002625A0": "2500000 MHz",
+				"0x0026A688": "2533000 MHz",
+				"0x00272770": "2566000 MHz",
+				"0x0027AC40": "2600000 MHz",
+				"0x00282D28": "2633000 MHz",
+				"0x0028AE10": "2666000 MHz",
+				"0x002932E0": "2700000 MHz",
+				"0x0029B3C8": "2733000 MHz",
+				"0x002A34B0": "2766000 MHz",
+				"0x002AB980": "2800000 MHz",
+				"0x002B3A68": "2833000 MHz",
+				"0x002BBB50": "2866000 MHz",
+				"0x002C4020": "2900000 MHz",
+				"0x002CC108": "2933000 MHz",
+				"0x002D41F0": "2966000 MHz",
+				"0x002DC6C0": "3000000 MHz",
+				"0x002E47A8": "3033000 MHz",
+				"0x002EC890": "3066000 MHz",
+				"0x002F4D60": "3100000 MHz",
+				"0x002FCE48": "3133000 MHz",
+				"0x00304F30": "3166000 MHz",
+				"0x0030D400": "3200000 MHz",
+				"0x003154E8": "3233000 MHz",
+				"0x0031D5D0": "3266000 MHz",
+				"0x00325AA0": "3300000 MHz",
+	        	"0xFFFFFFFF": "Max Clock"
+	      	},
+	    	"default": "0x00000000"
+	    },
+	    "tRTW_cfg": {
+	    	"options": {
+	    		"-3":"0xFDFFFFFF",
+	    		"-2":"0xFEFFFFFF",
+	    		"-1":"0xFFFFFFFF",
+	    		"0": "0x00000000",
+	    		"1": "0x01000000",
+	    		"2": "0x02000000",
+	    		"3": "0x03000000"
+	    	},
+	    	"default": "0x00000000"
+	    },
+	    "tWTR_cfg": {
+	    	"options": {
+	    		"-2":"0xFEFFFFFF",
+	    		"-1":"0xFFFFFFFF",
+	    		"0": "0x00000000",
+	    		"1": "0x01000000",
+	    		"2": "0x02000000"
+	    	},
+	    	"default": "0x00000000"
+	    },
+	    "44": { "name": "1 tRCD", 			"inherit": "tRCD_opts" },
+	    "48": { "name": "2 tRP", 			"inherit": "tRCD_opts" },
+	    "52": { "name": "3 tRAS", 			"inherit": "tRAS_opts" },
+	    "56": { "name": "4 tRRD", 			"inherit": "tRRD_opts" },
+	    "60": { "name": "5 tRFC", 			"inherit": "tRFC_opts" },
+	    "64": { "name": "6 tRTW", 			"inherit": "tRTW_opts" },
+	    "68": { "name": "7 tWTR", 			"inherit": "tWTR_opts" },
+	    "72": { "name": "8 tREFpb", 		"inherit": "tREFpb_opts" },
+	    "80": { "name": "1 tRCD Low", 		"inherit": "tRCD_opts" },
+	    "84": { "name": "2 tRP Low", 		"inherit": "tRCD_opts" },
+	    "88": { "name": "3 tRAS Low", 		"inherit": "tRAS_opts" },
+	    "92": { "name": "4 tRRD Low", 		"inherit": "tRRD_opts" },
+	    "96": { "name": "5 tRFC Low", 		"inherit": "tRFC_opts" },
+	    "100":{ "name": "6 tRTW Low", 		"inherit": "tRTW_opts" },
+	    "104":{ "name": "7 tWTR Low", 		"inherit": "tWTR_opts" },
+	    "108":{ "name": "8 tREFpb Low", 	"inherit": "tREFpb_opts" },
+	    "tRL": {
+	    	"inherit": "bl",
+	    	"112": { "name": "1333 RL", 	"default": "0x00000000" },
+	    	"116": { "name": "1600 RL", 	"default": "0x00000000" },
+	    	"120": { "name": "1866 RL", 	"default": "0x00000000" },
+	    	"124": { "name": "2133 RL", 	"default": "0x00000000" }
+	    },
+	    "tWL": {
+	    	"inherit": "bl",
+	    	"128": { "name": "1333 WL", 	"default": "0x00000000" },
+	    	"132": { "name": "1600 WL", 	"default": "0x00000000" },
+	    	"136": { "name": "1866 WL", 	"default": "0x00000000" },
+	    	"140": { "name": "2133 WL", 	"default": "0x00000000" }
+	    },
+	    "76": { "name": "tBreak",			"inherit": "bl",		"default": "0x001CFDE0" },
+	    "564": { "name": "tRTW Tuning", 	"inherit": "tRTW_cfg", 	"default": "0x00000000" },
+	    "568": { "name": "tWTR Tuning", 	"inherit": "tWTR_cfg", 	"default": "0x00000000" },
+  	}
+}
