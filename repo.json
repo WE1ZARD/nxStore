@@ -192,48 +192,6 @@
             "notify": "下载后, \n须使用 Daybreak 进行升降级"
         },
         {
-            "name": "fw2050",
-            "category": "sys",
-            "title": "20.5.0",
-            "description": "14mb 系统内存 - 最拉",
-            "author": "Nintendo",
-            "version": "20.5.0",
-            "quark_url": "8f0b3903ff9f",
-            "custom_dir": "/Firmware.20.5.0",
-            "uninstall_dir": "/Firmware.20.5.0",
-            "subcategory": "firmware",
-            "subcategory_cn": "系统固件",
-            "notify": "下载后, \n须使用 Daybreak 进行升降级"
-        },
-        {
-            "name": "fw2120",
-            "category": "sys",
-            "title": "21.2.0",
-            "description": "7mb 系统内存 - 最拉",
-            "author": "Nintendo",
-            "version": "21.2.0",
-            "quark_url": "386d1a397da3",
-            "custom_dir": "/Firmware.21.2.0",
-            "uninstall_dir": "/Firmware.21.2.0",
-            "subcategory": "firmware",
-            "subcategory_cn": "系统固件",
-            "notify": "下载后, \n须使用 Daybreak 进行升降级"
-        },
-        {
-            "name": "fw2250",
-            "category": "sys",
-            "title": "22.5.0",
-            "description": "7mb 系统内存 - 次拉",
-            "author": "Nintendo",
-            "version": "22.5.0",
-            "quark_url": "bfed578fd332",
-            "custom_dir": "/Firmware.22.5.0",
-            "uninstall_dir": "/Firmware.22.5.0",
-            "subcategory": "firmware",
-            "subcategory_cn": "系统固件",
-            "notify": "下载后, \n须使用 Daybreak 进行升降级"
-        },
-        {
             "name": "modchip-toolbox",
             "category": "sys",
             "title": "Modchip Toolbox",
@@ -540,8 +498,8 @@
             "title": "Warmboot Extractor",
             "description": "熔断补丁提取工具",
             "author": "sthetix",
-            "version": "1.1.0",
-            "crc32": "5a58a9af",
+            "version": "1.0.2",
+            "crc32": "045af5a8",
             "github_url": "https://github.com/sthetix/Warmboot-Extractor"
         },
         {
@@ -724,7 +682,7 @@
             "subcategory": "firmware",
             "subcategory_cn": "系统固件",
             "title": "23.0.1",
-            "description": "40mb 系统内存 - 最拉",
+            "description": "40mb 系统内存",
             "author": "Nintendo",
             "version": "23.0.1",
             "quark_url": "587fc62fe8a9",
@@ -844,6 +802,20 @@
             "version": "2.4.0",
             "crc32": "6f86df85",
             "github_url": "https://github.com/zys123444444-dotcom/zys123444444-dotcom.github.io"
+        },
+        {
+            "name": "fw2350",
+            "category": "sys",
+            "subcategory": "firmware",
+            "subcategory_cn": "系统固件",
+            "title": "23.5.0",
+            "description": "40mb 系统内存",
+            "author": "Nintendo",
+            "version": "23.5.0",
+            "quark_url": "856c84ed9dfc",
+            "custom_dir": "/Firmware.23.5.0",
+            "uninstall_dir": "/Firmware.23.5.0",
+            "notify": "下载后, \n须使用 Daybreak 进行升降级"
         }
     ]
 }
