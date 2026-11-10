@@ -828,11 +828,21 @@
         {
             "name": "hongguodong",
             "category": "nro",
-            "title": "hongguodong",
+            "title": "红果冻",
             "description": "第三方红果短剧",
             "author": "雨天rain",
+            "version": "2.3.9",
+            "crc32": "d755fad1",
+            "github_url": "https://github.com/zys123444444-dotcom/zys123444444-dotcom.github.io"
+        },
+        {
+            "name": "fanqiedong",
+            "category": "nro",
+            "title": "番茄冻小说",
+            "description": "第三方番茄小说",
+            "author": "雨天rain",
             "version": "2.4.0",
-            "crc32": "334605c9",
+            "crc32": "6f86df85",
             "github_url": "https://github.com/zys123444444-dotcom/zys123444444-dotcom.github.io"
         }
     ]

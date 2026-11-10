@@ -257,12 +257,14 @@ def github_repo_of(data):
     return None
 
 
-def github_pick_asset(assets, name, pattern=None):
+def github_pick_asset(assets, name, pattern=None, strict=False):
     """在 release 资产里挑最匹配的一个 (返回 asset dict 或 None).
 
     优先级: github_asset 显式模式 (fnmatch) > 精确 {name}{ext} >
     {下划线名}{ext} > 前缀 {name}-/{name}_ > 前缀 {name} > 该扩展名任意资产.
-    这样即使 release 里有多个 zip (分平台/源码包等), 也能稳定选中包名的那个."""
+    这样即使 release 里有多个 zip (分平台/源码包等), 也能稳定选中包名的那个.
+    strict=True 时不接受「该扩展名任意资产」兜底, 用于在多应用共仓库时判断
+    某个 release 是否属于本包."""
     if pattern:
         cand = [a for a in assets
                 if fnmatch.fnmatchcase(a.get("name", "").lower(), pattern.lower())]
@@ -286,6 +288,8 @@ def github_pick_asset(assets, name, pattern=None):
                     and a.get("name", "").lower().startswith(low)]
         if pref:
             return pref[0]
+        if strict:
+            continue
         fallback = [a for a in assets if a.get("name", "").lower().endswith(ext)]
         if fallback:
             return fallback[0]
@@ -363,17 +367,20 @@ def compare_versions(a, b):
     return 0
 
 
-def github_latest_assets(repo, pin=None):
+def github_latest_assets(repo, pin=None, name=None, pattern=None):
     """查询 release 的 (tag, 资产列表 [(name, url, id), ...], notes).
 
     pin 钉定指定 tag; 否则取最新发布 — 注意: GitHub 的 /releases/latest 端点
-    排除预发布版, 这里改用完整 release 列表取最新一条 (含预发布, 不含草稿).
+    排除预发布版, 这里改用完整 release 列表 (含预发布, 不含草稿).
+    多应用共用一个仓库时, 「最新」按包名筛选: 取最新一条含有 {name} 匹配资产的
+    release (strict 匹配, 不接受同扩展名兜底); 最新一条资产为空时仍返回它,
+    交给 github_release_asset 的退避重查等待资产上传.
     优先 GitHub API; 遇限流/失败时回落 HTML (不消耗 API 配额, 但拿不到更新内容,
     notes 返回 None). 完全失败返回 None。"""
     if pin:
         api_url = "%s/repos/%s/releases/tags/%s" % (GITHUB_API, repo, urllib.parse.quote(pin))
     else:
-        api_url = "%s/repos/%s/releases?per_page=1" % (GITHUB_API, repo)
+        api_url = "%s/repos/%s/releases?per_page=30" % (GITHUB_API, repo)
     try:
         req = github_request(api_url, "application/vnd.github+json")
         with urllib.request.urlopen(req, timeout=60) as r:
@@ -385,6 +392,14 @@ def github_latest_assets(repo, pin=None):
                 print("github %s: 仓库没有 release" % repo, file=sys.stderr)
                 return None
             rel = data[0]
+            # 最新一条资产为空 = 可能还在上传, 保留原 release 让上层退避重查
+            if name and rel.get("assets"):
+                for candidate in data:
+                    if github_pick_asset(
+                            [{"name": a["name"]} for a in candidate.get("assets", [])],
+                            name, pattern, strict=True):
+                        rel = candidate
+                        break
         return (rel.get("tag_name", ""),
                 [(a["name"], a["browser_download_url"], a.get("id"))
                  for a in rel.get("assets", [])],
@@ -393,33 +408,41 @@ def github_latest_assets(repo, pin=None):
         pass
     try:
         if pin:
-            tag = pin
-            page = "https://github.com/%s/releases/tag/%s" % (repo, urllib.parse.quote(pin))
+            tags = [pin]
         else:
-            # releases 页按最新排序, 含预发布; 取第一条 release 的 tag
-            page = "https://github.com/%s/releases" % repo
-        req = github_request(page)
-        with urllib.request.urlopen(req, timeout=60) as r:
-            html = r.read().decode("utf-8", "replace")
-        if not pin:
-            m = re.search(r'href="/%s/releases/tag/([^"]+)"' % re.escape(repo), html)
-            if not m:
+            # releases 页按最新排序, 含预发布; 收集第一页的 tag
+            req = github_request("https://github.com/%s/releases" % repo)
+            with urllib.request.urlopen(req, timeout=60) as r:
+                html = r.read().decode("utf-8", "replace")
+            tags = []
+            for m in re.finditer(r'href="/%s/releases/tag/([^"]+)"' % re.escape(repo), html):
+                tag = urllib.parse.unquote(m.group(1))
+                if tag not in tags:
+                    tags.append(tag)
+            if not tags:
                 print("github %s: releases 页未找到任何 release" % repo, file=sys.stderr)
                 return None
-            tag = m.group(1)
-        req = github_request(
-            "https://github.com/%s/releases/expanded_assets/%s"
-            % (repo, urllib.parse.quote(tag)))
-        with urllib.request.urlopen(req, timeout=60) as r:
-            html = r.read().decode("utf-8", "replace")
-        pat = re.compile(r'href="/[^"/]+/[^"/]+/releases/download/%s/([^"]+)"'
-                         % re.escape(tag))
-        out = []
-        for m in pat.finditer(html):
-            raw = m.group(1)
-            out.append((raw, "https://github.com/%s/releases/download/%s/%s"
-                        % (repo, urllib.parse.quote(tag), urllib.parse.quote(raw)), None))
-        return (tag, out, None)
+        first = None
+        for tag in tags[:10]:
+            req = github_request(
+                "https://github.com/%s/releases/expanded_assets/%s"
+                % (repo, urllib.parse.quote(tag)))
+            with urllib.request.urlopen(req, timeout=60) as r:
+                html = r.read().decode("utf-8", "replace")
+            pat = re.compile(r'href="/[^"/]+/[^"/]+/releases/download/%s/([^"]+)"'
+                             % re.escape(tag))
+            out = []
+            for m in pat.finditer(html):
+                raw = m.group(1)
+                out.append((raw, "https://github.com/%s/releases/download/%s/%s"
+                            % (repo, urllib.parse.quote(tag), urllib.parse.quote(raw)), None))
+            result = (tag, out, None)
+            if first is None:
+                first = result
+            if name and github_pick_asset([{"name": n} for n, _, _ in out],
+                                          name, pattern, strict=True):
+                return result
+        return first
     except Exception as e:
         print("github %s: release 查询失败 (API 限流或网络): %s%s" %
               (repo, e, github_auth_hint()), file=sys.stderr)
@@ -437,7 +460,7 @@ def github_release_asset(repo, pin, name, pattern=None):
     tag = None
     notes = None
     for delay in GITHUB_ASSET_RETRY_DELAYS + (None,):
-        latest = github_latest_assets(repo, pin)
+        latest = github_latest_assets(repo, pin, name, pattern)
         if latest is not None:
             tag, assets, notes = latest
             asset = github_pick_asset(

@@ -6,7 +6,7 @@
   1. issue-upload 流程: 开 PR 前校验 (硬错误不过关, 安全地不产生 PR)
   2. publish.yml: gen_manifest 入库前再校验一次 (防线)
 
-硬错误(exit 1): JSON 无法解析 / name、title 仅英文数字._- 且缺失即拦 /
+硬错误(exit 1): JSON 无法解析 / name 仅英文数字._- 且 name、title 缺失即拦 /
   author、description 缺失 / category、subcategory 仅英文白名单 /
   subcategory_cn 须中文 / 字段类型错误(version 允许纯数字) /
   quark 托管缺 custom_dir+uninstall_dir / github_url、direct_url、version_url 非法。
@@ -76,11 +76,6 @@ def validate(name_key, data, path, errors, warns):
         v = data.get(k)
         if not isinstance(v, str) or not v.strip():
             errors.append(f"{path}: 缺少必填字段 {k}")
-
-    # title: 只允许英文/数字/._- 等, 不能中文(README 硬错误; 不限长度)
-    ttl = data.get("title")
-    if isinstance(ttl, str) and ttl.strip() and not ttl.isascii():
-        errors.append(f"{path}: title 只能使用英文/数字/._-(不能中文或其他语言)")
 
     # version: 必填, 但 github_url 托管包除外(版本以 release tag 为准),
     # 且 app_url 托管包除外(版本从 zip 内 info.json 提取, 见 CONTEXT.md)

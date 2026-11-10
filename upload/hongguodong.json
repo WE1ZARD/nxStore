@@ -1,8 +1,9 @@
 {
     "category": "nro",
     "name": "hongguodong",
-    "title": "hongguodong",
+    "title": "红果冻",
     "description": "第三方红果短剧",
     "author": "雨天rain",
-    "github_url": "https://github.com/zys123444444-dotcom/zys123444444-dotcom.github.io"
+    "github_url": "https://github.com/zys123444444-dotcom/zys123444444-dotcom.github.io",
+    "github_asset": "hongguodong*.nro"
 }
