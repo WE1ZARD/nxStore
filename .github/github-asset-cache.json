@@ -9,8 +9,8 @@
             "asset_id": 729553386
         },
         "Aurora": {
-            "version": "12.1.7261",
-            "asset_id": 665560659
+            "version": "12.2.7261",
+            "asset_id": 734342095
         },
         "Breeze": {
             "version": "beta128.12",
@@ -181,8 +181,8 @@
             "asset_id": 672209159
         },
         "switch-frame-tap": {
-            "version": "0.7.22-beta1",
-            "asset_id": 733443601
+            "version": "0.7.22",
+            "asset_id": 733538358
         },
         "sys-clk": {
             "version": "3.5.1",
