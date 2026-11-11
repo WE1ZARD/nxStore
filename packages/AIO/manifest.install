@@ -68,17 +68,9 @@ U: bootloader/res/icon_sys_hue_nobox.bmp
 U: bootloader/sys/4g.bin
 U: bootloader/sys/8g.bin
 U: bootloader/sys/emummc.kipm
-U: bootloader/sys/l4t/bpmpfw.bin
-U: bootloader/sys/l4t/bpmpfw_b01.bin
-U: bootloader/sys/l4t/mtc_tbl_b01.bin
-U: bootloader/sys/l4t/sc7entry.bin
-U: bootloader/sys/l4t/sc7exit.bin
-U: bootloader/sys/l4t/sc7exit_b01.bin
 U: bootloader/sys/libsys_lp0.bso
 U: bootloader/sys/libsys_minerva.bso
 U: bootloader/sys/nyx.bin
-U: bootloader/sys/res.pak
-U: bootloader/sys/thk.bin
 U: bootloader/update.bin
 U: config/status-monitor/config.ini.template
 U: config/sys-clk/config.ini.template

@@ -156,12 +156,12 @@
             "title": "AIO",
             "description": "大气层整合包 Magic-Suite",
             "author": "WE1ZARD",
-            "version": "12.2.0",
+            "version": "12.2.1",
             "check_init": true,
             "github_url": "https://github.com/WE1ZARD/Magic-Suite",
             "require_reboot": true,
             "disable_uninstall": true,
-            "crc32": "4ad6c63b"
+            "crc32": "7c917444"
         },
         {
             "name": "fw1810",
@@ -282,9 +282,9 @@
             "title": "MissionControl",
             "description": "第三方蓝牙手柄支持",
             "author": "ndeadly",
-            "version": "0.16.0",
+            "version": "0.16.1",
             "github_url": "https://github.com/ndeadly/MissionControl",
-            "crc32": "033c4faf",
+            "crc32": "2afe7262",
             "notify": "要求重启生效, \n手柄重置后, 再蓝牙匹配"
         },
         {

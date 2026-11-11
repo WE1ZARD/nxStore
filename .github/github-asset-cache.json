@@ -1,8 +1,8 @@
 {
     "packages": {
         "AIO": {
-            "version": "12.2.0",
-            "asset_id": 734365853
+            "version": "12.2.1",
+            "asset_id": 735389953
         },
         "ANIMEX": {
             "version": "1.0.8",
@@ -69,8 +69,8 @@
             "asset_id": 533395542
         },
         "MissionControl": {
-            "version": "0.16.0",
-            "asset_id": 605337501
+            "version": "0.16.1",
+            "asset_id": 735139748
         },
         "MissionControl-Patches": {
             "version": "23.0.1",

@@ -68,17 +68,14 @@ U: atmosphere/exefs_patches/btm_patches/F9A63D3E811CAE0F06495124042CE7F951CE505B
 U: atmosphere/exefs_patches/btm_patches/FE1CFC6CE0B8F5A3C779ED67C9EF8C08DE959AE9.ips
 U: atmosphere/exefs_patches/hid_patches/0ABCF878B3E22287ABD15F1F73B365DB26A4E124.ips
 U: atmosphere/exefs_patches/hid_patches/0F02EFFAEF77015948F635C1559FC32507074451.ips
-U: atmosphere/exefs_patches/hid_patches/12DB6C7DF6BF40BC02695C611EC46F458504A5AD.ips
 U: atmosphere/exefs_patches/hid_patches/1780B569DE805B4E9AFBCC366D93BB313DCBA67E.ips
 U: atmosphere/exefs_patches/hid_patches/296FB63B038723955A5EEE4720C3E17BF49B5ECC.ips
 U: atmosphere/exefs_patches/hid_patches/2ABBA006E9E162C1EF0A28E6477725F2836FFEC9.ips
-U: atmosphere/exefs_patches/hid_patches/403978CD2BC64E4ACB3BF1A5E556F582BFC3498B.ips
 U: atmosphere/exefs_patches/hid_patches/453AF9911A69ED566732A7AF2BF54B0B50BC3255.ips
 U: atmosphere/exefs_patches/hid_patches/47BCA8366FC3D4C9E86592E8FC42485989E69CCB.ips
 U: atmosphere/exefs_patches/hid_patches/6AC68185D4597477D9AD8A2EBE014733F2BCB104.ips
 U: atmosphere/exefs_patches/hid_patches/74480E653551A0415F90CD61E4B851C60E71E674.ips
 U: atmosphere/exefs_patches/hid_patches/765B710D7D40049E06C1326F5B57123B74A2E4AD.ips
-U: atmosphere/exefs_patches/hid_patches/8BDBD223E61D122E98CDBFC77C231BBB5CBE56E3.ips
 U: atmosphere/exefs_patches/hid_patches/98EB0277ADFC171F79765FCC8A56674AE39B08FC.ips
 U: atmosphere/exefs_patches/hid_patches/9A1F471859D99957A81B2FC21169EE4DBC191734.ips
 U: atmosphere/exefs_patches/hid_patches/A2F71DB9568A864B8AC81AC79E2735A53A9CD291.ips
@@ -92,6 +89,7 @@ U: atmosphere/exefs_patches/hid_patches/C9636704F7726BF77CEBBC53FFB14A80D8F789A1
 U: atmosphere/exefs_patches/hid_patches/CA1A12452AF8789F5D03BF2A70260CE80D7DA5C4.ips
 U: atmosphere/exefs_patches/hid_patches/CEE923637C0797454FBE98A64F63D2B9F39B62FC.ips
 U: atmosphere/exefs_patches/hid_patches/CFCBD39A38FC2E8FC1273B4B5BF7C619FA93579E.ips
+U: atmosphere/exefs_patches/hid_patches/D209357BF939276179EF943C8DC88E482C7F588E.ips
 U: atmosphere/exefs_patches/hid_patches/D7E71B92FAFD5E6D670F36593D98DC30AD15A24F.ips
 U: atmosphere/exefs_patches/hid_patches/E5139E8D47BE57C31DA97FCFBB66472416D60BD1.ips
 U: atmosphere/exefs_patches/hid_patches/FA528960A4ED9B4C408D2667BFE7C8BCD80E1FE2.ips
