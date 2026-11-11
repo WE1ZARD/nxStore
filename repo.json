@@ -156,12 +156,12 @@
             "title": "AIO",
             "description": "大气层整合包 Magic-Suite",
             "author": "WE1ZARD",
-            "version": "12.1.8",
+            "version": "12.2.0",
             "check_init": true,
             "github_url": "https://github.com/WE1ZARD/Magic-Suite",
             "require_reboot": true,
             "disable_uninstall": true,
-            "crc32": "b9438d9d"
+            "crc32": "4ad6c63b"
         },
         {
             "name": "fw1810",

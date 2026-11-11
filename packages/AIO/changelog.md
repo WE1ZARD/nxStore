@@ -1,5 +1,6 @@
-## nx-ovlloader 2.1.1
-- 修复: 换区问题
-## WIZBOX 2.5.2
-- 修复: 自动超频 offset 拉取失败问题
-- 优化: 自动超频现在加入镜像源中
+- 支持: 23.5.0 极限超频
+## Atmosphere 1.2.2
+- Basic support was added for 23.5.0.
+- General system stability improvements to enhance the user's experience.
+## Aurora 12.2.7261
+- 更新: 支持大气层 1.12.2
