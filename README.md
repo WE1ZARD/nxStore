@@ -75,6 +75,7 @@
 	- quark 外部托管 (quark_url) 时必填, 否则跳过不发布
 - `github_url`: 
 	- 填写 release 地址 (`https://github.com/{owner}/{repo}/releases`, 比如: `https://github.com/WE1ZARD/Magic-Suite/releases`) 
+	- 也支持 Gitea/Forgejo 实例的仓库页或 release 地址 (如 `https://git.nextendo.network/NextendoNetwork/Prelude-Nextendo/releases`)
 	- 填 `true` 仅当包名与仓库名相同时自动获取
 - `direct_url`:
 	- 填完整直链时自动下载入库: 单文件 `.nro/.ovl/.bin` 直接打包, `.zip` 剔除第三方元数据后入库
@@ -92,8 +93,8 @@
 	- quark 分享id, 必须填写
 - `crc32`:
 	- 由 `gen_manifest.py` 对 nxStore 最终托管 ZIP 自动生成,无需提交者填写
-	- 上传 ZIP、单文件自动打包和 GitHub release 拉取条目都必须生成 CRC32
-	- GitHub 托管包以 release tag + GitHub asset id 判断缓存；生成器私有状态保存在 `.github/github-asset-cache.json`，不进入客户端 `repo.json` / `packages/*/info.json`
+	- 上传 ZIP、单文件自动打包和 release 拉取条目都必须生成 CRC32
+	- 托管包以 release tag + 资产 id 判断缓存 (GitHub / Gitea / Forgejo 均适用)；生成器私有状态保存在 `.github/github-asset-cache.json`，不进入客户端 `repo.json` / `packages/*/info.json`
 	- 已发布版本仍应避免覆盖同 tag 资产；需要重发时优先提升版本号
 	- 只有 `quark_url` 因仓库不持有实际归档而不生成 CRC32
 - zip 条目名:

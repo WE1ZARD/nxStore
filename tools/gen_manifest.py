@@ -103,6 +103,7 @@ def externally_hosted(data) -> bool:
 
 
 GITHUB_API = "https://api.github.com"
+GITHUB_WEB_BASE = "https://github.com"
 HTTP_UA = "wizbox-nxstore-gen-manifest/1.0"
 # release 刚建好时资产可能尚未上传完或尚未在 API 可见: 此时查到的是一个资产
 # 为空的 release。按这些间隔退避重查, 避免把「资产还没出现」当成「不存在」。
@@ -112,6 +113,19 @@ GITHUB_TOKEN_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath
                                  "gh_token.txt")
 GITHUB_AUTH_HOSTS = {"api.github.com", "github.com", "www.github.com"}
 GITHUB_ASSET_CACHE_REL = os.path.join(".github", "github-asset-cache.json")
+
+
+def is_github_base(web_base) -> bool:
+    """站点根是否为 github.com (决定 API 端点与 token 用法)."""
+    return (web_base or "").rstrip("/").lower() in (
+        GITHUB_WEB_BASE, "http://github.com")
+
+
+def release_api_base(web_base) -> str:
+    """release API 根: GitHub 走 api.github.com, 其余 (Gitea/Forgejo) 走 /api/v1."""
+    if is_github_base(web_base):
+        return GITHUB_API
+    return (web_base or GITHUB_WEB_BASE).rstrip("/") + "/api/v1"
 
 
 def load_github_asset_cache(root: str):
@@ -219,12 +233,12 @@ def github_auth_hint() -> str:
 
 
 def github_repo_of(data):
-    """解析 github_url (兼容 github 字段别名) 为 (kind, target, pin):
-    ('direct', 资产直链, tag) / ('repo', owner/repo, 钉定tag或None) / None.
+    """解析 github_url (兼容 github 字段别名) 为 (kind, target, pin, web_base):
+    ('direct', 资产直链, tag, None) / ('repo', owner/repo, 钉定tag或None, 站点根) / None.
 
-    推荐统一填 release 地址 (https://github.com/{owner}/{repo}/releases[/latest|/tag/{tag}]
-    或资产直链), 资产按包名 {name} 匹配; github_url 为 true 时按 {author}/{name} 推导,
-    仅当包名与仓库名相同时可用 (如 SaltyNX)."""
+    支持 github.com 与 Gitea/Forgejo 实例 (如 git.nextendo.network) 的
+    release 地址/资产直链, 资产按包名 {name} 匹配; github_url 为 true 时按
+    {author}/{name} 推导 GitHub 仓库, 仅当包名与仓库名相同时可用 (如 SaltyNX)."""
     v = data.get("github_url")
     if is_empty(v) and data.get("github") is True:
         v = True  # 别名: github: true == github_url: true
@@ -233,27 +247,28 @@ def github_repo_of(data):
         if s.lower().startswith("http"):
             if "/releases/download/" in s:
                 m = re.search(r"/releases/download/([^/]+)/", s)
-                return ("direct", s, m.group(1) if m else None)
-            s = s.split("?", 1)[0].rstrip("/")
-            for pre in ("https://github.com/", "http://github.com/"):
-                if s.startswith(pre):
-                    parts = s[len(pre):].split("/")
-                    if len(parts) >= 2 and parts[0] and parts[1]:
-                        pin = None
-                        if (len(parts) >= 4 and parts[2] == "releases"
-                                and parts[3] == "tag" and len(parts) >= 5):
-                            pin = parts[4]
-                        return ("repo", "%s/%s" % (parts[0], parts[1]), pin)
+                return ("direct", s, m.group(1) if m else None, None)
+            s = s.split("?", 1)[0].split("#", 1)[0].rstrip("/")
+            parsed = urllib.parse.urlsplit(s)
+            parts = [p for p in parsed.path.split("/") if p]
+            if (parsed.scheme in ("http", "https") and parsed.hostname
+                    and len(parts) >= 2):
+                pin = None
+                if len(parts) >= 5 and parts[2] == "releases" and parts[3] == "tag":
+                    pin = parts[4]
+                return ("repo", "%s/%s" % (parts[0], parts[1]), pin,
+                        "%s://%s" % (parsed.scheme, parsed.netloc))
             return None
         parts = s.split("/")
         if len(parts) == 2 and parts[0] and parts[1]:
-            return ("repo", "%s/%s" % (parts[0], parts[1]), None)
+            return ("repo", "%s/%s" % (parts[0], parts[1]), None, GITHUB_WEB_BASE)
         return None
     if v is True:
         author = data.get("author", "")
         name = data.get("name", "")
         if not is_empty(author) and not is_empty(name):
-            return ("repo", "%s/%s" % (str(author).strip(), str(name).strip()), None)
+            return ("repo", "%s/%s" % (str(author).strip(), str(name).strip()), None,
+                    GITHUB_WEB_BASE)
     return None
 
 
@@ -367,7 +382,8 @@ def compare_versions(a, b):
     return 0
 
 
-def github_latest_assets(repo, pin=None, name=None, pattern=None):
+def github_latest_assets(repo, pin=None, name=None, pattern=None,
+                         web_base=GITHUB_WEB_BASE):
     """查询 release 的 (tag, 资产列表 [(name, url, id), ...], notes).
 
     pin 钉定指定 tag; 否则取最新发布 — 注意: GitHub 的 /releases/latest 端点
@@ -375,14 +391,19 @@ def github_latest_assets(repo, pin=None, name=None, pattern=None):
     多应用共用一个仓库时, 「最新」按包名筛选: 取最新一条含有 {name} 匹配资产的
     release (strict 匹配, 不接受同扩展名兜底); 最新一条资产为空时仍返回它,
     交给 github_release_asset 的退避重查等待资产上传.
-    优先 GitHub API; 遇限流/失败时回落 HTML (不消耗 API 配额, 但拿不到更新内容,
+    web_base 非 github.com 时走 Gitea/Forgejo 的 /api/v1 端点.
+    GitHub 优先 API; 遇限流/失败时回落 HTML (不消耗 API 配额, 但拿不到更新内容,
     notes 返回 None). 完全失败返回 None。"""
+    api_base = release_api_base(web_base)
+    is_github = is_github_base(web_base)
     if pin:
-        api_url = "%s/repos/%s/releases/tags/%s" % (GITHUB_API, repo, urllib.parse.quote(pin))
+        api_url = "%s/repos/%s/releases/tags/%s" % (api_base, repo, urllib.parse.quote(pin))
     else:
-        api_url = "%s/repos/%s/releases?per_page=30" % (GITHUB_API, repo)
+        # GitHub 用 per_page, Gitea/Forgejo 用 limit (默认只回 10 条)
+        api_url = "%s/repos/%s/releases?%s" % (
+            api_base, repo, "per_page=30" if is_github else "limit=30")
     try:
-        req = github_request(api_url, "application/vnd.github+json")
+        req = github_request(api_url, "application/vnd.github+json" if is_github else None)
         with urllib.request.urlopen(req, timeout=60) as r:
             data = json.load(r)
         if pin:
@@ -406,6 +427,10 @@ def github_latest_assets(repo, pin=None, name=None, pattern=None):
                 rel.get("body") or "")
     except Exception:
         pass
+    if not is_github:
+        print("github %s: release 查询失败 (API 或网络): %s" % (repo, api_base),
+              file=sys.stderr)
+        return None
     try:
         if pin:
             tags = [pin]
@@ -449,7 +474,7 @@ def github_latest_assets(repo, pin=None, name=None, pattern=None):
         return None
 
 
-def github_release_asset(repo, pin, name, pattern=None):
+def github_release_asset(repo, pin, name, pattern=None, web_base=GITHUB_WEB_BASE):
     """查询 release 并挑出可下载资产, 返回 (tag, asset, notes) / (tag, None, notes) / None.
 
     release 刚创建时资产可能还没上传完, 或已上传但 API 尚未可见 —— 此时拿到的是
@@ -460,7 +485,7 @@ def github_release_asset(repo, pin, name, pattern=None):
     tag = None
     notes = None
     for delay in GITHUB_ASSET_RETRY_DELAYS + (None,):
-        latest = github_latest_assets(repo, pin, name, pattern)
+        latest = github_latest_assets(repo, pin, name, pattern, web_base)
         if latest is not None:
             tag, assets, notes = latest
             asset = github_pick_asset(
@@ -493,7 +518,7 @@ def fetch_github_package(root: str, name: str, data, dry_run: bool, cached_ident
               % name, file=sys.stderr)
         return ("failed", None, None, None)
 
-    kind, target, pin = resolved
+    kind, target, pin, web_base = resolved
     version = None
     asset_id = None
     notes = None
@@ -501,7 +526,8 @@ def fetch_github_package(root: str, name: str, data, dry_run: bool, cached_ident
         asset_name = target.rsplit("/", 1)[-1]
         version = github_version_of(pin, name)
     else:
-        release = github_release_asset(target, pin, name, data.get("github_asset"))
+        release = github_release_asset(target, pin, name, data.get("github_asset"),
+                                       web_base)
         if release is None:
             if not isinstance(data.get("github_url"), str):
                 print("github %s: 提示 — 包名与仓库名(%s)不同时 author/name 推导会失败; "
@@ -542,7 +568,7 @@ def fetch_github_package(root: str, name: str, data, dry_run: bool, cached_ident
     try:
         download_url = target
         accept = None
-        if asset_id and github_auth_token():
+        if asset_id and github_auth_token() and is_github_base(web_base):
             # 私有仓库: github.com 的 /releases/download 端点不接受 fine-grained token,
             # 改走 API 资产端点 (需要 Contents 读取权限)
             download_url = "%s/repos/%s/releases/assets/%s" % (GITHUB_API, repo_name, asset_id)
@@ -1260,7 +1286,7 @@ def process_upload(root: str, dry_run: bool):
                         and "/releases/tag/" in str(gdata["github_url"])):
                     norm = str(gdata["github_url"]).split("?", 1)[0].rstrip("/")
                 else:
-                    norm = "https://github.com/" + res[1]
+                    norm = res[3].rstrip("/") + "/" + res[1]
             elif res and res[0] == "direct":
                 norm = res[1]
             changes = []
