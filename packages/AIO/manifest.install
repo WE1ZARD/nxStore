@@ -71,6 +71,7 @@ U: bootloader/sys/emummc.kipm
 U: bootloader/sys/libsys_lp0.bso
 U: bootloader/sys/libsys_minerva.bso
 U: bootloader/sys/nyx.bin
+U: bootloader/sys/res.pak
 U: bootloader/update.bin
 U: config/status-monitor/config.ini.template
 U: config/sys-clk/config.ini.template

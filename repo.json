@@ -161,7 +161,7 @@
             "github_url": "https://github.com/WE1ZARD/Magic-Suite",
             "require_reboot": true,
             "disable_uninstall": true,
-            "crc32": "5e960164"
+            "crc32": "38488fbd"
         },
         {
             "name": "fw1810",
@@ -604,7 +604,7 @@
             "description": "在线主题下载安装工具 (汉化版)",
             "author": "suchmememanyskill",
             "version": "3.0.2",
-            "crc32": "b529df1b",
+            "crc32": "d9ec282e",
             "app_url": "https://download.nswiki.cn/gayking/store/zips/ThemezerNX.zip"
         },
         {
@@ -738,8 +738,8 @@
             "title": "Switch TVBox",
             "description": "多源+网盘影视",
             "author": "Zender",
-            "version": "1.0.1",
-            "crc32": "f8f5bf5a",
+            "version": "1.0.42",
+            "crc32": "fdf41118",
             "github_url": "https://github.com/lGuann/SwitchTVBox"
         },
         {
@@ -767,8 +767,8 @@
             "title": "Loopy",
             "description": "首款多源后台播放器，可自行添加音源",
             "author": "Zender",
-            "version": "2.12",
-            "crc32": "23421584",
+            "version": "2.13",
+            "crc32": "d04f775b",
             "github_url": "https://github.com/lGuann/Loopy",
             "notify": "歌单列表需额外安装补丁否则为空，请自行前往开发者Q群获取"
         },
@@ -789,8 +789,8 @@
             "title": "红果冻",
             "description": "第三方红果短剧",
             "author": "雨天rain",
-            "version": "2.4.122",
-            "crc32": "a049fbae",
+            "version": "2.4.126",
+            "crc32": "dbaabd59",
             "github_url": "https://github.com/zys123444444-dotcom/zys123444444-dotcom.github.io"
         },
         {

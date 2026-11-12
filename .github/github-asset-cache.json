@@ -2,7 +2,7 @@
     "packages": {
         "AIO": {
             "version": "12.2.1",
-            "asset_id": 737363728
+            "asset_id": 739945448
         },
         "ANIMEX": {
             "version": "1.0.8",
@@ -61,8 +61,8 @@
             "asset_id": 598052446
         },
         "Loopy": {
-            "version": "2.12",
-            "asset_id": 701611546
+            "version": "2.13",
+            "asset_id": 739143193
         },
         "MasterVolume": {
             "version": "1.2.5",
@@ -109,8 +109,8 @@
             "asset_id": 592653614
         },
         "SwitchTVBox": {
-            "version": "1.0.1",
-            "asset_id": 709415123
+            "version": "1.0.42",
+            "asset_id": 739136317
         },
         "Tikzen": {
             "version": "1.0.5",
@@ -161,8 +161,8 @@
             "asset_id": 720643830
         },
         "hongguodong": {
-            "version": "2.4.122",
-            "asset_id": 738518799
+            "version": "2.4.126",
+            "asset_id": 739824565
         },
         "mangadex-reader": {
             "version": "1.0.4",
