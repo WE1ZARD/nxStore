@@ -161,7 +161,7 @@
             "github_url": "https://github.com/WE1ZARD/Magic-Suite",
             "require_reboot": true,
             "disable_uninstall": true,
-            "crc32": "7c917444"
+            "crc32": "5e960164"
         },
         {
             "name": "fw1810",
@@ -778,8 +778,8 @@
             "title": "MissionControl-Patches",
             "description": "第三方蓝牙手柄增强补丁",
             "author": "ndeadly",
-            "version": "23.0.1",
-            "crc32": "86231532",
+            "version": "23.5.0",
+            "crc32": "a0140e47",
             "github_url": "https://github.com/ndeadly/mc_exefs_patches",
             "notify": "要求重启生效, \n手柄重置后, 再蓝牙匹配"
         },
@@ -789,8 +789,8 @@
             "title": "红果冻",
             "description": "第三方红果短剧",
             "author": "雨天rain",
-            "version": "2.3.9",
-            "crc32": "d755fad1",
+            "version": "2.4.91",
+            "crc32": "84cf2293",
             "github_url": "https://github.com/zys123444444-dotcom/zys123444444-dotcom.github.io"
         },
         {

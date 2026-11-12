@@ -2,7 +2,7 @@
     "packages": {
         "AIO": {
             "version": "12.2.1",
-            "asset_id": 735389953
+            "asset_id": 737363728
         },
         "ANIMEX": {
             "version": "1.0.8",
@@ -73,8 +73,8 @@
             "asset_id": 735139748
         },
         "MissionControl-Patches": {
-            "version": "23.0.1",
-            "asset_id": 685000707
+            "version": "23.5.0",
+            "asset_id": 735842029
         },
         "NSteamLink": {
             "version": "0.7.3",
@@ -161,8 +161,8 @@
             "asset_id": 720643830
         },
         "hongguodong": {
-            "version": "2.3.9",
-            "asset_id": 714724268
+            "version": "2.4.91",
+            "asset_id": 736344505
         },
         "mangadex-reader": {
             "version": "1.0.4",
