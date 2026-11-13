@@ -9,14 +9,15 @@ name: Publish store (gen_manifest)
 #
 # 触发:
 #   - push master   : upload/ 之类的 PR 合并后立即处理
-#   - schedule    : 每日 UTC 03:00 拉取 github_url 最新版本
+#   - schedule    : 每 30 分钟拉取 github_url 最新版本 (上游一天可发多次,
+#                   每日一次会让商店落后半天以上; 无变化时生成器只做 API 查询)
 #   - workflow_dispatch : 手动
 
 on:
   push:
     branches: [master]
   schedule:
-    - cron: '0 3 * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -30,6 +31,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
+    timeout-minutes: 30
     env:
       DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
     steps:
