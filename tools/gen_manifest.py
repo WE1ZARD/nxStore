@@ -12,6 +12,7 @@ import re
 import shutil
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 import zlib
@@ -113,6 +114,7 @@ GITHUB_TOKEN_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath
                                  "gh_token.txt")
 GITHUB_AUTH_HOSTS = {"api.github.com", "github.com", "www.github.com"}
 GITHUB_ASSET_CACHE_REL = os.path.join(".github", "github-asset-cache.json")
+APP_ETAG_CACHE_REL = os.path.join(".github", "app-etag-cache.json")
 
 
 def is_github_base(web_base) -> bool:
@@ -194,6 +196,41 @@ def write_github_asset_cache(root: str, cache) -> None:
     tmp = path + ".tmp"
     with open(tmp, "w", encoding="utf-8", newline="\n") as output:
         json.dump(canonical, output, ensure_ascii=False, indent=4)
+        output.write("\n")
+    os.replace(tmp, path)
+
+
+def load_app_etag_cache(root: str):
+    """Load generator-private app_url ETags (name -> {url, etag})."""
+    path = os.path.join(root, APP_ETAG_CACHE_REL)
+    try:
+        with open(path, encoding="utf-8") as source:
+            doc = json.load(source)
+    except OSError:
+        return {}
+    except json.JSONDecodeError:
+        print("警告: %s 无法解析, 重建" % path, file=sys.stderr)
+        return {}
+    if not isinstance(doc, dict):
+        return {}
+    cache = {}
+    for name, entry in doc.items():
+        if not isinstance(name, str) or not isinstance(entry, dict):
+            continue
+        url = entry.get("url")
+        etag = entry.get("etag")
+        if isinstance(url, str) and isinstance(etag, str) and etag:
+            cache[name] = {"url": url, "etag": etag}
+    return cache
+
+
+def write_app_etag_cache(root: str, cache) -> None:
+    """Atomically persist generator-private app_url ETags."""
+    path = os.path.join(root, APP_ETAG_CACHE_REL)
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8", newline="\n") as output:
+        json.dump(dict(sorted(cache.items())), output, ensure_ascii=False, indent=4)
         output.write("\n")
     os.replace(tmp, path)
 
@@ -1233,6 +1270,8 @@ def process_upload(root: str, dry_run: bool):
     repo_changed = False
     github_asset_cache = load_github_asset_cache(root)
     cache_changed = migrate_info_asset_ids(root, github_asset_cache, dry_run)
+    app_etags = load_app_etag_cache(root)
+    app_etags_changed = False
 
     # 清理历史遗留的空值可选字段 (写入侧已跳过, 此处迁移旧数据)
     for e in entries:
@@ -1385,21 +1424,47 @@ def process_upload(root: str, dry_run: bool):
             continue
 
         tmp = os.path.join(upload_dir, ".app-%s.download" % name)
+        dst_path = os.path.join(zips_dir, name + ".zip")
+        headers = {"User-Agent": HTTP_UA}
+        # app_url 站点 (nginx) 的 If-Modified-Since 是 exact 匹配, 本地 mtime
+        # 对不上; 用上次响应的 ETag 做 If-None-Match, 未变化时直接 304。
+        cached = app_etags.get(name)
+        if cached and cached.get("url") == app_url and os.path.isfile(dst_path):
+            headers["If-None-Match"] = cached["etag"]
+        new_etag = None
         try:
-            req = urllib.request.Request(app_url, headers={"User-Agent": HTTP_UA})
+            req = urllib.request.Request(app_url, headers=headers)
             with urllib.request.urlopen(req, timeout=300) as r, open(tmp, "wb") as f:
+                new_etag = r.headers.get("ETag")
                 while True:
                     chunk = r.read(65536)
                     if not chunk:
                         break
                     f.write(chunk)
         except Exception as e:
+            if isinstance(e, urllib.error.HTTPError) and e.code == 304:
+                # 版本取已发布的 info.json; 本地 zip 已剔除 info.json
+                version = read_info_json_version(
+                    os.path.join(root, "packages", name, "info.json"))
+                if version:
+                    app_versions[name] = version
+                print("app %s: up-to-date (304), version=%s"
+                      % (name, version or "(未知)"))
+                continue
             print("app %s: 下载失败 (%s)" % (name, e), file=sys.stderr)
             try:
                 os.remove(tmp)
             except OSError:
                 pass
             continue
+
+        if new_etag and (not cached or cached.get("url") != app_url
+                         or cached.get("etag") != new_etag):
+            app_etags[name] = {"url": app_url, "etag": new_etag}
+            app_etags_changed = True
+        elif not new_etag and name in app_etags:
+            del app_etags[name]
+            app_etags_changed = True
 
         version = ""
         try:
@@ -1763,6 +1828,9 @@ def process_upload(root: str, dry_run: bool):
     if cache_changed and not dry_run:
         write_github_asset_cache(root, github_asset_cache)
         print("github asset cache 已更新")
+    if app_etags_changed and not dry_run:
+        write_app_etag_cache(root, app_etags)
+        print("app etag cache 已更新")
     return active_names
 
 
