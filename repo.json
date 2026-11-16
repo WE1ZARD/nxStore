@@ -498,8 +498,8 @@
             "title": "Warmboot Extractor",
             "description": "熔断补丁提取工具",
             "author": "sthetix",
-            "version": "1.0.2",
-            "crc32": "045af5a8",
+            "version": "1.1.0",
+            "crc32": "5a58a9af",
             "github_url": "https://github.com/sthetix/Warmboot-Extractor"
         },
         {
@@ -758,8 +758,8 @@
             "title": "TOMOD",
             "description": "游戏模组管理器",
             "author": "TOM",
-            "version": "4.2.1",
-            "crc32": "acf96b1e"
+            "version": "4.2.2",
+            "crc32": "aef8f98c"
         },
         {
             "name": "Loopy",
