@@ -313,7 +313,7 @@ def github_pick_asset(assets, name, pattern=None, strict=False):
     """在 release 资产里挑最匹配的一个 (返回 asset dict 或 None).
 
     优先级: github_asset 显式模式 (fnmatch) > 精确 {name}{ext} >
-    {下划线名}{ext} > 前缀 {name}-/{name}_ > 前缀 {name} > 该扩展名任意资产.
+    前缀 {name}-/{name}_ (忽略 -/_ 差异) > 前缀 {name} > 该扩展名任意资产.
     这样即使 release 里有多个 zip (分平台/源码包等), 也能稳定选中包名的那个.
     strict=True 时不接受「该扩展名任意资产」兜底, 用于在多应用共仓库时判断
     某个 release 是否属于本包."""
@@ -323,21 +323,20 @@ def github_pick_asset(assets, name, pattern=None, strict=False):
         if cand:
             return cand[0]
     for ext in (".bin", ".nro", ".ovl", ".zip"):
-        low = name.lower()
-        exact = [a for a in assets if a.get("name", "").lower() == low + ext]
-        if not exact:
-            exact = [a for a in assets
-                     if a.get("name", "").lower() == name.replace("-", "_").lower() + ext]
+        # 上游常把项目名从 A-B 改成 A_B (如 Warmboot_Extractor-1.1.0.zip),
+        # 名称比较统一忽略 -/_ 差异, 否则新版 release 会被判成不属于本包.
+        low = name.lower().replace("_", "-")
+        exact = [a for a in assets
+                 if a.get("name", "").lower().replace("_", "-") == low + ext]
         if exact:
             return exact[0]
         pref = [a for a in assets
                 if a.get("name", "").lower().endswith(ext)
-                and (a.get("name", "").lower().startswith(low + "-")
-                     or a.get("name", "").lower().startswith(low + "_"))]
+                and a.get("name", "").lower().replace("_", "-").startswith(low + "-")]
         if not pref:
             pref = [a for a in assets
                     if a.get("name", "").lower().endswith(ext)
-                    and a.get("name", "").lower().startswith(low)]
+                    and a.get("name", "").lower().startswith(name.lower())]
         if pref:
             return pref[0]
         if strict:
