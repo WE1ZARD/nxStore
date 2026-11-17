@@ -230,9 +230,9 @@
             "title": "akira",
             "description": "PS4 & 5 串流工具",
             "author": "xlanor",
-            "version": "0.7.0-rc.5",
+            "version": "0.7.0",
             "github_url": "https://github.com/xlanor/akira",
-            "crc32": "0715985e"
+            "crc32": "63e98bc0"
         },
         {
             "name": "dvr-patches",
@@ -789,8 +789,8 @@
             "title": "红果冻",
             "description": "第三方红果短剧",
             "author": "雨天rain",
-            "version": "2.4.195",
-            "crc32": "4ee08b64",
+            "version": "2.4.203",
+            "crc32": "4926f0d7",
             "github_url": "https://github.com/zys123444444-dotcom/zys123444444-dotcom.github.io"
         },
         {
