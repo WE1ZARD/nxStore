@@ -13,8 +13,8 @@
             "asset_id": 741837559
         },
         "Breeze": {
-            "version": "beta128.12",
-            "asset_id": 726216114
+            "version": "beta129.00",
+            "asset_id": 758702273
         },
         "CommonProblemResolver": {
             "version": "0.3.4",
@@ -161,8 +161,8 @@
             "asset_id": 757261436
         },
         "hongguodong": {
-            "version": "2.4.211",
-            "asset_id": 758079762
+            "version": "2.4.215",
+            "asset_id": 759408941
         },
         "mangadex-reader": {
             "version": "1.0.4",
@@ -181,8 +181,8 @@
             "asset_id": 672209159
         },
         "switch-frame-tap": {
-            "version": "0.7.22",
-            "asset_id": 733538358
+            "version": "0.7.23-beta2",
+            "asset_id": 759657280
         },
         "sys-clk": {
             "version": "3.5.1",

@@ -272,9 +272,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta128.12",
+            "version": "beta129.00",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "120a2a3a"
+            "crc32": "05f129f6"
         },
         {
             "name": "MissionControl",
@@ -728,8 +728,8 @@
             "title": "Switch Frame Tap",
             "description": "USB 串流录屏, 支持1080P 60FPS",
             "author": "TomasUribe",
-            "version": "0.7.22",
-            "crc32": "385c60b6",
+            "version": "0.7.23-beta2",
+            "crc32": "2b84ce1b",
             "github_url": "https://github.com/TomasUribe/switch-frame-tap"
         },
         {
@@ -789,8 +789,8 @@
             "title": "红果冻",
             "description": "第三方红果短剧",
             "author": "雨天rain",
-            "version": "2.4.211",
-            "crc32": "50e8eb68",
+            "version": "2.4.215",
+            "crc32": "b6135f8b",
             "github_url": "https://github.com/zys123444444-dotcom/zys123444444-dotcom.github.io"
         },
         {
