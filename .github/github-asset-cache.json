@@ -1,8 +1,8 @@
 {
     "packages": {
         "AIO": {
-            "version": "12.2.3",
-            "asset_id": 767365470
+            "version": "12.2.4",
+            "asset_id": 775522471
         },
         "ANIMEX": {
             "version": "1.0.8",
@@ -13,8 +13,8 @@
             "asset_id": 741837559
         },
         "Breeze": {
-            "version": "beta129.01",
-            "asset_id": 763951033
+            "version": "beta129.02",
+            "asset_id": 774831586
         },
         "CommonProblemResolver": {
             "version": "0.3.4",
