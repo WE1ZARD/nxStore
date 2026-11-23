@@ -272,9 +272,9 @@
             "title": "Breeze",
             "description": "金手指制作工具",
             "author": "tomvita",
-            "version": "beta129.04",
+            "version": "beta129.06",
             "github_url": "https://github.com/tomvita/Breeze-Beta",
-            "crc32": "db5f66d6"
+            "crc32": "0c2217de"
         },
         {
             "name": "MissionControl",
@@ -789,8 +789,8 @@
             "title": "红果冻",
             "description": "第三方红果短剧",
             "author": "雨天rain",
-            "version": "2.4.232",
-            "crc32": "36b10bbe",
+            "version": "2.4.239",
+            "crc32": "b5b5ad94",
             "github_url": "https://github.com/zys123444444-dotcom/zys123444444-dotcom.github.io"
         },
         {
