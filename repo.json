@@ -758,8 +758,8 @@
             "title": "TOMOD",
             "description": "游戏模组管理器",
             "author": "TOM",
-            "version": "4.2.2",
-            "crc32": "aef8f98c"
+            "version": "4.3.2",
+            "crc32": "681261ab"
         },
         {
             "name": "Loopy",
@@ -816,6 +816,16 @@
             "custom_dir": "/Firmware.23.5.0",
             "uninstall_dir": "/Firmware.23.5.0",
             "notify": "下载后, \n须使用 Daybreak 进行升降级"
+        },
+        {
+            "name": "savehere",
+            "category": "nro",
+            "title": "savehere",
+            "description": "找存档,直接爽",
+            "author": "Zender",
+            "crc32": "a1b3d1d9",
+            "github_url": "https://github.com/lGuann/savehere",
+            "notify": "注册绑定账号需要扫码加入qq群,发送验证信息"
         }
     ]
 }
