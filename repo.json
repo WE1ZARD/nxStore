@@ -823,9 +823,10 @@
             "title": "savehere",
             "description": "找存档,直接爽",
             "author": "Zender",
-            "crc32": "a1b3d1d9",
+            "crc32": "2aceb28b",
             "github_url": "https://github.com/lGuann/savehere",
-            "notify": "注册绑定账号需要扫码加入qq群,发送验证信息"
+            "notify": "注册绑定账号需要扫码加入qq群,发送验证信息",
+            "version": "1.0"
         }
     ]
 }
