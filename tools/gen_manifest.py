@@ -934,7 +934,11 @@ def classify(rel: str, g_dirs) -> str:
     return "G" if rel.split("/", 1)[0] in g_dirs else "U"
 
 
-ICON_MAX_SIDE = 128  # 图标最长边上限 (px)
+ICON_MAX_SIDE = 128  # 图标/封面最长边上限 (px)
+ICON_EXT = ".avif"  # 图标/封面统一输出格式
+ICON_QUALITY = 90
+# 上传图片允许的输入扩展名 (转换前格式不做要求, 输出统一为 AVIF)
+ICON_SOURCE_EXTS = (".jpg", ".jpeg", ".png", ".avif")
 
 # manifest.install 不记录这些说明文件 (LICENSE / COPYRIGHT / README 及其扩展名)
 MANIFEST_SKIP_STEMS = {"license", "copyright", "readme"}
@@ -942,15 +946,18 @@ MANIFEST_SKIP_STEMS = {"license", "copyright", "readme"}
 MANIFEST_SKIP_NAMES = {"info.json", "manifest.install"}
 
 
-def shrink_icon(src: str, dst: str) -> bool:
-    """将 src 图片最长边缩至 128px 内并保存为 jpg; 已达标返回 False (调用方原样移动)."""
+def convert_icon(src: str, dst: str) -> bool:
+    """将 src 转成 avif 写入 dst (最长边 <=128px), 返回是否发生缩放."""
+    Image.init()  # 加载插件, 否则 Image.SAVE 里还没有 AVIF
+    if "AVIF" not in Image.SAVE:
+        raise RuntimeError("Pillow 缺少 AVIF 写入支持, 请升级到 >= 11.3")
     with Image.open(src) as im:
         im.load()  # 提前解码, 损坏文件在此抛 OSError
-        if max(im.size) <= ICON_MAX_SIDE:
-            return False
-        im.thumbnail((ICON_MAX_SIDE, ICON_MAX_SIDE), Image.LANCZOS)
-        im.convert("RGB").save(dst, "JPEG", quality=90)
-        return True
+        resized = max(im.size) > ICON_MAX_SIDE
+        if resized:
+            im.thumbnail((ICON_MAX_SIDE, ICON_MAX_SIDE), Image.LANCZOS)
+        im.convert("RGB").save(dst, "AVIF", quality=ICON_QUALITY)
+        return resized
 
 
 def build_single_file_zip(zip_path: str, entry_rel: str, src: str) -> None:
@@ -1258,7 +1265,7 @@ def load_repo_json(path: str):
 
 
 def process_upload(root: str, dry_run: bool):
-    """处理 upload/ 原始输入: zip -> zips/, jpg -> icon, json -> info.json + repo.json."""
+    """处理 upload/ 原始输入: zip -> zips/, 图片 -> avif 图标/封面, json -> info.json + repo.json."""
     upload_dir = os.path.join(root, "upload")
     if not os.path.isdir(upload_dir):
         return None
@@ -1504,33 +1511,34 @@ def process_upload(root: str, dry_run: bool):
         and os.path.isfile(os.path.join(upload_dir, fname))
     }
 
-    # ── 封面: upload/categories/<id>.jpg -> categories/<id>.jpg (缩放 128px) ──
+    # ── 封面: upload/categories/<id>.<图片> -> categories/<id>.avif (最长边 128px) ──
     cover_src_dir = os.path.join(upload_dir, "categories")
     if os.path.isdir(cover_src_dir):
         cover_dst_dir = os.path.join(root, "categories")
         for fname in sorted(f for f in os.listdir(cover_src_dir) if f):
             name, ext = os.path.splitext(fname)
-            if ext.lower() != ".jpg":
-                print("忽略(封面仅支持 jpg): %s" % fname, file=sys.stderr)
+            if ext.lower() not in ICON_SOURCE_EXTS:
+                print("忽略(封面仅支持 %s): %s" % ("/".join(ICON_SOURCE_EXTS), fname),
+                      file=sys.stderr)
                 continue
             src = os.path.join(cover_src_dir, fname)
-            dst = os.path.join(cover_dst_dir, name + ".jpg")
+            dst = os.path.join(cover_dst_dir, name + ICON_EXT)
             print("cover %s -> %s" % (fname, os.path.relpath(dst, root)))
             if dry_run:
-                print("  [dry-run] 移动")
+                print("  [dry-run] 转换为 AVIF")
+                continue
+            if Image is None:
+                print("  警告: 未安装 Pillow, 跳过图标转换: %s" % fname, file=sys.stderr)
                 continue
             os.makedirs(cover_dst_dir, exist_ok=True)
             try:
-                shrunk = shrink_icon(src, dst)
+                resized = convert_icon(src, dst)
             except OSError:
-                print("  警告: 图片解析失败, 原样移动: %s" % fname, file=sys.stderr)
-                os.replace(src, dst)
-            else:
-                if shrunk:
-                    print("  缩放至最长边 %dpx" % ICON_MAX_SIDE)
-                    os.remove(src)
-                else:
-                    os.replace(src, dst)
+                print("  警告: 图片解析失败, 跳过: %s" % fname, file=sys.stderr)
+                continue
+            if resized:
+                print("  缩放至最长边 %dpx" % ICON_MAX_SIDE)
+            os.remove(src)
 
     # ── 第一遍: 移动原始 zip / 打包原始 nro、ovl / 安装清单 / 图标 (先于 json, 使对应检查准确) ──
     for fname in files:
@@ -1589,46 +1597,27 @@ def process_upload(root: str, dry_run: bool):
                 os.remove(src)
             continue
 
-        if ext.lower() == ".jpg":
-            icon_path = os.path.join(root, "packages", name, "icon.jpg")
+        if ext.lower() in ICON_SOURCE_EXTS:
+            icon_path = os.path.join(root, "packages", name, "icon" + ICON_EXT)
             print("icon %s -> %s" % (fname, os.path.relpath(icon_path, root)))
 
             if Image is None:
-                print("  警告: 未安装 Pillow, 跳过缩放, 原样移动", file=sys.stderr)
-                if dry_run:
-                    print("  [dry-run] 移动")
-                else:
-                    os.makedirs(os.path.dirname(icon_path), exist_ok=True)
-                    os.replace(src, icon_path)
+                print("  警告: 未安装 Pillow, 跳过图标转换", file=sys.stderr)
                 continue
 
             if dry_run:
-                try:
-                    with Image.open(src) as im:
-                        im.load()
-                        too_big = max(im.size) > ICON_MAX_SIDE
-                except OSError:
-                    too_big = None
-                if too_big is None:
-                    print("  [dry-run] 原样移动 (图片解析失败)")
-                elif too_big:
-                    print("  [dry-run] 缩放至最长边 %dpx 后移动" % ICON_MAX_SIDE)
-                else:
-                    print("  [dry-run] 原样移动 (已 <= %dpx)" % ICON_MAX_SIDE)
+                print("  [dry-run] 转换为 AVIF")
                 continue
 
             os.makedirs(os.path.dirname(icon_path), exist_ok=True)
             try:
-                shrunk = shrink_icon(src, icon_path)
+                resized = convert_icon(src, icon_path)
             except OSError:
-                print("  警告: 图片解析失败, 原样移动: %s" % fname, file=sys.stderr)
-                os.replace(src, icon_path)
-            else:
-                if shrunk:
-                    print("  缩放至最长边 %dpx" % ICON_MAX_SIDE)
-                    os.remove(src)
-                else:
-                    os.replace(src, icon_path)
+                print("  警告: 图片解析失败, 跳过: %s" % fname, file=sys.stderr)
+                continue
+            if resized:
+                print("  缩放至最长边 %dpx" % ICON_MAX_SIDE)
+            os.remove(src)
             continue
 
         if ext.lower() == ".json":

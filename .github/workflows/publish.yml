@@ -46,7 +46,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install deps
-        run: pip install pillow
+        run: pip install "pillow>=11.3"
 
       - name: Regenerate and publish artifacts
         id: commit
