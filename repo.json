@@ -696,8 +696,8 @@
             "title": "Vita3K",
             "description": "PSV 模拟器",
             "author": "NaGaa95",
-            "version": "1.4.2",
-            "crc32": "f690c180",
+            "version": "1.4.3",
+            "crc32": "7f7a49a6",
             "github_url": "https://github.com/NaGaa95/Vita3K-nx"
         },
         {
@@ -728,8 +728,8 @@
             "title": "Switch Frame Tap",
             "description": "USB 串流录屏, 支持1080P 60FPS",
             "author": "TomasUribe",
-            "version": "0.7.24-beta2",
-            "crc32": "f3830b08",
+            "version": "0.7.24-beta3",
+            "crc32": "7e3e4d66",
             "github_url": "https://github.com/TomasUribe/switch-frame-tap"
         },
         {
@@ -789,8 +789,8 @@
             "title": "红果冻",
             "description": "第三方红果短剧",
             "author": "雨天rain",
-            "version": "2.4.274",
-            "crc32": "e5f4140f",
+            "version": "2.4.276",
+            "crc32": "7d13df12",
             "github_url": "https://github.com/zys123444444-dotcom/zys123444444-dotcom.github.io"
         },
         {
