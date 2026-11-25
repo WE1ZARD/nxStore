@@ -161,8 +161,8 @@
             "asset_id": 770771104
         },
         "hongguodong": {
-            "version": "2.4.280",
-            "asset_id": 789642853
+            "version": "2.4.281",
+            "asset_id": 791837625
         },
         "mangadex-reader": {
             "version": "1.0.4",
@@ -185,16 +185,16 @@
             "asset_id": 672209159
         },
         "switch-frame-tap": {
-            "version": "0.7.24-beta3",
-            "asset_id": 787830755
+            "version": "0.7.24-beta5",
+            "asset_id": 792005868
         },
         "sys-clk": {
             "version": "3.5.1",
             "asset_id": 671603698
         },
         "sys-con": {
-            "version": "2.1.0",
-            "asset_id": 716255948
+            "version": "2.1.1",
+            "asset_id": 792929092
         },
         "sys-env": {
             "version": "1.1.0",

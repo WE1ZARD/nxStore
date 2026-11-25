@@ -358,9 +358,9 @@
             "title": "sys-con",
             "description": "支持第三方有线手柄",
             "author": "o0Zz",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "github_url": "https://github.com/o0Zz/sys-con",
-            "crc32": "9eec055f",
+            "crc32": "b7e1b3d5",
             "notify": "要求重启生效"
         },
         {
@@ -728,8 +728,8 @@
             "title": "Switch Frame Tap",
             "description": "USB 串流录屏, 支持1080P 60FPS",
             "author": "TomasUribe",
-            "version": "0.7.24-beta3",
-            "crc32": "7e3e4d66",
+            "version": "0.7.24-beta5",
+            "crc32": "830f4644",
             "github_url": "https://github.com/TomasUribe/switch-frame-tap"
         },
         {
@@ -789,8 +789,8 @@
             "title": "红果冻",
             "description": "第三方红果短剧",
             "author": "雨天rain",
-            "version": "2.4.280",
-            "crc32": "7bb0f6ca",
+            "version": "2.4.281",
+            "crc32": "092cf46d",
             "github_url": "https://github.com/zys123444444-dotcom/zys123444444-dotcom.github.io"
         },
         {
