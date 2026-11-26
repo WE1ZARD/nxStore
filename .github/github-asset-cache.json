@@ -121,8 +121,8 @@
             "asset_id": 788110629
         },
         "WIZBOX": {
-            "version": "2.6.0",
-            "asset_id": 786524435
+            "version": "2.6.1",
+            "asset_id": 794806967
         },
         "Warmboot-Extractor": {
             "version": "1.1.0",
@@ -193,8 +193,8 @@
             "asset_id": 671603698
         },
         "sys-con": {
-            "version": "2.1.1",
-            "asset_id": 792929092
+            "version": "2.1.2",
+            "asset_id": 794577767
         },
         "sys-env": {
             "version": "1.1.0",
